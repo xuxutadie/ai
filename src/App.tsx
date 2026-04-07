@@ -71,7 +71,7 @@ export default function App() {
         {currentScreen === 'auth' && <Auth onAuthSuccess={handleAuthSuccess} />}
         {currentScreen === 'selection' && (
           <Selection 
-            authStatus={authStatus} 
+            authStatus={authStatus!} 
             onStart={handleStartQuiz} 
             onLogout={handleLogout}
             onAdmin={() => setCurrentScreen('admin')}

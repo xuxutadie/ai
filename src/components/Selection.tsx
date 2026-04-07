@@ -7,17 +7,17 @@ import ElectricBorder from './ElectricBorder';
 export default function Selection({ 
   authStatus, 
   onStart, 
-  onLogout,
-  onAdmin 
+  onAdmin,
+  onLogout 
 }: { 
-  authStatus: AuthStatus | null;
+  authStatus: AuthStatus; 
   onStart: (group: 'primary' | 'junior', track: 'track1' | 'track2') => void;
-  onLogout: () => void;
   onAdmin: () => void;
+  onLogout: () => void;
 }) {
-  const [adminCode, setAdminCode] = useState('');
-  const [showAdmin, setShowAdmin] = useState(false);
   const [selectedTrack, setSelectedTrack] = useState<'track1' | 'track2' | null>(null);
+  const [showAdmin, setShowAdmin] = useState(false);
+  const [adminCode, setAdminCode] = useState('');
 
   const handleAdminEnter = () => {
     if (adminCode === 'xxxb520') {
@@ -27,21 +27,26 @@ export default function Selection({
     }
   };
 
+  const handleStart = (group: 'primary' | 'junior') => {
+    if (selectedTrack) {
+      onStart(group, selectedTrack);
+    }
+  };
+
   return (
     <motion.div 
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       className="w-full h-full flex flex-col px-4 md:px-0"
     >
-      {/* Navbar */}
       <nav className="flex items-center justify-between glass-panel bg-white/20 text-white px-6 py-4 rounded-2xl mb-4 md:mb-8 mt-4 shrink-0">
         <div className="flex items-center space-x-4">
           <div className="bg-amber-400/20 text-amber-300 px-4 py-2 rounded-full flex items-center font-bold text-sm tracking-wider border border-amber-400/30">
             <Zap className="w-4 h-4 mr-2 shrink-0" />
-            <span className="truncate max-w-[120px] md:max-w-none">剩余能量: {authStatus?.remaining === 999 ? '无限' : authStatus?.remaining} 次</span>
+            <span className="truncate max-w-[120px] md:max-w-none">剩余能量：{authStatus?.remaining === 999 ? '无限' : authStatus?.remaining}</span>
           </div>
           <div className="text-white/90 text-sm font-medium hidden md:block">
-            类型: {authStatus?.type === 'PAID_5' ? '次卡' : '年卡'}
+            类型：{authStatus?.type === 'PAID_5' ? '次卡' : '年卡'}
           </div>
         </div>
         <button onClick={onLogout} className="text-white/80 hover:text-white transition-colors flex items-center text-sm font-medium bg-white/10 px-4 py-2 rounded-xl hover:bg-white/20 shrink-0">
@@ -50,116 +55,110 @@ export default function Selection({
         </button>
       </nav>
 
-      {/* Main Content */}
       <div className="flex-1 flex flex-col items-center justify-center py-2 md:py-4 min-h-0 relative">
         <AnimatePresence mode="wait">
           {!selectedTrack ? (
             <motion.div
-              key="tracks"
+              key="track-selection"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              className="w-full flex flex-col items-center justify-center h-full min-h-0"
+              exit={{ opacity: 0, x: 20 }}
+              className="w-full h-full flex flex-col items-center"
             >
-              <h2 className="text-3xl md:text-5xl font-black text-white mb-6 md:mb-12 tracking-wider drop-shadow-lg shrink-0">选择测试赛道</h2>
+              <h2 className="text-2xl md:text-3xl font-black text-white mb-6 md:mb-8 text-center">选择赛道</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full max-w-4xl flex-1 min-h-0">
-                {/* Track 1 */}
-                <ElectricBorder color="#a855f7" speed={1} chaos={0.12} borderRadius={32} className="cursor-pointer h-full">
-                  <motion.div 
+                <ElectricBorder color="#8b5cf6" speed={1} chaos={0.12} borderRadius={32} className="cursor-pointer h-full">
+                  <motion.div
                     whileHover={{ y: -5 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setSelectedTrack('track1')}
                     className="w-full h-full p-4 md:p-8 group flex flex-col items-center text-center justify-center"
                   >
-                    <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl bg-purple-500/20 border border-purple-400/30 flex items-center justify-center mb-3 md:mb-8 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(168,85,247,0.2)] shrink-0">
-                      <Target className="w-8 h-8 md:w-12 md:h-12 text-purple-400" />
+                    <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl bg-purple-500/20 border border-purple-400/30 flex items-center justify-center mb-3 md:mb-8 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(139,92,246,0.2)] shrink-0">
+                      <Brain className="w-8 h-8 md:w-12 md:h-12 text-purple-400" />
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-black text-white mb-1 md:mb-3 tracking-wide">赛道一 <span className="text-lg md:text-xl font-bold opacity-80">(基础)</span></h3>
-                    <p className="text-purple-100/80 text-sm md:text-lg mb-3 md:mb-6">客观题测试 (单选、判断)</p>
-                    <div className="mt-auto inline-flex items-center text-xs md:text-sm font-bold text-purple-300 bg-purple-500/20 px-4 md:px-5 py-2 md:py-2.5 rounded-full border border-purple-500/30">
-                      下一步
-                    </div>
+                    <h3 className="text-2xl md:text-3xl font-black text-white mb-1 md:mb-3 tracking-wide">赛道一<span className="text-lg md:text-xl font-bold opacity-80">(AI 理论)</span></h3>
+                    <p className="text-purple-100/80 text-sm md:text-lg mb-3 md:mb-6">人工智能基础知识考核</p>
+                    <div className="mt-auto inline-flex items-center text-xs md:text-sm font-bold text-purple-300 bg-purple-500/20 px-4 md:px-5 py-2 md:py-2.5 rounded-full border border-purple-500/30">扣除 1 次能量</div>
                   </motion.div>
                 </ElectricBorder>
 
-                {/* Track 2 */}
-                <ElectricBorder color="#f43f5e" speed={1} chaos={0.12} borderRadius={32} className="cursor-pointer h-full">
-                  <motion.div 
+                <ElectricBorder color="#f59e0b" speed={1} chaos={0.12} borderRadius={32} className="cursor-pointer h-full">
+                  <motion.div
                     whileHover={{ y: -5 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setSelectedTrack('track2')}
                     className="w-full h-full p-4 md:p-8 group flex flex-col items-center text-center justify-center"
                   >
-                    <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl bg-rose-500/20 border border-rose-400/30 flex items-center justify-center mb-3 md:mb-8 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(244,63,94,0.2)] shrink-0">
-                      <Brain className="w-8 h-8 md:w-12 md:h-12 text-rose-400" />
+                    <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl bg-amber-500/20 border border-amber-400/30 flex items-center justify-center mb-3 md:mb-8 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(245,158,11,0.2)] shrink-0">
+                      <Target className="w-8 h-8 md:w-12 md:h-12 text-amber-400" />
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-black text-white mb-1 md:mb-3 tracking-wide">赛道二 <span className="text-lg md:text-xl font-bold opacity-80">(进阶)</span></h3>
-                    <p className="text-rose-100/80 text-sm md:text-lg mb-3 md:mb-6">主客观混合测试 (多选、简答)</p>
-                    <div className="mt-auto inline-flex items-center text-xs md:text-sm font-bold text-rose-300 bg-rose-500/20 px-4 md:px-5 py-2 md:py-2.5 rounded-full border border-rose-500/30">
-                      下一步
-                    </div>
+                    <h3 className="text-2xl md:text-3xl font-black text-white mb-1 md:mb-3 tracking-wide">赛道二<span className="text-lg md:text-xl font-bold opacity-80">(AI 应用)</span></h3>
+                    <p className="text-amber-100/80 text-sm md:text-lg mb-3 md:mb-6">人工智能应用场景分析</p>
+                    <div className="mt-auto inline-flex items-center text-xs md:text-sm font-bold text-amber-300 bg-amber-500/20 px-4 md:px-5 py-2 md:py-2.5 rounded-full border border-amber-500/30">扣除 1 次能量</div>
                   </motion.div>
                 </ElectricBorder>
               </div>
+
+              <button
+                onClick={() => setShowAdmin(true)}
+                className="mt-6 text-white/50 hover:text-white flex items-center text-sm transition-colors font-medium bg-black/10 px-4 py-2 rounded-full backdrop-blur-md"
+              >
+                <Settings className="w-4 h-4 mr-2" />
+                进入后台管理
+              </button>
             </motion.div>
           ) : (
             <motion.div
-              key="groups"
+              key="group-selection"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 20 }}
-              className="w-full flex flex-col items-center justify-center h-full min-h-0"
+              exit={{ opacity: 0, x: -20 }}
+              className="w-full h-full flex flex-col items-center"
             >
-              <div className="w-full max-w-4xl flex items-center justify-between mb-4 md:mb-12 shrink-0 px-2">
-                <button 
+              <div className="flex items-center justify-between w-full max-w-4xl mb-6">
+                <button
                   onClick={() => setSelectedTrack(null)}
-                  className="text-white/70 hover:text-white flex items-center transition-colors p-2 md:px-4 md:py-2 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 text-sm md:text-base"
+                  className="text-white/70 hover:text-white flex items-center text-sm font-medium transition-colors"
                 >
-                  <ArrowLeft className="w-5 h-5 md:mr-2" /> <span className="hidden md:inline">返回重选</span>
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  返回赛道选择
                 </button>
-                <h2 className="text-2xl md:text-4xl font-black text-white tracking-wider drop-shadow-lg text-center flex-1">
-                  选择考试组别
-                </h2>
-                <div className="w-10 md:w-24"></div> {/* Spacer */}
+                <h2 className="text-2xl md:text-3xl font-black text-white text-center">选择考试组别</h2>
+                <div className="w-24"></div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full max-w-4xl flex-1 min-h-0">
-                {/* Primary */}
                 <ElectricBorder color="#10b981" speed={1} chaos={0.12} borderRadius={32} className="cursor-pointer h-full">
-                  <motion.div 
+                  <motion.div
                     whileHover={{ y: -5 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => onStart('primary', selectedTrack)}
+                    onClick={() => handleStart('primary')}
                     className="w-full h-full p-4 md:p-8 group flex flex-col items-center text-center justify-center"
                   >
                     <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center mb-3 md:mb-8 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(16,185,129,0.2)] shrink-0">
                       <GraduationCap className="w-8 h-8 md:w-12 md:h-12 text-emerald-400" />
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-black text-white mb-1 md:mb-3 tracking-wide">小学组 <span className="text-lg md:text-xl font-bold opacity-80">(Primary)</span></h3>
-                    <p className="text-emerald-100/80 text-sm md:text-lg mb-3 md:mb-6">适合 1-6 年级</p>
-                    <div className="mt-auto inline-flex items-center text-xs md:text-sm font-bold text-emerald-300 bg-emerald-500/20 px-4 md:px-5 py-2 md:py-2.5 rounded-full border border-emerald-500/30">
-                      扣除 1 次能量
-                    </div>
+                    <h3 className="text-2xl md:text-3xl font-black text-white mb-1 md:mb-3 tracking-wide">小学组<span className="text-lg md:text-xl font-bold opacity-80">(Primary)</span></h3>
+                    <p className="text-emerald-100/80 text-sm md:text-lg mb-3 md:mb-6">适合 3-6 年级</p>
+                    <div className="mt-auto inline-flex items-center text-xs md:text-sm font-bold text-emerald-300 bg-emerald-500/20 px-4 md:px-5 py-2 md:py-2.5 rounded-full border border-emerald-500/30">扣除 1 次能量</div>
                   </motion.div>
                 </ElectricBorder>
 
-                {/* Junior */}
                 <ElectricBorder color="#3b82f6" speed={1} chaos={0.12} borderRadius={32} className="cursor-pointer h-full">
-                  <motion.div 
+                  <motion.div
                     whileHover={{ y: -5 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => onStart('junior', selectedTrack)}
+                    onClick={() => handleStart('junior')}
                     className="w-full h-full p-4 md:p-8 group flex flex-col items-center text-center justify-center"
                   >
                     <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl bg-blue-500/20 border border-blue-400/30 flex items-center justify-center mb-3 md:mb-8 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(59,130,246,0.2)] shrink-0">
                       <Rocket className="w-8 h-8 md:w-12 md:h-12 text-blue-400" />
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-black text-white mb-1 md:mb-3 tracking-wide">初中组 <span className="text-lg md:text-xl font-bold opacity-80">(Junior)</span></h3>
+                    <h3 className="text-2xl md:text-3xl font-black text-white mb-1 md:mb-3 tracking-wide">初中组<span className="text-lg md:text-xl font-bold opacity-80">(Junior)</span></h3>
                     <p className="text-blue-100/80 text-sm md:text-lg mb-3 md:mb-6">适合初中生，进阶题库</p>
-                    <div className="mt-auto inline-flex items-center text-xs md:text-sm font-bold text-blue-300 bg-blue-500/20 px-4 md:px-5 py-2 md:py-2.5 rounded-full border border-blue-500/30">
-                      扣除 1 次能量
-                    </div>
+                    <div className="mt-auto inline-flex items-center text-xs md:text-sm font-bold text-blue-300 bg-blue-500/20 px-4 md:px-5 py-2 md:py-2.5 rounded-full border border-blue-500/30">扣除 1 次能量</div>
                   </motion.div>
                 </ElectricBorder>
               </div>
@@ -168,10 +167,9 @@ export default function Selection({
         </AnimatePresence>
       </div>
 
-      {/* Admin Entrance */}
       <div className="mt-auto pt-4 pb-4 flex justify-center shrink-0">
         {!showAdmin ? (
-          <button 
+          <button
             onClick={() => setShowAdmin(true)}
             className="text-white/50 hover:text-white flex items-center text-sm transition-colors font-medium bg-black/10 px-4 py-2 rounded-full backdrop-blur-md"
           >
