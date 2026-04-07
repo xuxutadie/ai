@@ -460,7 +460,7 @@ export default function Quiz({
                     : 'bg-blue-600 hover:bg-blue-500 active:scale-95 shadow-[0_4px_15px_rgba(37,99,235,0.3)] border border-blue-500/50'
                 }`}
               >
-                {currentQ.type === 'short_answer' || currentQ.type === 'fill_in_the_blanks' ? '查看答案' : '确认答案'}
+                {currentQ.type === 'short_answer' || currentQ.type === 'fill_in_the_blanks' ? '确认答案' : '确认答案'}
               </button>
             )}
           </div>
