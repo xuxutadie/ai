@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Clock, CheckCircle2, XCircle, ArrowRight } from 'lucide-react';
+import { Clock } from 'lucide-react';
 import { Question } from '../types';
 import questionsData from '../data/questions.json';
 
@@ -165,9 +165,6 @@ export default function Quiz({
   const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
   const [timeLeft, setTimeLeft] = useState(3600); // 60 minutes
   
-  const [feedback, setFeedback] = useState<'correct' | 'wrong' | 'partial' | null>(null);
-  const [showAnswer, setShowAnswer] = useState(false);
-  
   // 记录每道题的答题情况
   const [questionResults, setQuestionResults] = useState<{
     question: Question;
@@ -258,8 +255,6 @@ export default function Quiz({
   const currentQ = questions[currentIndex];
 
   const handleOptionClick = (optionKey: string) => {
-    if (feedback) return; // Prevent click during feedback
-
     if (currentQ.type === 'single' || currentQ.type === 'boolean') {
       setSelectedAnswers([optionKey]);
     } else if (currentQ.type === 'multiple') {
@@ -320,12 +315,7 @@ export default function Quiz({
       };
       setQuestionResults(prev => [...prev, result]);
       
-      setShowAnswer(true);
-      if (earnedPoints >= currentQ.points) {
-        setFeedback('correct');
-      } else {
-        setFeedback('wrong');
-      }
+      handleNext();
       return;
     }
 
@@ -346,14 +336,7 @@ export default function Quiz({
       };
       setQuestionResults(prev => [...prev, result]);
       
-      setShowAnswer(true);
-      if (earnedPoints >= currentQ.points * 0.6) {
-        setFeedback('correct');
-      } else if (earnedPoints >= currentQ.points * 0.3) {
-        setFeedback('partial');
-      } else {
-        setFeedback('wrong');
-      }
+      handleNext();
       return;
     }
 
@@ -367,26 +350,13 @@ export default function Quiz({
     };
     setQuestionResults(prev => [...prev, result]);
 
-    if (isCorrect) {
-      setFeedback('correct');
-      setTimeout(() => {
-        handleNext();
-      }, 300);
-    } else {
-      setFeedback('wrong');
-      setShowAnswer(true);
-      setTimeout(() => {
-        handleNext();
-      }, 1500);
-    }
+    handleNext();
   };
 
   // 四舍五入到最近的 0.5
   const roundToHalf = (num: number) => Math.round(num * 2) / 2;
   
   const handleNext = () => {
-    setFeedback(null);
-    setShowAnswer(false);
     setSelectedAnswers([]);
     
     if (isLast) {
@@ -522,19 +492,10 @@ export default function Quiz({
                     <button
                       key={opt}
                       onClick={() => handleOptionClick(opt)}
-                      disabled={feedback !== null}
                       className={`w-full text-left p-4 rounded-xl border-2 transition-all ${
                         selectedAnswers.includes(opt)
                           ? 'bg-blue-500/20 border-blue-400/50 shadow-[0_4px_15px_rgba(59,130,246,0.2)]'
                           : 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20'
-                      } ${
-                        showAnswer && currentQ.answer === opt
-                          ? 'bg-emerald-500/20 border-emerald-400/50'
-                          : ''
-                      } ${
-                        showAnswer && selectedAnswers.includes(opt) && currentQ.answer !== opt
-                          ? 'bg-red-500/20 border-red-400/50'
-                          : ''
                       }`}
                     >
                       <span className="text-base md:text-lg font-medium text-white">{opt === 'True' ? '正确' : '错误'}</span>
@@ -546,24 +507,14 @@ export default function Quiz({
               {(currentQ.type === 'single' || currentQ.type === 'multiple') && currentQ.options && (
                 Object.entries(currentQ.options).map(([key, val]) => {
                   const isSelected = selectedAnswers.includes(key);
-                  const isCorrectAnswer = Array.isArray(currentQ.answer) ? currentQ.answer.includes(key) : currentQ.answer === key;
                   
                   let optionStateClass = 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20';
                   if (isSelected) optionStateClass = 'bg-blue-500/20 border-blue-400/50 shadow-[0_4px_15px_rgba(59,130,246,0.2)]';
-                  
-                  if (showAnswer) {
-                    if (isCorrectAnswer) {
-                      optionStateClass = 'bg-emerald-500/20 border-emerald-400/50';
-                    } else if (isSelected) {
-                      optionStateClass = 'bg-red-500/20 border-red-400/50';
-                    }
-                  }
 
                   return (
                     <button
                       key={key}
                       onClick={() => handleOptionClick(key)}
-                      disabled={feedback !== null}
                       className={`w-full text-left p-3 md:p-4 rounded-xl border-2 transition-all flex items-center ${optionStateClass}`}
                     >
                       <span className={`w-8 h-8 rounded-lg flex items-center justify-center mr-3 md:mr-4 font-bold shrink-0 ${
@@ -572,9 +523,6 @@ export default function Quiz({
                         {key}
                       </span>
                       <span className="text-base md:text-lg font-medium text-white">{val}</span>
-                      
-                      {showAnswer && isCorrectAnswer && <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-emerald-400 ml-auto shrink-0" />}
-                      {showAnswer && isSelected && !isCorrectAnswer && <XCircle className="w-5 h-5 md:w-6 md:h-6 text-red-400 ml-auto shrink-0" />}
                     </button>
                   );
                 })
@@ -586,79 +534,25 @@ export default function Quiz({
                     className="w-full h-24 md:h-32 bg-transparent p-3 md:p-4 text-white outline-none resize-none placeholder:text-white/30"
                     placeholder={currentQ.type === 'fill_in_the_blanks' ? "请输入填空答案（多个空用逗号分隔）..." : "请输入你的答案..."}
                     onChange={(e) => setSelectedAnswers([e.target.value])}
-                    disabled={feedback !== null}
                   />
-                  {showAnswer && (
-                    <motion.div 
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      className="mt-2 p-3 md:p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl"
-                    >
-                      <p className="text-emerald-400 font-bold mb-1 text-sm md:text-base">参考答案：</p>
-                      <p className="text-white/90 text-sm md:text-base">{currentQ.answer}</p>
-                    </motion.div>
-                  )}
                 </div>
               )}
             </div>
           </div>
 
           {/* Bottom Action Area */}
-          <div className="mt-4 pt-4 border-t border-white/10 flex justify-between items-center relative shrink-0">
-            <div className="absolute left-1/2 -translate-x-1/2 top-0 mt-4 flex items-center justify-center">
-              {feedback === 'correct' && (
-                <motion.div 
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  className="text-emerald-400 flex items-center bg-emerald-500/20 px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-base md:text-xl shadow-lg border border-emerald-500/30 backdrop-blur-md"
-                >
-                  <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 mr-2" /> 回答正确
-                </motion.div>
-              )}
-              {feedback === 'wrong' && (
-                <motion.div 
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.4 }}
-                  className="text-red-400 flex items-center bg-red-500/20 px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-base md:text-xl shadow-lg border border-red-500/30 backdrop-blur-md"
-                >
-                  <XCircle className="w-5 h-5 md:w-6 md:h-6 mr-2" /> 回答错误
-                </motion.div>
-              )}
-              {feedback === 'partial' && (
-                <motion.div 
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  className="text-amber-400 flex items-center bg-amber-500/20 px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-base md:text-xl shadow-lg border border-amber-500/30 backdrop-blur-md"
-                >
-                  <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 mr-2" /> 部分正确
-                </motion.div>
-              )}
-            </div>
-
-            <div /> {/* Spacer */}
-            
-            {(currentQ.type === 'short_answer' || currentQ.type === 'fill_in_the_blanks') && showAnswer ? (
-              <button
-                onClick={handleNext}
-                className="h-12 md:h-14 px-6 md:px-8 rounded-xl bg-blue-600 hover:bg-blue-500 active:scale-95 transition-all flex items-center justify-center text-white font-bold text-base md:text-lg shadow-[0_4px_15px_rgba(37,99,235,0.3)] group z-10 border border-blue-500/50"
-              >
-                {isLast ? '提交试卷' : '下一题'}
-                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
-            ) : (
-              <button
-                onClick={handleConfirm}
-                disabled={feedback !== null || (selectedAnswers.length === 0 && currentQ.type !== 'short_answer' && currentQ.type !== 'fill_in_the_blanks')}
-                className={`h-12 md:h-14 px-6 md:px-8 rounded-xl transition-all flex items-center justify-center text-white font-bold text-base md:text-lg group z-10 ${
-                  feedback !== null || (selectedAnswers.length === 0 && currentQ.type !== 'short_answer' && currentQ.type !== 'fill_in_the_blanks')
-                    ? 'bg-white/10 text-white/40 cursor-not-allowed border border-white/5'
-                    : 'bg-blue-600 hover:bg-blue-500 active:scale-95 shadow-[0_4px_15px_rgba(37,99,235,0.3)] border border-blue-500/50'
-                }`}
-              >
-                {currentQ.type === 'short_answer' || currentQ.type === 'fill_in_the_blanks' ? '确认答案' : '确认答案'}
-              </button>
-            )}
+          <div className="mt-4 pt-4 border-t border-white/10 flex justify-end shrink-0">
+            <button
+              onClick={handleConfirm}
+              disabled={selectedAnswers.length === 0 && currentQ.type !== 'short_answer' && currentQ.type !== 'fill_in_the_blanks'}
+              className={`h-12 md:h-14 px-6 md:px-8 rounded-xl transition-all flex items-center justify-center text-white font-bold text-base md:text-lg group z-10 ${
+                selectedAnswers.length === 0 && currentQ.type !== 'short_answer' && currentQ.type !== 'fill_in_the_blanks'
+                  ? 'bg-white/10 text-white/40 cursor-not-allowed border border-white/5'
+                  : 'bg-blue-600 hover:bg-blue-500 active:scale-95 shadow-[0_4px_15px_rgba(37,99,235,0.3)] border border-blue-500/50'
+              }`}
+            >
+              {currentQ.type === 'short_answer' || currentQ.type === 'fill_in_the_blanks' ? '确认答案' : '确认答案'}
+            </button>
           </div>
         </motion.div>
       </AnimatePresence>
