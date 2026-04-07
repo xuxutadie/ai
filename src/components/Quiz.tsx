@@ -85,10 +85,13 @@ function calculateShortAnswerScore(userAnswer: string, correctAnswer: string, ma
   const correctKeywords = extractKeywords(correctNorm);
   const userKeywords = extractKeywords(userNorm);
   
+  // 四舍五入到最近的 0.5
+  const roundToHalf = (num: number) => Math.round(num * 2) / 2;
+  
   if (correctKeywords.length === 0) {
     // 如果没有提取到关键词，使用相似度计算
     const similarity = calculateSimilarity(userNorm, correctNorm);
-    return Math.round(similarity * maxPoints * 10) / 10;
+    return roundToHalf(similarity * maxPoints);
   }
   
   // 计算匹配的关键词数量
@@ -110,24 +113,26 @@ function calculateShortAnswerScore(userAnswer: string, correctAnswer: string, ma
   
   // 根据匹配比例计算分数
   const matchRatio = matchedKeywords / correctKeywords.length;
-  const score = matchRatio * maxPoints;
+  let score = matchRatio * maxPoints;
   
   // 根据匹配程度给予最低分数保障
   if (matchRatio >= 0.7) {
     // 匹配70%以上，给70%-100%分数
-    return Math.max(score, maxPoints * 0.7);
+    score = Math.max(score, maxPoints * 0.7);
   } else if (matchRatio >= 0.5) {
     // 匹配50%-70%，给50%-70%分数
-    return Math.max(score, maxPoints * 0.5);
+    score = Math.max(score, maxPoints * 0.5);
   } else if (matchRatio >= 0.3) {
     // 匹配30%-50%，给30%-50%分数
-    return Math.max(score, maxPoints * 0.3);
+    score = Math.max(score, maxPoints * 0.3);
   } else if (matchRatio > 0) {
     // 匹配30%以下，按比例给分，但最低10%
-    return Math.max(score, maxPoints * 0.1);
+    score = Math.max(score, maxPoints * 0.1);
+  } else {
+    score = 0;
   }
   
-  return 0;
+  return roundToHalf(score);
 }
 
 function calculateSimilarity(str1: string, str2: string): number {
@@ -226,7 +231,7 @@ export default function Quiz({
         if (prev <= 1) {
           clearInterval(timer);
           // 时间到，自动提交
-          const finalScore = questionResults.reduce((acc, r) => acc + r.earnedPoints, 0);
+          const finalScore = roundToHalf(questionResults.reduce((acc, r) => acc + r.earnedPoints, 0));
           const totalPoints = questions.reduce((acc, q) => acc + q.points, 0);
           onFinish(finalScore, totalPoints, questionResults);
           return 0;
@@ -376,6 +381,9 @@ export default function Quiz({
     }
   };
 
+  // 四舍五入到最近的 0.5
+  const roundToHalf = (num: number) => Math.round(num * 2) / 2;
+  
   const handleNext = () => {
     setFeedback(null);
     setShowAnswer(false);
@@ -383,7 +391,7 @@ export default function Quiz({
     
     if (isLast) {
       // 计算最终得分并传递详细结果
-      const finalScore = questionResults.reduce((acc, r) => acc + r.earnedPoints, 0);
+      const finalScore = roundToHalf(questionResults.reduce((acc, r) => acc + r.earnedPoints, 0));
       const totalPoints = questions.reduce((acc, q) => acc + q.points, 0);
       onFinish(finalScore, totalPoints, questionResults);
     } else {

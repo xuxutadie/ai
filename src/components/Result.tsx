@@ -23,7 +23,11 @@ export default function Result({
   onRetry: () => void 
 }) {
   const [showDetails, setShowDetails] = useState(false);
-  const percentage = Math.round((score / total) * 100) || 0;
+  
+  // 四舍五入到最近的 0.5
+  const roundToHalf = (num: number) => Math.round(num * 2) / 2;
+  const finalScore = roundToHalf(score);
+  const percentage = Math.round((finalScore / total) * 100) || 0;
   
   // 筛选出答错的题目
   const wrongAnswers = questionResults.filter(r => !r.isCorrect || r.earnedPoints < r.maxPoints);
@@ -100,7 +104,7 @@ export default function Result({
         <div className="flex w-full justify-between items-center bg-black/20 border border-white/10 rounded-2xl p-4 md:p-6 mb-6 shadow-inner">
           <div className="flex flex-col items-center w-1/2">
             <span className="text-white/50 text-sm mb-1 font-medium">得分</span>
-            <span className="text-3xl md:text-4xl font-black text-white drop-shadow-sm">{score}</span>
+            <span className="text-3xl md:text-4xl font-black text-white drop-shadow-sm">{finalScore}</span>
             <span className="text-white/40 text-xs mt-1 font-medium">满分 {total}</span>
           </div>
           
@@ -146,7 +150,7 @@ export default function Result({
                             {getTypeLabel(result.question.type)}
                           </span>
                           <span className="text-sm font-medium text-red-300">
-                            -{result.maxPoints - result.earnedPoints}分
+                            -{roundToHalf(result.maxPoints - result.earnedPoints)}分
                           </span>
                         </div>
                         
@@ -172,8 +176,8 @@ export default function Result({
                           </div>
                           
                           <div className="flex items-center justify-between pt-2 border-t border-white/10 mt-2">
-                            <span className="text-white/40">得分：{result.earnedPoints}/{result.maxPoints}</span>
-                            <span className="text-white/40">扣分：{result.maxPoints - result.earnedPoints}</span>
+                            <span className="text-white/40">得分：{roundToHalf(result.earnedPoints)}/{result.maxPoints}</span>
+                            <span className="text-white/40">扣分：{roundToHalf(result.maxPoints - result.earnedPoints)}</span>
                           </div>
                         </div>
                       </div>
