@@ -4,6 +4,34 @@ import { Clock, CheckCircle2, XCircle, ArrowRight } from 'lucide-react';
 import { Question } from '../types';
 import questionsData from '../data/questions.json';
 
+function calculateFillInBlanksScore(userAnswer: string, correctAnswer: string, maxPoints: number): number {
+  if (!userAnswer.trim()) return 0;
+  
+  const normalizeText = (text: string) => {
+    return text.toLowerCase()
+      .replace(/[^\u4e00-\u9fa5a-z0-9]/g, '')
+      .trim();
+  };
+  
+  const userNorm = normalizeText(userAnswer);
+  const correctNorm = normalizeText(correctAnswer);
+  
+  // 填空题使用精确匹配
+  if (userNorm === correctNorm) {
+    return maxPoints;
+  }
+  
+  // 如果答案包含多个选项（用"或"、"/"、","分隔），检查是否匹配任一选项
+  const possibleAnswers = correctAnswer.split(/[或\/|,，]/).map(a => normalizeText(a)).filter(a => a.length > 0);
+  for (const possible of possibleAnswers) {
+    if (userNorm === possible) {
+      return maxPoints;
+    }
+  }
+  
+  return 0;
+}
+
 function calculateShortAnswerScore(userAnswer: string, correctAnswer: string, maxPoints: number): number {
   if (!userAnswer.trim()) return 0;
   
@@ -202,7 +230,21 @@ export default function Quiz({
       earnedPoints = isCorrect ? 1 : 0;
     }
 
-    if (currentQ.type === 'short_answer' || currentQ.type === 'fill_in_the_blanks') {
+    if (currentQ.type === 'fill_in_the_blanks') {
+      const userAnswer = selectedAnswers[0] || '';
+      const correctAnswer = currentQ.answer as string;
+      const earnedPoints = calculateFillInBlanksScore(userAnswer, correctAnswer, currentQ.points);
+      setScore(prev => prev + earnedPoints);
+      setShowAnswer(true);
+      if (earnedPoints >= currentQ.points) {
+        setFeedback('correct');
+      } else {
+        setFeedback('wrong');
+      }
+      return;
+    }
+
+    if (currentQ.type === 'short_answer') {
       const userAnswer = selectedAnswers[0] || '';
       const correctAnswer = currentQ.answer as string;
       const earnedPoints = calculateShortAnswerScore(userAnswer, correctAnswer, currentQ.points);
