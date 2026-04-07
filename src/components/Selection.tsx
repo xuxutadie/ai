@@ -100,14 +100,6 @@ export default function Selection({
                   </motion.div>
                 </ElectricBorder>
               </div>
-
-              <button
-                onClick={() => setShowAdmin(true)}
-                className="mt-6 text-white/50 hover:text-white flex items-center text-sm transition-colors font-medium bg-black/10 px-4 py-2 rounded-full backdrop-blur-md"
-              >
-                <Settings className="w-4 h-4 mr-2" />
-                进入后台管理
-              </button>
             </motion.div>
           ) : (
             <motion.div
