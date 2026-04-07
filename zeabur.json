@@ -1,9 +1,0 @@
-name: ai-quiz-system
-services:
-  - name: web
-    type: static
-    buildCommand: npm run build
-    outputDirectory: dist
-    ports:
-      - port: 80
-        protocol: HTTP
