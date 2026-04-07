@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+﻿import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Clock, CheckCircle2, XCircle, ArrowRight } from 'lucide-react';
 import { Question } from '../types';
@@ -263,6 +263,27 @@ export default function Quiz({
     return map[type] || '未知题型';
   };
 
+  const getTypeScoreInfo = (type: string) => {
+    const scoreMap: Record<string, number> = {
+      single: 2,
+      multiple: 2,
+      boolean: 2,
+      short_answer: 60,
+      fill_in_the_blanks: 2
+    };
+    const countMap: Record<string, number> = {
+      single: 10,
+      multiple: 5,
+      boolean: 5,
+      short_answer: 1,
+      fill_in_the_blanks: 10
+    };
+    const perQuestion = scoreMap[type] || 2;
+    const count = countMap[type] || 1;
+    const total = perQuestion * count;
+    return { perQuestion, count, total };
+  };
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -278,10 +299,7 @@ export default function Quiz({
           </div>
           <div className="h-6 w-px bg-white/20"></div>
           <div className="text-blue-200 font-medium flex items-center">
-            {getTypeLabel(currentQ.type)}
-            <span className="ml-2 text-xs bg-white/10 px-2 py-1 rounded-md text-white border border-white/10">
-              {currentQ.points} 分
-            </span>
+            <span className="text-lg font-bold text-yellow-300 drop-shadow-[0_0_8px_rgba(253,224,71,0.8)]">{getTypeLabel(currentQ.type)}</span><span className="ml-3 text-xs bg-gradient-to-r from-yellow-500/20 to-amber-500/20 px-3 py-1.5 rounded-full text-yellow-200 font-medium border border-yellow-500/30 shadow-[0_0_10px_rgba(234,179,8,0.3)]">每题{(() => {const scoreInfo = getTypeScoreInfo(currentQ.type);return scoreInfo.perQuestion;})()}分，共计{(() => {const scoreInfo = getTypeScoreInfo(currentQ.type);return scoreInfo.total;})()}分</span>
           </div>
         </div>
         
