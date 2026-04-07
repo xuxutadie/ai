@@ -4,3 +4,8 @@ dist
 *.log
 .vscode
 .idea
+*.docx
+赛道一*/
+赛道二*/
+extract.cjs
+fix_options.cjs
