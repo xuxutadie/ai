@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Key, Sparkles, ShieldAlert } from 'lucide-react';
 import { AuthStatus } from '../types';
@@ -69,9 +69,7 @@ export default function Auth({ onAuthSuccess }: { onAuthSuccess: (status: AuthSt
               <ShieldCheck className="w-8 h-8 text-blue-400 stroke-[2.5]" />
             </div>
             
-            <h2 className="text-[1.7rem] font-black text-white mb-1.5 tracking-tight">
-              系统访问授权
-            </h2>
+            <div className="mb-4 text-center"><p className="text-amber-300 text-xs font-medium tracking-wide bg-gradient-to-r from-transparent via-amber-500/10 to-transparent py-2 px-4 rounded-lg border border-amber-500/20">本工具搭建、部署、算力都存在成本，故需自愿付费进行使用</p></div><h2 className="text-[1.7rem] font-black text-white mb-1.5 tracking-tight">系统访问授权</h2>
             <p className="text-slate-300 text-sm mb-8 font-medium">
               请输入您的节点代码以解锁训练任务
             </p>
