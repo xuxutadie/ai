@@ -152,17 +152,25 @@ export default function Quiz({
 }: { 
   group: 'primary' | 'junior';
   track: 'track1' | 'track2';
-  onFinish: (score: number, total: number) => void;
+  onFinish: (score: number, total: number, results?: { question: Question; userAnswer: string[]; earnedPoints: number; maxPoints: number; isCorrect: boolean }[]) => void;
   onExit: () => void;
 }) {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
-  const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(3600); // 60 minutes
   
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | 'partial' | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
+  
+  // 记录每道题的答题情况
+  const [questionResults, setQuestionResults] = useState<{
+    question: Question;
+    userAnswer: string[];
+    earnedPoints: number;
+    maxPoints: number;
+    isCorrect: boolean;
+  }[]>([]);
 
   useEffect(() => {
     let filtered = (questionsData as Question[]);
@@ -217,17 +225,17 @@ export default function Quiz({
       setTimeLeft((prev) => {
         if (prev <= 1) {
           clearInterval(timer);
-          setScore(s => {
-            onFinish(s, questions.reduce((acc, q) => acc + q.points, 0));
-            return s;
-          }); // auto submit
+          // 时间到，自动提交
+          const finalScore = questionResults.reduce((acc, r) => acc + r.earnedPoints, 0);
+          const totalPoints = questions.reduce((acc, q) => acc + q.points, 0);
+          onFinish(finalScore, totalPoints, questionResults);
           return 0;
         }
         return prev - 1;
       });
     }, 1000);
     return () => clearInterval(timer);
-  }, [questions, onFinish]);
+  }, [questions, onFinish, questionResults]);
 
   const isLast = currentIndex === questions.length - 1;
 
@@ -266,7 +274,7 @@ export default function Quiz({
     
     if (currentQ.type === 'single') {
       isCorrect = selectedAnswers[0] === currentQ.answer;
-      earnedPoints = isCorrect ? 1 : 0;
+      earnedPoints = isCorrect ? currentQ.points : 0;
     } else if (currentQ.type === 'boolean') {
       const isUserTrue = selectedAnswers[0] === '正确' || selectedAnswers[0] === 'True' || selectedAnswers[0] === '√' || selectedAnswers[0] === '对';
       
@@ -281,20 +289,32 @@ export default function Quiz({
       } else {
         isCorrect = false;
       }
-      earnedPoints = isCorrect ? 1 : 0;
+      earnedPoints = isCorrect ? currentQ.points : 0;
     } else if (currentQ.type === 'multiple') {
       const correctAnswers = currentQ.answer as string[];
       isCorrect = 
         selectedAnswers.length === correctAnswers.length && 
         selectedAnswers.every(a => correctAnswers.includes(a));
-      earnedPoints = isCorrect ? 1 : 0;
+      earnedPoints = isCorrect ? currentQ.points : 0;
     }
 
     if (currentQ.type === 'fill_in_the_blanks') {
       const userAnswer = selectedAnswers[0] || '';
       const correctAnswer = currentQ.answer as string;
-      const earnedPoints = calculateFillInBlanksScore(userAnswer, correctAnswer, currentQ.points);
-      setScore(prev => prev + earnedPoints);
+      const points = calculateFillInBlanksScore(userAnswer, correctAnswer, currentQ.points);
+      earnedPoints = points;
+      isCorrect = points >= currentQ.points;
+      
+      // 记录结果
+      const result = {
+        question: currentQ,
+        userAnswer: [...selectedAnswers],
+        earnedPoints: points,
+        maxPoints: currentQ.points,
+        isCorrect: isCorrect
+      };
+      setQuestionResults(prev => [...prev, result]);
+      
       setShowAnswer(true);
       if (earnedPoints >= currentQ.points) {
         setFeedback('correct');
@@ -307,8 +327,20 @@ export default function Quiz({
     if (currentQ.type === 'short_answer') {
       const userAnswer = selectedAnswers[0] || '';
       const correctAnswer = currentQ.answer as string;
-      const earnedPoints = calculateShortAnswerScore(userAnswer, correctAnswer, currentQ.points);
-      setScore(prev => prev + earnedPoints);
+      const points = calculateShortAnswerScore(userAnswer, correctAnswer, currentQ.points);
+      earnedPoints = points;
+      isCorrect = points >= currentQ.points * 0.6;
+      
+      // 记录结果
+      const result = {
+        question: currentQ,
+        userAnswer: [...selectedAnswers],
+        earnedPoints: points,
+        maxPoints: currentQ.points,
+        isCorrect: isCorrect
+      };
+      setQuestionResults(prev => [...prev, result]);
+      
       setShowAnswer(true);
       if (earnedPoints >= currentQ.points * 0.6) {
         setFeedback('correct');
@@ -320,8 +352,17 @@ export default function Quiz({
       return;
     }
 
+    // 记录选择题结果
+    const result = {
+      question: currentQ,
+      userAnswer: [...selectedAnswers],
+      earnedPoints: earnedPoints,
+      maxPoints: currentQ.points,
+      isCorrect: isCorrect
+    };
+    setQuestionResults(prev => [...prev, result]);
+
     if (isCorrect) {
-      setScore(prev => prev + earnedPoints);
       setFeedback('correct');
       setTimeout(() => {
         handleNext();
@@ -341,8 +382,10 @@ export default function Quiz({
     setSelectedAnswers([]);
     
     if (isLast) {
-      // Use the latest score state to avoid closure stale data or double-counting
-      onFinish(score, questions.reduce((acc, q) => acc + q.points, 0));
+      // 计算最终得分并传递详细结果
+      const finalScore = questionResults.reduce((acc, r) => acc + r.earnedPoints, 0);
+      const totalPoints = questions.reduce((acc, q) => acc + q.points, 0);
+      onFinish(finalScore, totalPoints, questionResults);
     } else {
       setCurrentIndex(prev => prev + 1);
     }

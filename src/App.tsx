@@ -5,7 +5,7 @@ import Selection from './components/Selection';
 import Quiz from './components/Quiz';
 import Result from './components/Result';
 import AdminPanel from './components/AdminPanel';
-import { AuthStatus } from './types';
+import { AuthStatus, Question } from './types';
 
 type Screen = 'auth' | 'selection' | 'quiz' | 'result' | 'admin';
 
@@ -16,6 +16,13 @@ export default function App() {
   const [track, setTrack] = useState<'track1' | 'track2' | null>(null);
   const [score, setScore] = useState<number>(0);
   const [totalQuestions, setTotalQuestions] = useState<number>(0);
+  const [questionResults, setQuestionResults] = useState<{
+    question: Question;
+    userAnswer: string[];
+    earnedPoints: number;
+    maxPoints: number;
+    isCorrect: boolean;
+  }[]>([]);
 
   useEffect(() => {
     const saved = localStorage.getItem('ai_quiz_auth');
@@ -51,9 +58,18 @@ export default function App() {
     setCurrentScreen('quiz');
   };
 
-  const handleFinishQuiz = (finalScore: number, total: number) => {
+  const handleFinishQuiz = (finalScore: number, total: number, results?: {
+    question: Question;
+    userAnswer: string[];
+    earnedPoints: number;
+    maxPoints: number;
+    isCorrect: boolean;
+  }[]) => {
     setScore(finalScore);
     setTotalQuestions(total);
+    if (results) {
+      setQuestionResults(results);
+    }
     setCurrentScreen('result');
   };
 
@@ -85,7 +101,7 @@ export default function App() {
             onExit={() => setCurrentScreen('selection')} 
           />
         )}
-        {currentScreen === 'result' && <Result score={score} total={totalQuestions} onRetry={() => setCurrentScreen('selection')} />}
+        {currentScreen === 'result' && <Result score={score} total={totalQuestions} questionResults={questionResults} onRetry={() => setCurrentScreen('selection')} />}
         {currentScreen === 'admin' && <AdminPanel onExit={() => setCurrentScreen('auth')} />}
       </div>
     </div>
