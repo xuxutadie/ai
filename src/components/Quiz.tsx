@@ -4,6 +4,58 @@ import { Clock, CheckCircle2, XCircle, ArrowRight } from 'lucide-react';
 import { Question } from '../types';
 import questionsData from '../data/questions.json';
 
+function calculateShortAnswerScore(userAnswer: string, correctAnswer: string, maxPoints: number): number {
+  if (!userAnswer.trim()) return 0;
+  
+  const normalizeText = (text: string) => {
+    return text.toLowerCase()
+      .replace(/[^\u4e00-\u9fa5a-z0-9\s]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+  };
+  
+  const userNorm = normalizeText(userAnswer);
+  const correctNorm = normalizeText(correctAnswer);
+  
+  if (userNorm.length < 5) return 0;
+  
+  const correctParts = correctNorm.split(/[；;,，、]/).filter(p => p.length > 2);
+  
+  if (correctParts.length === 0) {
+    const similarity = calculateSimilarity(userNorm, correctNorm);
+    return Math.round(similarity * maxPoints);
+  }
+  
+  let matchedPoints = 0;
+  for (const part of correctParts) {
+    if (userNorm.includes(part) || part.includes(userNorm)) {
+      matchedPoints += 1;
+    } else {
+      const similarity = calculateSimilarity(userNorm, part);
+      if (similarity > 0.6) {
+        matchedPoints += similarity;
+      }
+    }
+  }
+  
+  const score = (matchedPoints / correctParts.length) * maxPoints;
+  return Math.round(score * 10) / 10;
+}
+
+function calculateSimilarity(str1: string, str2: string): number {
+  if (str1 === str2) return 1;
+  if (str1.length < 2 || str2.length < 2) return 0;
+  
+  const longer = str1.length >= str2.length ? str1 : str2;
+  const shorter = str1.length < str2.length ? str1 : str2;
+  
+  const longerLength = longer.length;
+  if (longerLength === 0) return 1;
+  
+  const matches = [...shorter].filter(char => longer.includes(char)).length;
+  return matches / longerLength;
+}
+
 export default function Quiz({ 
   group, 
   track,
@@ -21,7 +73,7 @@ export default function Quiz({
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(3600); // 60 minutes
   
-  const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null);
+  const [feedback, setFeedback] = useState<'correct' | 'wrong' | 'partial' | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
 
   useEffect(() => {
@@ -151,9 +203,18 @@ export default function Quiz({
     }
 
     if (currentQ.type === 'short_answer' || currentQ.type === 'fill_in_the_blanks') {
-      setScore(prev => prev + currentQ.points);
-      setFeedback('correct');
+      const userAnswer = selectedAnswers[0] || '';
+      const correctAnswer = currentQ.answer as string;
+      const earnedPoints = calculateShortAnswerScore(userAnswer, correctAnswer, currentQ.points);
+      setScore(prev => prev + earnedPoints);
       setShowAnswer(true);
+      if (earnedPoints >= currentQ.points * 0.6) {
+        setFeedback('correct');
+      } else if (earnedPoints >= currentQ.points * 0.3) {
+        setFeedback('partial');
+      } else {
+        setFeedback('wrong');
+      }
       return;
     }
 
@@ -366,6 +427,15 @@ export default function Quiz({
                   className="text-red-400 flex items-center bg-red-500/20 px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-base md:text-xl shadow-lg border border-red-500/30 backdrop-blur-md"
                 >
                   <XCircle className="w-5 h-5 md:w-6 md:h-6 mr-2" /> 回答错误
+                </motion.div>
+              )}
+              {feedback === 'partial' && (
+                <motion.div 
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  className="text-amber-400 flex items-center bg-amber-500/20 px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-base md:text-xl shadow-lg border border-amber-500/30 backdrop-blur-md"
+                >
+                  <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 mr-2" /> 部分正确
                 </motion.div>
               )}
             </div>
