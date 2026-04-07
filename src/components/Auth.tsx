@@ -1,0 +1,119 @@
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { ShieldCheck, Key, Sparkles, ShieldAlert } from 'lucide-react';
+import { AuthStatus } from '../types';
+import ElectricBorder from './ElectricBorder';
+
+export default function Auth({ onAuthSuccess }: { onAuthSuccess: (status: AuthStatus) => void }) {
+  const [code, setCode] = useState('');
+  const [error, setError] = useState(false);
+
+  const handleVerify = () => {
+    if (code === 'admin888'.toUpperCase()) {
+      onAuthSuccess({ code, type: 'ADMIN', remaining: 999 });
+      return;
+    }
+
+    if (code === 'XXXB520') {
+      onAuthSuccess({ code, type: 'UNLIMITED_1Y', remaining: 999 });
+      return;
+    }
+    
+    if (code.startsWith('AI5-') && code.length >= 8) {
+      onAuthSuccess({ code, type: 'PAID_5', remaining: 5 });
+      return;
+    }
+    
+    if (code.startsWith('AI1Y-') && code.length >= 9) {
+      onAuthSuccess({ code, type: 'UNLIMITED_1Y', remaining: 999 });
+      return;
+    }
+    
+    setError(true);
+    setTimeout(() => setError(false), 500);
+  };
+
+  return (
+    <div className="m-auto flex flex-col items-center w-full max-w-[500px] z-10 px-4">
+      {/* Header Text */}
+      <motion.div 
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="flex flex-col items-center mb-8 text-center"
+      >
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-bold shadow-sm border border-white/20 mb-6">
+          <span className="w-2 h-2 rounded-full bg-blue-400 opacity-90"></span>
+          2026 EDITION
+        </div>
+        <h1 className="text-4xl md:text-5xl font-black text-white drop-shadow-lg tracking-tight mb-3">
+          青少年人工智能核心素养练习系统
+        </h1>
+        <p className="text-blue-100 font-medium text-lg drop-shadow-md uppercase">
+          YOUTH AI CORE LITERACY PRACTICE SYSTEM
+        </p>
+      </motion.div>
+
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="w-full"
+      >
+        <ElectricBorder 
+          color="#3b82f6" 
+          speed={1.5} 
+          chaos={0.15} 
+          borderRadius={32} 
+        >
+          <div className="w-full p-8 md:p-10 flex flex-col items-center">
+            <div className="w-[4.5rem] h-[4.5rem] rounded-[1.25rem] bg-white/10 border border-white/20 shadow-[0_4px_20px_rgba(0,0,0,0.2)] flex items-center justify-center mb-5">
+              <ShieldCheck className="w-8 h-8 text-blue-400 stroke-[2.5]" />
+            </div>
+            
+            <h2 className="text-[1.7rem] font-black text-white mb-1.5 tracking-tight">
+              系统访问授权
+            </h2>
+            <p className="text-slate-300 text-sm mb-8 font-medium">
+              请输入您的节点代码以解锁训练任务
+            </p>
+
+            <motion.div 
+              animate={error ? { x: [-10, 10, -10, 10, 0] } : {}}
+              transition={{ duration: 0.4 }}
+              className="w-full relative mb-8"
+            >
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <Key className="w-5 h-5 text-white/50" />
+              </div>
+              <input
+                type="text"
+                value={code}
+                onChange={(e) => setCode(e.target.value.toUpperCase())}
+                placeholder="请输入系统授权码"
+                className={`w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-blue-400/50 focus:bg-white/10 focus:ring-4 focus:ring-blue-500/20 transition-all placeholder:text-white/30 ${
+                  error ? 'border-red-400/50 focus:border-red-400/50 focus:ring-red-500/20' : ''
+                }`}
+                onKeyDown={(e) => e.key === 'Enter' && handleVerify()}
+              />
+              {error && (
+                <div className="absolute -bottom-7 left-0 flex items-center text-red-400 text-sm font-medium">
+                  <ShieldAlert className="w-4 h-4 mr-1" />
+                  无效的授权码，请重试
+                </div>
+              )}
+            </motion.div>
+
+            <button
+              onClick={handleVerify}
+              className="glow-button w-full"
+            >
+              <span className="glow-button-inner">
+                立即激活
+                <Sparkles className="w-[1.15rem] h-[1.15rem] ml-2 text-blue-400 group-hover:rotate-12 transition-transform" />
+              </span>
+            </button>
+          </div>
+        </ElectricBorder>
+      </motion.div>
+    </div>
+  );
+}
