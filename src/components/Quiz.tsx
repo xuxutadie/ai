@@ -37,37 +37,97 @@ function calculateShortAnswerScore(userAnswer: string, correctAnswer: string, ma
   
   const normalizeText = (text: string) => {
     return text.toLowerCase()
-      .replace(/[^\u4e00-\u9fa5a-z0-9\s]/g, '')
-      .replace(/\s+/g, ' ')
+      .replace(/[^\u4e00-\u9fa5a-z0-9]/g, '')
       .trim();
   };
   
   const userNorm = normalizeText(userAnswer);
   const correctNorm = normalizeText(correctAnswer);
   
-  if (userNorm.length < 5) return 0;
-  
-  const correctParts = correctNorm.split(/[；;,，、]/).filter(p => p.length > 2);
-  
-  if (correctParts.length === 0) {
-    const similarity = calculateSimilarity(userNorm, correctNorm);
-    return Math.round(similarity * maxPoints);
+  // 完全匹配直接满分
+  if (userNorm === correctNorm) {
+    return maxPoints;
   }
   
-  let matchedPoints = 0;
-  for (const part of correctParts) {
-    if (userNorm.includes(part) || part.includes(userNorm)) {
-      matchedPoints += 1;
+  // 提取关键词（长度大于等于2的词）
+  const extractKeywords = (text: string): string[] => {
+    // 中文分词：提取连续的汉字或英文单词
+    const words: string[] = [];
+    let currentWord = '';
+    
+    for (const char of text) {
+      if (/[\u4e00-\u9fa5]/.test(char)) {
+        // 汉字：每个字都是关键词
+        if (currentWord && /[a-z0-9]/.test(currentWord)) {
+          words.push(currentWord);
+          currentWord = '';
+        }
+        words.push(char);
+      } else if (/[a-z0-9]/.test(char)) {
+        currentWord += char;
+      } else {
+        if (currentWord.length >= 2) {
+          words.push(currentWord);
+        }
+        currentWord = '';
+      }
+    }
+    if (currentWord.length >= 2) {
+      words.push(currentWord);
+    }
+    
+    // 过滤掉常见的停用词
+    const stopWords = new Set(['的', '了', '和', '是', '在', '有', '我', '都', '个', '与', '也', '对', '为', '能', '很', '可以', '就', '不', '会', '要', '没有', '到', '更', '让', '但', '给', '上', '这', '能够', '它', '他', '她', '们', '来', '去', '过', '着', '把', '被', '向', '从', '而', '却', '但是', '然后', '因为', '所以', '如果', '即使', '虽然', '尽管', '而且', '并且', '或者', '还是', '要么', '假如', '假定', '譬如', '例如', '比如', '像是', '像', '似的', '似乎', '好像', '一样', '一般', '通常', '常常', '经常', '往往', '一直', '总是', '千万', '万一', '如果', '若是', '若', '要是', '假如', '假使', '假若', '倘若', '倘使', '设若', '若是', '若果', '如果', '如若', '要是', '若是', '倘或', '倘然', '设或', '设使']);
+    
+    return words.filter(w => w.length >= 2 || (w.length === 1 && /[\u4e00-\u9fa5]/.test(w) && !stopWords.has(w)));
+  };
+  
+  const correctKeywords = extractKeywords(correctNorm);
+  const userKeywords = extractKeywords(userNorm);
+  
+  if (correctKeywords.length === 0) {
+    // 如果没有提取到关键词，使用相似度计算
+    const similarity = calculateSimilarity(userNorm, correctNorm);
+    return Math.round(similarity * maxPoints * 10) / 10;
+  }
+  
+  // 计算匹配的关键词数量
+  let matchedKeywords = 0;
+  for (const keyword of correctKeywords) {
+    // 检查用户答案是否包含该关键词
+    if (userNorm.includes(keyword)) {
+      matchedKeywords += 1;
     } else {
-      const similarity = calculateSimilarity(userNorm, part);
-      if (similarity > 0.6) {
-        matchedPoints += similarity;
+      // 检查是否有相似的关键词
+      for (const userKeyword of userKeywords) {
+        if (calculateSimilarity(keyword, userKeyword) > 0.7) {
+          matchedKeywords += 0.8; // 相似关键词给80%分数
+          break;
+        }
       }
     }
   }
   
-  const score = (matchedPoints / correctParts.length) * maxPoints;
-  return Math.round(score * 10) / 10;
+  // 根据匹配比例计算分数
+  const matchRatio = matchedKeywords / correctKeywords.length;
+  const score = matchRatio * maxPoints;
+  
+  // 根据匹配程度给予最低分数保障
+  if (matchRatio >= 0.7) {
+    // 匹配70%以上，给70%-100%分数
+    return Math.max(score, maxPoints * 0.7);
+  } else if (matchRatio >= 0.5) {
+    // 匹配50%-70%，给50%-70%分数
+    return Math.max(score, maxPoints * 0.5);
+  } else if (matchRatio >= 0.3) {
+    // 匹配30%-50%，给30%-50%分数
+    return Math.max(score, maxPoints * 0.3);
+  } else if (matchRatio > 0) {
+    // 匹配30%以下，按比例给分，但最低10%
+    return Math.max(score, maxPoints * 0.1);
+  }
+  
+  return 0;
 }
 
 function calculateSimilarity(str1: string, str2: string): number {
@@ -306,24 +366,48 @@ export default function Quiz({
   };
 
   const getTypeScoreInfo = (type: string) => {
-    const scoreMap: Record<string, number> = {
-      single: 2,
-      multiple: 2,
-      boolean: 2,
-      short_answer: 60,
-      fill_in_the_blanks: 2
-    };
-    const countMap: Record<string, number> = {
-      single: 10,
-      multiple: 5,
-      boolean: 5,
-      short_answer: 1,
-      fill_in_the_blanks: 10
-    };
-    const perQuestion = scoreMap[type] || 2;
-    const count = countMap[type] || 1;
-    const total = perQuestion * count;
-    return { perQuestion, count, total };
+    // 根据当前赛道和题型计算分数
+    if (track === 'track2') {
+      // 赛道二：10单选(2分) + 10多选(2分) + 10判断(2分) + 10填空(2分) + 2简答(10分) = 100分
+      const scoreMap: Record<string, number> = {
+        single: 2,
+        multiple: 2,
+        boolean: 2,
+        short_answer: 10,
+        fill_in_the_blanks: 2
+      };
+      const countMap: Record<string, number> = {
+        single: 10,
+        multiple: 10,
+        boolean: 10,
+        short_answer: 2,
+        fill_in_the_blanks: 10
+      };
+      const perQuestion = scoreMap[type] || 2;
+      const count = countMap[type] || 1;
+      const total = perQuestion * count;
+      return { perQuestion, count, total };
+    } else {
+      // 赛道一：10单选(4分) + 5多选(4分) + 5判断(4分) + 1简答(60分) = 100分
+      const scoreMap: Record<string, number> = {
+        single: 4,
+        multiple: 4,
+        boolean: 4,
+        short_answer: 60,
+        fill_in_the_blanks: 2
+      };
+      const countMap: Record<string, number> = {
+        single: 10,
+        multiple: 5,
+        boolean: 5,
+        short_answer: 1,
+        fill_in_the_blanks: 0
+      };
+      const perQuestion = scoreMap[type] || 4;
+      const count = countMap[type] || 1;
+      const total = perQuestion * count;
+      return { perQuestion, count, total };
+    }
   };
 
   return (
