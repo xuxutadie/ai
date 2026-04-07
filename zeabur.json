@@ -4,6 +4,3 @@ services:
     type: static
     buildCommand: npm run build
     outputDirectory: dist
-    ports:
-      - port: 9898
-        protocol: HTTP
