@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Background from './components/Background';
 import Auth from './components/Auth';
 import Selection from './components/Selection';

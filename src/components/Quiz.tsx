@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Clock, CheckCircle2, XCircle, ArrowRight } from 'lucide-react';
 import { Question } from '../types';
@@ -26,13 +26,6 @@ export default function Quiz({
 
   useEffect(() => {
     let filtered = (questionsData as Question[]);
-
-    const groupMap: Record<string, string> = {
-      'track1_primary': 'track1_primary',
-      'track1_junior': 'track1_junior',
-      'primary': 'primary',
-      'junior': 'junior'
-    };
 
     if (track === 'track1') {
       filtered = filtered.filter(q => 
@@ -186,10 +179,7 @@ export default function Quiz({
     
     if (isLast) {
       // Use the latest score state to avoid closure stale data or double-counting
-      setScore(prev => {
-        onFinish(prev, questions.reduce((acc, q) => acc + q.points, 0));
-        return prev;
-      });
+      onFinish(score, questions.reduce((acc, q) => acc + q.points, 0));
     } else {
       setCurrentIndex(prev => prev + 1);
     }
@@ -370,8 +360,8 @@ export default function Quiz({
               )}
               {feedback === 'wrong' && (
                 <motion.div 
-                  initial={{ scale: 0, x: [-10, 10, -10, 10, 0] }}
-                  animate={{ scale: 1, x: 0 }}
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
                   transition={{ duration: 0.4 }}
                   className="text-red-400 flex items-center bg-red-500/20 px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-base md:text-xl shadow-lg border border-red-500/30 backdrop-blur-md"
                 >
