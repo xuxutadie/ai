@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LogOut, Zap, GraduationCap, Rocket, Settings, ArrowLeft, Brain, Target } from 'lucide-react';
 import { AuthStatus } from '../types';
@@ -78,8 +78,8 @@ export default function Selection({
                     <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl bg-purple-500/20 border border-purple-400/30 flex items-center justify-center mb-3 md:mb-8 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(139,92,246,0.2)] shrink-0">
                       <Brain className="w-8 h-8 md:w-12 md:h-12 text-purple-400" />
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-black text-white mb-1 md:mb-3 tracking-wide">赛道一<span className="text-lg md:text-xl font-bold opacity-80">(AI 理论)</span></h3>
-                    <p className="text-purple-100/80 text-sm md:text-lg mb-3 md:mb-6">人工智能基础知识考核</p>
+                    <h3 className="text-2xl md:text-3xl font-black text-white mb-1 md:mb-3 tracking-wide">赛道一</h3>
+                    <p className="text-purple-100/80 text-sm md:text-lg mb-3 md:mb-6">基础知识训练</p>
                     <div className="mt-auto inline-flex items-center text-xs md:text-sm font-bold text-purple-300 bg-purple-500/20 px-4 md:px-5 py-2 md:py-2.5 rounded-full border border-purple-500/30">扣除 1 次能量</div>
                   </motion.div>
                 </ElectricBorder>
@@ -94,8 +94,8 @@ export default function Selection({
                     <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl bg-amber-500/20 border border-amber-400/30 flex items-center justify-center mb-3 md:mb-8 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(245,158,11,0.2)] shrink-0">
                       <Target className="w-8 h-8 md:w-12 md:h-12 text-amber-400" />
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-black text-white mb-1 md:mb-3 tracking-wide">赛道二<span className="text-lg md:text-xl font-bold opacity-80">(AI 应用)</span></h3>
-                    <p className="text-amber-100/80 text-sm md:text-lg mb-3 md:mb-6">人工智能应用场景分析</p>
+                    <h3 className="text-2xl md:text-3xl font-black text-white mb-1 md:mb-3 tracking-wide">赛道二</h3>
+                    <p className="text-amber-100/80 text-sm md:text-lg mb-3 md:mb-6">工具应用问答</p>
                     <div className="mt-auto inline-flex items-center text-xs md:text-sm font-bold text-amber-300 bg-amber-500/20 px-4 md:px-5 py-2 md:py-2.5 rounded-full border border-amber-500/30">扣除 1 次能量</div>
                   </motion.div>
                 </ElectricBorder>
