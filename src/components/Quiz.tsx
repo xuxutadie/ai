@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Clock, CheckCircle2, XCircle, ArrowRight } from 'lucide-react';
 import { Question } from '../types';
@@ -324,12 +324,13 @@ export default function Quiz({
       </div>
 
       {/* Question Card */}
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         <motion.div 
           key={currentQ.id}
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.15 }}
           className="flex-1 flex flex-col min-h-0 glass-card p-4 md:p-8"
         >
           <div className="flex-1 overflow-y-auto pr-2 pb-2">
