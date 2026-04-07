@@ -1,0 +1,6 @@
+name: ai-quiz-system
+services:
+  - name: web
+    type: nodejs
+    buildCommand: npm run build
+    outputDirectory: dist
