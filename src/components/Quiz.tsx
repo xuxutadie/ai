@@ -690,7 +690,7 @@ export default function Quiz({
             duration: SLIDE_DURATION,
             ease: [0.4, 0, 0.2, 1] // 使用缓动函数使动画更自然
           }}
-          className="flex-1 flex flex-col min-h-0 glass-card p-4 md:p-8"
+          className="flex-1 flex flex-col min-h-0 glass-card p-4 md:p-8 w-full max-w-6xl mx-auto"
         >
           <div className="flex-1 overflow-y-auto pr-2 pb-2">
             <h2 className="text-xl md:text-2xl font-bold text-white mb-6 leading-relaxed drop-shadow-md whitespace-pre-wrap">
