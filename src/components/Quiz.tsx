@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Clock } from 'lucide-react';
+import { Clock, CheckCircle2, XCircle } from 'lucide-react';
 import { Question } from '../types';
 import questionsData from '../data/questions.json';
 
@@ -164,6 +164,7 @@ export default function Quiz({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
   const [timeLeft, setTimeLeft] = useState(3600); // 60 minutes
+  const [feedback, setFeedback] = useState<'correct' | 'wrong' | 'partial' | null>(null);
   
   // 记录每道题的答题情况
   const [questionResults, setQuestionResults] = useState<{
@@ -305,6 +306,13 @@ export default function Quiz({
       earnedPoints = points;
       isCorrect = points >= currentQ.points;
       
+      // 设置反馈
+      if (isCorrect) {
+        setFeedback('correct');
+      } else {
+        setFeedback('wrong');
+      }
+      
       // 记录结果
       const result = {
         question: currentQ,
@@ -325,6 +333,15 @@ export default function Quiz({
       const points = calculateShortAnswerScore(userAnswer, correctAnswer, currentQ.points);
       earnedPoints = points;
       isCorrect = points >= currentQ.points * 0.6;
+      
+      // 设置反馈
+      if (earnedPoints >= currentQ.points * 0.6) {
+        setFeedback('correct');
+      } else if (earnedPoints >= currentQ.points * 0.3) {
+        setFeedback('partial');
+      } else {
+        setFeedback('wrong');
+      }
       
       // 记录结果
       const result = {
@@ -350,6 +367,13 @@ export default function Quiz({
     };
     setQuestionResults(prev => [...prev, result]);
 
+    // 设置反馈
+    if (isCorrect) {
+      setFeedback('correct');
+    } else {
+      setFeedback('wrong');
+    }
+
     handleNext();
   };
 
@@ -358,6 +382,7 @@ export default function Quiz({
   
   const handleNext = () => {
     setSelectedAnswers([]);
+    setFeedback(null);
     
     if (isLast) {
       // 计算最终得分并传递详细结果
@@ -541,7 +566,27 @@ export default function Quiz({
           </div>
 
           {/* Bottom Action Area */}
-          <div className="mt-4 pt-4 border-t border-white/10 flex justify-end shrink-0">
+          <div className="mt-4 pt-4 border-t border-white/10 flex justify-between items-center relative shrink-0">
+            <div className="absolute left-1/2 -translate-x-1/2 top-0 mt-4 flex items-center justify-center">
+              {feedback === 'correct' && (
+                <div className="text-emerald-400 flex items-center bg-emerald-500/20 px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-base md:text-xl shadow-lg border border-emerald-500/30 backdrop-blur-md">
+                  <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 mr-2" /> 回答正确
+                </div>
+              )}
+              {feedback === 'wrong' && (
+                <div className="text-red-400 flex items-center bg-red-500/20 px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-base md:text-xl shadow-lg border border-red-500/30 backdrop-blur-md">
+                  <XCircle className="w-5 h-5 md:w-6 md:h-6 mr-2" /> 回答错误
+                </div>
+              )}
+              {feedback === 'partial' && (
+                <div className="text-amber-400 flex items-center bg-amber-500/20 px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-base md:text-xl shadow-lg border border-amber-500/30 backdrop-blur-md">
+                  <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 mr-2" /> 部分正确
+                </div>
+              )}
+            </div>
+
+            <div /> {/* Spacer */}
+            
             <button
               onClick={handleConfirm}
               disabled={selectedAnswers.length === 0 && currentQ.type !== 'short_answer' && currentQ.type !== 'fill_in_the_blanks'}
