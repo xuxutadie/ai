@@ -314,9 +314,11 @@ export default function Quiz({
   const currentQ = questions[currentIndex];
 
   const handleOptionClick = (optionKey: string) => {
-    if (currentQ.type === 'single' || currentQ.type === 'boolean') {
+    // 直接从 questions 和 currentIndex 获取当前题目，避免闭包问题
+    const q = questions[currentIndex];
+    if (q.type === 'single' || q.type === 'boolean') {
       setSelectedAnswers([optionKey]);
-    } else if (currentQ.type === 'multiple') {
+    } else if (q.type === 'multiple') {
       setSelectedAnswers(prev => 
         prev.includes(optionKey) 
           ? prev.filter(k => k !== optionKey)
