@@ -9,15 +9,6 @@
     "answer": "这项功能用到了语音识别技术。它的作用是将人类的语音信号转换成计算机可以识别的文字信息，除了语音转文字输入之外，还能帮助听障人士识别他人说话内容、给视频自动生成字幕等，大幅提升信息输入的效率。"
   },
   {
-    "id": "track1_primary_boolean_1775553178696_1",
-    "grade": "1-6",
-    "group": "track1_primary",
-    "type": "boolean",
-    "question": "一、人工智能基础认知与生活应用类（共40道）",
-    "points": 2,
-    "answer": "对"
-  },
-  {
     "id": "track1_primary_boolean_1775553178696_2",
     "grade": "1-6",
     "group": "track1_primary",
@@ -369,15 +360,6 @@
     "answer": "错"
   },
   {
-    "id": "track1_primary_boolean_1775553178696_41",
-    "grade": "1-6",
-    "group": "track1_primary",
-    "type": "boolean",
-    "question": "---",
-    "points": 2,
-    "answer": "对"
-  },
-  {
     "id": "track1_primary_boolean_1775553178696_42",
     "grade": "1-6",
     "group": "track1_primary",
@@ -684,15 +666,6 @@
     "answer": "对"
   },
   {
-    "id": "track1_primary_boolean_1775553178696_76",
-    "grade": "1-6",
-    "group": "track1_primary",
-    "type": "boolean",
-    "question": "---",
-    "points": 2,
-    "answer": "错"
-  },
-  {
     "id": "track1_primary_boolean_1775553178696_77",
     "grade": "1-6",
     "group": "track1_primary",
@@ -909,15 +882,6 @@
     "answer": "对"
   },
   {
-    "id": "track1_primary_boolean_1775553178696_101",
-    "grade": "1-6",
-    "group": "track1_primary",
-    "type": "boolean",
-    "question": "---",
-    "points": 2,
-    "answer": "对"
-  },
-  {
     "id": "track1_primary_boolean_1775553178696_102",
     "grade": "1-6",
     "group": "track1_primary",
@@ -1089,15 +1053,6 @@
     "answer": "错"
   },
   {
-    "id": "track1_primary_boolean_1775553178696_121",
-    "grade": "1-6",
-    "group": "track1_primary",
-    "type": "boolean",
-    "question": "---",
-    "points": 2,
-    "answer": "对"
-  },
-  {
     "id": "track1_primary_boolean_1775553178696_122",
     "grade": "1-6",
     "group": "track1_primary",
@@ -1177,21 +1132,6 @@
     "question": "10. 我们在使用AI工具的时候，要遵守相关的规则和道德，不能做伤害别人的事。",
     "points": 2,
     "answer": "对"
-  },
-  {
-    "id": "track1_primary_single_1775553178747_1",
-    "grade": "1-6",
-    "group": "track1_primary",
-    "type": "single",
-    "question": "一、人工智能基础认知类（40道）",
-    "options": {
-      "A": "AI",
-      "B": "APP",
-      "C": "CEO",
-      "D": "WiFi"
-    },
-    "points": 2,
-    "answer": "A"
   },
   {
     "id": "track1_primary_single_1775553178748_2",
@@ -1774,21 +1714,6 @@
       "B": "使用人工智能一定会让我们变笨",
       "C": "人工智能只有坏处没有好处",
       "D": "小学生不需要了解人工智能，长大再学就可以"
-    },
-    "points": 2,
-    "answer": "A"
-  },
-  {
-    "id": "track1_primary_single_1775553178748_41",
-    "grade": "1-6",
-    "group": "track1_primary",
-    "type": "single",
-    "question": "---",
-    "options": {
-      "A": "语音识别技术",
-      "B": "图像识别技术",
-      "C": "人脸识别技术",
-      "D": "自动驾驶技术"
     },
     "points": 2,
     "answer": "A"
@@ -2379,21 +2304,6 @@
     "answer": "A"
   },
   {
-    "id": "track1_primary_single_1775553178748_81",
-    "grade": "1-6",
-    "group": "track1_primary",
-    "type": "single",
-    "question": "---",
-    "options": {
-      "A": "“今天北京的天气怎么样？”",
-      "B": "“天气？”",
-      "C": "“今天怎么样？”",
-      "D": "“我想知道点东西。”"
-    },
-    "points": 2,
-    "answer": "A"
-  },
-  {
     "id": "track1_primary_single_1775553178748_82",
     "grade": "1-6",
     "group": "track1_primary",
@@ -2754,21 +2664,6 @@
     "answer": "A"
   },
   {
-    "id": "track1_primary_single_1775553178748_106",
-    "grade": "1-6",
-    "group": "track1_primary",
-    "type": "single",
-    "question": "---",
-    "options": {
-      "A": "②①③④",
-      "B": "①②③④",
-      "C": "②①④③",
-      "D": "①②④③"
-    },
-    "points": 2,
-    "answer": "A"
-  },
-  {
     "id": "track1_primary_single_1775553178748_107",
     "grade": "1-6",
     "group": "track1_primary",
@@ -2974,21 +2869,6 @@
       "B": "这样AI会觉得你很厉害",
       "C": "没有原因，随便说也可以",
       "D": "这样AI会更快回答你，不管内容对不对"
-    },
-    "points": 2,
-    "answer": "A"
-  },
-  {
-    "id": "track1_primary_single_1775553178748_121",
-    "grade": "1-6",
-    "group": "track1_primary",
-    "type": "single",
-    "question": "---",
-    "options": {
-      "A": "不随便把自己的人脸信息、身份证信息告诉陌生的AI应用",
-      "B": "所有要你人脸验证的APP都随便验证，不管是不是正规的",
-      "C": "把自己家的住址、爸爸妈妈的手机号都告诉AI聊天机器人",
-      "D": "用AI工具伪造别人的照片到处发"
     },
     "points": 2,
     "answer": "A"
@@ -3489,15 +3369,6 @@
     "answer": "是"
   },
   {
-    "id": "track1_primary_fill_in_the_blanks_1775553178763_41",
-    "grade": "1-6",
-    "group": "track1_primary",
-    "type": "fill_in_the_blanks",
-    "question": "---",
-    "points": 2,
-    "answer": "提示词（或描述词）"
-  },
-  {
     "id": "track1_primary_fill_in_the_blanks_1775553178763_42",
     "grade": "1-6",
     "group": "track1_primary",
@@ -3669,15 +3540,6 @@
     "answer": "地点（或地区）"
   },
   {
-    "id": "track1_primary_fill_in_the_blanks_1775553178763_61",
-    "grade": "1-6",
-    "group": "track1_primary",
-    "type": "fill_in_the_blanks",
-    "question": "---",
-    "points": 2,
-    "answer": "拆分（或分解）"
-  },
-  {
     "id": "track1_primary_fill_in_the_blanks_1775553178763_62",
     "grade": "1-6",
     "group": "track1_primary",
@@ -3847,15 +3709,6 @@
     "question": "80. 我们在给AI下达指令时，指令要尽量______，避免AI理解错误。",
     "points": 2,
     "answer": "清晰具体（或明确、准确）"
-  },
-  {
-    "id": "track1_primary_fill_in_the_blanks_1775553178763_81",
-    "grade": "1-6",
-    "group": "track1_primary",
-    "type": "fill_in_the_blanks",
-    "question": "---",
-    "points": 2,
-    "answer": "隐私（或敏感信息）"
   },
   {
     "id": "track1_primary_fill_in_the_blanks_1775553178763_82",
@@ -7897,15 +7750,6 @@
     "answer": "无答案"
   },
   {
-    "id": "track1_junior_boolean_1775553178883_1",
-    "grade": "7-9",
-    "group": "track1_junior",
-    "type": "boolean",
-    "question": "一、AI核心概念与技术原理类（共35道）",
-    "points": 2,
-    "answer": "对"
-  },
-  {
     "id": "track1_junior_boolean_1775553178883_2",
     "grade": "7-9",
     "group": "track1_junior",
@@ -9076,21 +8920,6 @@
     "answer": "对"
   },
   {
-    "id": "track1_junior_single_1775553178919_1",
-    "grade": "7-9",
-    "group": "track1_junior",
-    "type": "single",
-    "question": "一、AI核心概念与技术原理类（40道）",
-    "options": {
-      "A": "输入大量标注好的「数据+对应结果」= 自动学习出通用规则",
-      "B": "输入规则+结果= 自动生成需要的训练数据",
-      "C": "不需要任何输入就能自主生成完成任务的规则",
-      "D": "只要输入一次数据就能永远适配所有同类任务"
-    },
-    "points": 2,
-    "answer": "A"
-  },
-  {
     "id": "track1_junior_single_1775553178919_2",
     "grade": "7-9",
     "group": "track1_junior",
@@ -9676,21 +9505,6 @@
     "answer": "A"
   },
   {
-    "id": "track1_junior_single_1775553178919_41",
-    "grade": "7-9",
-    "group": "track1_junior",
-    "type": "single",
-    "question": "---",
-    "options": {
-      "A": "OCR文字识别技术",
-      "B": "人脸识别技术",
-      "C": "语音合成技术",
-      "D": "动作识别技术"
-    },
-    "points": 2,
-    "answer": "A"
-  },
-  {
     "id": "track1_junior_single_1775553178919_42",
     "grade": "7-9",
     "group": "track1_junior",
@@ -10201,21 +10015,6 @@
     "answer": "A"
   },
   {
-    "id": "track1_junior_single_1775553178919_76",
-    "grade": "7-9",
-    "group": "track1_junior",
-    "type": "single",
-    "question": "---",
-    "options": {
-      "A": "①②③④⑤⑥",
-      "B": "②①③④⑤⑥",
-      "C": "①②③⑤④⑥",
-      "D": "①③②④⑤⑥"
-    },
-    "points": 2,
-    "answer": "A"
-  },
-  {
     "id": "track1_junior_single_1775553178919_77",
     "grade": "7-9",
     "group": "track1_junior",
@@ -10576,21 +10375,6 @@
     "answer": "A"
   },
   {
-    "id": "track1_junior_single_1775553178919_101",
-    "grade": "7-9",
-    "group": "track1_junior",
-    "type": "single",
-    "question": "---",
-    "options": {
-      "A": "设置「思考引导」环节，先给出解题思路提示，引导学生自主思考后再展示完整解析，不直接给出最终答案",
-      "B": "只要学生拍题就直接给出完整答案，帮助学生节省时间",
-      "C": "不管学生问什么问题都直接回答，包括考试作弊的请求",
-      "D": "只支持解答理科题目，完全不支持文科类问题"
-    },
-    "points": 2,
-    "answer": "A"
-  },
-  {
     "id": "track1_junior_single_1775553178919_102",
     "grade": "7-9",
     "group": "track1_junior",
@@ -10871,21 +10655,6 @@
       "B": "只用一个英语很好的学生测试，没问题就说明系统效果好",
       "C": "测试的时候只念简单的单词，不测试句子和篇章",
       "D": "不管测试结果如何，直接认为系统的测评是准确的"
-    },
-    "points": 2,
-    "answer": "A"
-  },
-  {
-    "id": "track1_junior_single_1775553178919_121",
-    "grade": "7-9",
-    "group": "track1_junior",
-    "type": "single",
-    "question": "---",
-    "options": {
-      "A": "深度伪造技术只有娱乐价值，没有任何危害",
-      "B": "深度伪造技术可能被用来造谣、诈骗，造成严重的不良影响",
-      "C": "不能随意使用深度伪造技术伪造他人的音视频内容，侵犯他人的合法权益",
-      "D": "要提升对AI生成内容的辨别能力，不要轻易相信来源不明的音视频"
     },
     "points": 2,
     "answer": "A"
@@ -11251,15 +11020,6 @@
     "answer": "不属于"
   },
   {
-    "id": "track1_junior_fill_in_the_blanks_1775553178931_26",
-    "grade": "7-9",
-    "group": "track1_junior",
-    "type": "fill_in_the_blanks",
-    "question": "---",
-    "points": 2,
-    "answer": "清洗"
-  },
-  {
     "id": "track1_junior_fill_in_the_blanks_1775553178931_27",
     "grade": "7-9",
     "group": "track1_junior",
@@ -11476,15 +11236,6 @@
     "answer": "目标框（或边界框、位置）"
   },
   {
-    "id": "track1_junior_fill_in_the_blanks_1775553178931_51",
-    "grade": "7-9",
-    "group": "track1_junior",
-    "type": "fill_in_the_blanks",
-    "question": "---",
-    "points": 2,
-    "answer": "需求分析"
-  },
-  {
     "id": "track1_junior_fill_in_the_blanks_1775553178931_52",
     "grade": "7-9",
     "group": "track1_junior",
@@ -11699,15 +11450,6 @@
     "question": "75. 要开发一个“校园闲置物品AI交换匹配工具”，核心需求是根据学生的闲置物品和需求自动匹配交换对象，适配该需求的AI技术是______算法。",
     "points": 2,
     "answer": "推荐（或匹配）"
-  },
-  {
-    "id": "track1_junior_fill_in_the_blanks_1775553178931_76",
-    "grade": "7-9",
-    "group": "track1_junior",
-    "type": "fill_in_the_blanks",
-    "question": "---",
-    "points": 2,
-    "answer": "深度伪造（DeepFake为英文别名，不作为必答内容）"
   },
   {
     "id": "track1_junior_fill_in_the_blanks_1775553178931_77",
@@ -15626,36 +15368,6 @@
     "answer": "B"
   },
   {
-    "id": "primary_single_1775553179028_42",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "single",
-    "question": "使用AI需遵守（）",
-    "options": {
-      "A": "国家法律法规",
-      "B": "个人想法",
-      "C": "同学要求",
-      "D": "随意规则"
-    },
-    "points": 2,
-    "answer": "A"
-  },
-  {
-    "id": "primary_single_1775553179028_43",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "single",
-    "question": "AI生成视频需（）",
-    "options": {
-      "A": "检查内容健康性",
-      "B": "直接传播",
-      "C": "不用检查",
-      "D": "篡改内容"
-    },
-    "points": 2,
-    "answer": "A"
-  },
-  {
     "id": "primary_single_1775553179028_44",
     "grade": "1-6",
     "group": "primary",
@@ -15696,21 +15408,6 @@
       "B": "脏话",
       "C": "模糊语言",
       "D": "方言"
-    },
-    "points": 2,
-    "answer": "A"
-  },
-  {
-    "id": "primary_single_1775553179028_47",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "single",
-    "question": "AI可用于（）",
-    "options": {
-      "A": "学习知识",
-      "B": "破坏网络",
-      "C": "抄袭作业",
-      "D": "传播谣言"
     },
     "points": 2,
     "answer": "A"
@@ -16151,21 +15848,6 @@
     "answer": "A"
   },
   {
-    "id": "primary_single_1775553179028_77",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "single",
-    "question": "使用AI需保护（）",
-    "options": {
-      "A": "自己和他人隐私",
-      "B": "泄露隐私",
-      "C": "收集隐私",
-      "D": "贩卖隐私"
-    },
-    "points": 2,
-    "answer": "A"
-  },
-  {
     "id": "primary_single_1775553179028_78",
     "grade": "1-6",
     "group": "primary",
@@ -16326,21 +16008,6 @@
       "B": "仅用工具",
       "C": "破坏科技",
       "D": "无视科技"
-    },
-    "points": 2,
-    "answer": "A"
-  },
-  {
-    "id": "primary_single_1775553179028_89",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "single",
-    "question": "AI工具操作应（）",
-    "options": {
-      "A": "简单规范",
-      "B": "复杂混乱",
-      "C": "随意操作",
-      "D": "破坏操作"
     },
     "points": 2,
     "answer": "A"
@@ -17861,15 +17528,6 @@
     "answer": "诚信"
   },
   {
-    "id": "primary_fill_in_the_blanks_1775553179045_101",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "fill_in_the_blanks",
-    "question": "|（注：文档部分内容可能由 AI 生成)",
-    "points": 2,
-    "answer": "无答案"
-  },
-  {
     "id": "primary_multiple_1775553179070_1",
     "grade": "1-6",
     "group": "primary",
@@ -18451,25 +18109,6 @@
     ]
   },
   {
-    "id": "primary_multiple_1775553179070_32",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "提示词的作用是（）",
-    "options": {
-      "A": "明确任务",
-      "B": "引导AI",
-      "C": "让AI混乱",
-      "D": "提升效果"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
     "id": "primary_multiple_1775553179070_33",
     "grade": "1-6",
     "group": "primary",
@@ -18603,25 +18242,6 @@
     ]
   },
   {
-    "id": "primary_multiple_1775553179070_40",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "人机协作的优势（）",
-    "options": {
-      "A": "提升效率",
-      "B": "激发创意",
-      "C": "完全靠AI",
-      "D": "优势互补"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
     "id": "primary_multiple_1775553179070_41",
     "grade": "1-6",
     "group": "primary",
@@ -18656,25 +18276,6 @@
     "answer": [
       "A",
       "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_43",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI的局限性有（）",
-    "options": {
-      "A": "没有情感",
-      "B": "会出错",
-      "C": "无所不知",
-      "D": "需要人检查"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
       "D"
     ]
   },
@@ -18983,44 +18584,6 @@
     ]
   },
   {
-    "id": "primary_multiple_1775553179070_60",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "科技伦理的核心（）",
-    "options": {
-      "A": "以人为本",
-      "B": "智能向善",
-      "C": "公平公正",
-      "D": "唯利是图"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_61",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI带来的好处（）",
-    "options": {
-      "A": "科技进步",
-      "B": "生活便捷",
-      "C": "学习助力",
-      "D": "代替人类"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
     "id": "primary_multiple_1775553179070_62",
     "grade": "1-6",
     "group": "primary",
@@ -19094,44 +18657,6 @@
     ]
   },
   {
-    "id": "primary_multiple_1775553179070_66",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI技术的分类（）",
-    "options": {
-      "A": "感知智能",
-      "B": "认知智能",
-      "C": "手工智能",
-      "D": "执行智能"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_67",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI生成内容要（）",
-    "options": {
-      "A": "健康向上",
-      "B": "暴力低俗",
-      "C": "合法合理",
-      "D": "积极有益"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
     "id": "primary_multiple_1775553179070_68",
     "grade": "1-6",
     "group": "primary",
@@ -19148,25 +18673,6 @@
       "A",
       "C",
       "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_69",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI的社会责任（）",
-    "options": {
-      "A": "抵制谣言",
-      "B": "保护隐私",
-      "C": "科技向善",
-      "D": "谋取私利"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
     ]
   },
   {
@@ -19243,44 +18749,6 @@
       "B",
       "C",
       "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_74",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI伦理的底线（）",
-    "options": {
-      "A": "不伤害人",
-      "B": "不侵权",
-      "C": "不违法",
-      "D": "随意行事"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_75",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "绿色出行的方式（）",
-    "options": {
-      "A": "步行",
-      "B": "骑自行车",
-      "C": "坐公交",
-      "D": "单人开车"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
     ]
   },
   {
@@ -19397,25 +18865,6 @@
     ]
   },
   {
-    "id": "primary_multiple_1775553179070_82",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI绘画可以画（）",
-    "options": {
-      "A": "风景",
-      "B": "暴力内容",
-      "C": "小动物",
-      "D": "健康插画"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
     "id": "primary_multiple_1775553179070_83",
     "grade": "1-6",
     "group": "primary",
@@ -19432,25 +18881,6 @@
       "A",
       "B",
       "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_84",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI不能用来做（）",
-    "options": {
-      "A": "违法犯罪",
-      "B": "辅助学习",
-      "C": "侵权抄袭",
-      "D": "网络欺凌"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
     ]
   },
   {
@@ -19483,25 +18913,6 @@
       "B": "风格要求",
       "C": "主题要求",
       "D": "违法指令"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_87",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI分类技术有（）",
-    "options": {
-      "A": "图像分类",
-      "B": "文字分类",
-      "C": "语音分类",
-      "D": "手工分类"
     },
     "points": 2,
     "answer": [
@@ -19625,44 +19036,6 @@
     ]
   },
   {
-    "id": "primary_multiple_1775553179070_94",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "使用AI的规范（）",
-    "options": {
-      "A": "文明操作",
-      "B": "合规使用",
-      "C": "诚信创作",
-      "D": "盗版使用"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_95",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI的创新应用（）",
-    "options": {
-      "A": "公益创作",
-      "B": "科普宣传",
-      "C": "创意设计",
-      "D": "抄袭拼接"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
     "id": "primary_multiple_1775553179070_96",
     "grade": "1-6",
     "group": "primary",
@@ -19757,15 +19130,6 @@
       "C",
       "D"
     ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_101",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "|（注：文档部分内容可能由 AI 生成)",
-    "points": 2,
-    "answer": "无答案"
   },
   {
     "id": "primary_short_answer_1775553179080_1",
@@ -21204,15 +20568,6 @@
     "group": "junior",
     "type": "boolean",
     "question": "人工智能的研发与应用必须坚守法律与道德底线。（）",
-    "points": 2,
-    "answer": "对"
-  },
-  {
-    "id": "junior_boolean_1775553179109_131",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "boolean",
-    "question": "|（注：文档部分内容可能由 AI 生成)",
     "points": 2,
     "answer": "对"
   },
@@ -23167,15 +22522,6 @@
     "answer": "A"
   },
   {
-    "id": "junior_single_1775553179143_131",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "single",
-    "question": "|（注：文档部分内容可能由 AI 生成)",
-    "points": 2,
-    "answer": "无答案"
-  },
-  {
     "id": "junior_fill_in_the_blanks_1775553179162_1",
     "grade": "7-9",
     "group": "junior",
@@ -24074,15 +23420,6 @@
     "question": "人工智能伦理要求我们做到公平、______、向善，尊重他人、坚守底线。",
     "points": 2,
     "answer": "诚信"
-  },
-  {
-    "id": "junior_fill_in_the_blanks_1775553179162_101",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "fill_in_the_blanks",
-    "question": "|（注：文档部分内容可能由 AI 生成)",
-    "points": 2,
-    "answer": "无答案"
   },
   {
     "id": "junior_multiple_1775553179187_1",
@@ -25967,15 +25304,6 @@
       "C",
       "D"
     ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_101",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "|（注：文档部分内容可能由 AI 生成)",
-    "points": 2,
-    "answer": "无答案"
   },
   {
     "id": "junior_short_answer_1775553179199_1",
