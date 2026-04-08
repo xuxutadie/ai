@@ -198,6 +198,45 @@ export default function Quiz({
   // 加载状态
   const [isLoading, setIsLoading] = useState(true);
 
+  // 随机打乱选项顺序的函数
+  const shuffleOptions = (questions: Question[]): Question[] => {
+    return questions.map(q => {
+      // 只对单选题和多选题打乱选项
+      if ((q.type === 'single' || q.type === 'multiple') && q.options) {
+        // 创建选项数组并记录原始key
+        const optionEntries = Object.entries(q.options);
+        // 随机打乱
+        const shuffled = [...optionEntries].sort(() => Math.random() - 0.5);
+        
+        // 创建新的选项对象
+        const newOptions: Record<string, string> = {};
+        const keyMapping: Record<string, string> = {}; // 旧key -> 新key
+        
+        shuffled.forEach(([oldKey, value], index) => {
+          const newKey = String.fromCharCode(65 + index); // A, B, C, D...
+          newOptions[newKey] = value;
+          keyMapping[oldKey] = newKey;
+        });
+        
+        // 更新答案映射
+        let newAnswer: string | string[];
+        if (q.type === 'single') {
+          newAnswer = keyMapping[q.answer as string];
+        } else {
+          // 多选题
+          newAnswer = (q.answer as string[]).map(oldKey => keyMapping[oldKey]);
+        }
+        
+        return {
+          ...q,
+          options: newOptions,
+          answer: newAnswer
+        };
+      }
+      return q;
+    });
+  };
+
   useEffect(() => {
     let filtered = (questionsData as Question[]);
 
@@ -242,6 +281,9 @@ export default function Quiz({
         filtered = (questionsData as Question[]).slice(0, 10);
       }
     }
+
+    // 随机打乱选项顺序
+    filtered = shuffleOptions(filtered);
 
     setQuestions(filtered);
     setIsLoading(false);
