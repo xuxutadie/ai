@@ -1,5 +1,5 @@
 // AI评分服务
-// 支持多种大模型API：OpenAI、百度文心、阿里通义千问、智谱GLM等
+// 内置豆包（火山引擎）大模型API
 
 interface ScoringResult {
   score: number; // 0-10分
@@ -9,21 +9,34 @@ interface ScoringResult {
   suggestions: string;
 }
 
-interface AIScoringConfig {
-  provider: 'openai' | 'baidu' | 'aliyun' | 'zhipu';
-  apiKey: string;
-  apiUrl?: string;
-  model?: string;
-}
+// 内置的豆包API密钥
+const DOUBAO_API_KEY = '514aeade-bdda-41ee-9d41-fa096a3af597';
+const DOUBAO_API_URL = 'https://ark.cn-beijing.volces.com/api/v3/chat/completions';
+const DOUBAO_MODEL = 'doubao-pro-32k'; // 或 doubao-lite-32k
 
-// OpenAI GPT评分
-async function scoreWithOpenAI(
+/**
+ * 使用豆包大模型进行评分
+ * @param question 题目
+ * @param referenceAnswer 参考答案
+ * @param studentAnswer 学生答案
+ * @returns 评分结果
+ */
+async function scoreWithDoubao(
   question: string,
-  referenceAnswer: string,
-  studentAnswer: string,
-  config: AIScoringConfig
+  referenceAnswer: string | null,
+  studentAnswer: string
 ): Promise<ScoringResult> {
-  const prompt = `你是一位专业的AI教育评分专家。请根据以下标准对答案进行评分：
+  if (!referenceAnswer) {
+    return {
+      score: 0,
+      feedback: '无参考答案，无法评分',
+      matchedPoints: [],
+      missingPoints: [],
+      suggestions: ''
+    };
+  }
+
+  const prompt = `你是一位专业的AI教育评分专家。请根据以下标准对学生答案进行评分：
 
 【题目】
 ${question}
@@ -40,7 +53,7 @@ ${studentAnswer}
 3. 表达清晰度（20%）：逻辑是否清晰
 4. 创新性（10%）：是否有独到见解
 
-请严格按以下JSON格式返回评分结果（不要包含任何其他内容）：
+请严格按以下JSON格式返回评分结果（不要包含任何其他内容，确保是合法JSON）：
 {
   "score": 8.5,
   "feedback": "详细评语，指出优点和不足",
@@ -49,45 +62,83 @@ ${studentAnswer}
   "suggestions": "改进建议"
 }`;
 
-  const response = await fetch(config.apiUrl || 'https://api.openai.com/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${config.apiKey}`
-    },
-    body: JSON.stringify({
-      model: config.model || 'gpt-3.5-turbo',
-      messages: [
-        { role: 'system', content: '你是一位专业的教育评分专家，擅长客观、公正地评分。' },
-        { role: 'user', content: prompt }
-      ],
-      temperature: 0.3,
-      max_tokens: 1000
-    })
-  });
-
-  if (!response.ok) {
-    throw new Error(`OpenAI API错误: ${response.status}`);
-  }
-
-  const data = await response.json();
-  const content = data.choices[0].message.content;
-  
-  // 解析JSON响应
   try {
-    const result = JSON.parse(content);
+    const response = await fetch(DOUBAO_API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${DOUBAO_API_KEY}`
+      },
+      body: JSON.stringify({
+        model: DOUBAO_MODEL,
+        messages: [
+          {
+            role: 'system',
+            content: '你是一位专业的教育评分专家，擅长客观、公正地评分。请始终返回合法的JSON格式。'
+          },
+          {
+            role: 'user',
+            content: prompt
+          }
+        ],
+        temperature: 0.3,
+        max_tokens: 2000
+      })
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('豆包API错误:', response.status, errorText);
+      throw new Error(`豆包API错误: ${response.status}`);
+    }
+
+    const data = await response.json();
+    const content = data.choices?.[0]?.message?.content || '';
+
+    // 解析JSON响应
+    try {
+      // 尝试直接解析
+      const result = JSON.parse(content);
+      return {
+        score: Math.max(0, Math.min(10, result.score || 0)),
+        feedback: result.feedback || '评分完成',
+        matchedPoints: result.matchedPoints || [],
+        missingPoints: result.missingPoints || [],
+        suggestions: result.suggestions || ''
+      };
+    } catch (parseError) {
+      // 如果直接解析失败，尝试提取JSON部分
+      const jsonMatch = content.match(/\{[\s\S]*\}/);
+      if (jsonMatch) {
+        try {
+          const result = JSON.parse(jsonMatch[0]);
+          return {
+            score: Math.max(0, Math.min(10, result.score || 0)),
+            feedback: result.feedback || '评分完成',
+            matchedPoints: result.matchedPoints || [],
+            missingPoints: result.missingPoints || [],
+            suggestions: result.suggestions || ''
+          };
+        } catch (e) {
+          console.error('JSON解析失败:', e);
+        }
+      }
+
+      // 如果都失败了，返回默认结果
+      console.error('无法解析AI响应:', content);
+      return {
+        score: 5,
+        feedback: '评分解析失败，请稍后重试',
+        matchedPoints: [],
+        missingPoints: [],
+        suggestions: ''
+      };
+    }
+  } catch (error) {
+    console.error('豆包评分失败:', error);
     return {
-      score: Math.max(0, Math.min(10, result.score)),
-      feedback: result.feedback || '',
-      matchedPoints: result.matchedPoints || [],
-      missingPoints: result.missingPoints || [],
-      suggestions: result.suggestions || ''
-    };
-  } catch (e) {
-    // 如果解析失败，返回默认结果
-    return {
-      score: 5,
-      feedback: '评分解析失败，请稍后重试',
+      score: 0,
+      feedback: '评分服务暂时不可用，请稍后重试',
       matchedPoints: [],
       missingPoints: [],
       suggestions: ''
@@ -95,96 +146,100 @@ ${studentAnswer}
   }
 }
 
-// 百度文心一言评分
-async function scoreWithBaidu(
-  _question: string,
-  _referenceAnswer: string,
-  _studentAnswer: string,
-  _config: AIScoringConfig
-): Promise<ScoringResult> {
-  // 百度文心API调用示例
-  // 需要先获取access_token
-  // const prompt = `作为教育评分专家，请评分...`;
-
-  // 百度API调用示例（需要实现具体的鉴权和调用逻辑）
-  // const response = await fetch(...)
-  
-  // 临时返回示例结果
-  console.log('百度评分功能待实现');
-  return { score: 5, feedback: '百度评分功能待实现', matchedPoints: [], missingPoints: [], suggestions: '' };
-}
-
-// 主评分函数
+/**
+ * 主观题AI评分（使用内置豆包模型）
+ * @param question 题目
+ * @param referenceAnswer 参考答案
+ * @param studentAnswer 学生答案
+ * @param maxPoints 满分分值
+ * @returns 评分结果（实际分数和评语）
+ */
 export async function scoreWithAI(
   question: string,
   referenceAnswer: string | null,
   studentAnswer: string,
-  maxPoints: number,
-  config: AIScoringConfig
+  maxPoints: number
 ): Promise<{ score: number; feedback: string }> {
-  if (!referenceAnswer) {
-    return { score: 0, feedback: '无参考答案，无法评分' };
+  // 空答案直接0分
+  if (!studentAnswer || !studentAnswer.trim()) {
+    return { score: 0, feedback: '未作答' };
   }
 
-  try {
-    let result: ScoringResult;
+  const result = await scoreWithDoubao(question, referenceAnswer, studentAnswer);
 
-    switch (config.provider) {
-      case 'openai':
-        result = await scoreWithOpenAI(question, referenceAnswer, studentAnswer, config);
-        break;
-      case 'baidu':
-        result = await scoreWithBaidu(question, referenceAnswer, studentAnswer, config);
-        break;
-      default:
-        throw new Error('不支持的AI提供商');
-    }
+  // 将10分制转换为实际分数
+  const actualScore = (result.score / 10) * maxPoints;
 
-    // 将10分制转换为实际分数
-    const actualScore = (result.score / 10) * maxPoints;
-
-    return {
-      score: Math.round(actualScore * 10) / 10, // 保留1位小数
-      feedback: result.feedback
-    };
-  } catch (error) {
-    console.error('AI评分失败:', error);
-    return { score: 0, feedback: '评分服务暂时不可用' };
-  }
+  return {
+    score: Math.round(actualScore * 10) / 10, // 保留1位小数
+    feedback: result.feedback
+  };
 }
 
-// 批量评分（用于考试结束后的统一评分）
+/**
+ * 批量评分（用于考试结束后的统一评分）
+ * @param answers 答案列表
+ * @returns 评分结果列表
+ */
 export async function batchScoreWithAI(
   answers: Array<{
     question: string;
     referenceAnswer: string | null;
     studentAnswer: string;
     maxPoints: number;
-  }>,
-  config: AIScoringConfig
+  }>
 ): Promise<Array<{ score: number; feedback: string }>> {
   const results = [];
-  
+
   for (const answer of answers) {
     const result = await scoreWithAI(
       answer.question,
       answer.referenceAnswer,
       answer.studentAnswer,
-      answer.maxPoints,
-      config
+      answer.maxPoints
     );
     results.push(result);
-    
-    // 添加延迟以避免API限流
+
+    // 添加延迟以避免API限流（豆包API通常有QPS限制）
     await new Promise(resolve => setTimeout(resolve, 500));
   }
-  
+
   return results;
 }
 
-// 配置示例
-export const aiScoringConfig: AIScoringConfig = {
-  provider: 'openai',
-  apiKey: import.meta.env.VITE_OPENAI_API_KEY || '',
-  model: 'gpt-3.5-turbo'
-};
+/**
+ * 获取详细的评分结果（包含匹配点和缺失点）
+ */
+export async function getDetailedScoring(
+  question: string,
+  referenceAnswer: string | null,
+  studentAnswer: string,
+  maxPoints: number
+): Promise<{
+  score: number;
+  feedback: string;
+  matchedPoints: string[];
+  missingPoints: string[];
+  suggestions: string;
+}> {
+  if (!studentAnswer || !studentAnswer.trim()) {
+    return {
+      score: 0,
+      feedback: '未作答',
+      matchedPoints: [],
+      missingPoints: referenceAnswer ? ['未回答参考答案中的要点'] : [],
+      suggestions: '请认真作答'
+    };
+  }
+
+  const result = await scoreWithDoubao(question, referenceAnswer, studentAnswer);
+  const actualScore = (result.score / 10) * maxPoints;
+
+  return {
+    score: Math.round(actualScore * 10) / 10,
+    feedback: result.feedback,
+    matchedPoints: result.matchedPoints,
+    missingPoints: result.missingPoints,
+    suggestions: result.suggestions
+  };
+}
