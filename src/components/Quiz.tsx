@@ -194,6 +194,9 @@ export default function Quiz({
   useEffect(() => {
     questionResultsRef.current = questionResults;
   }, [questionResults]);
+  
+  // 加载状态
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     let filtered = (questionsData as Question[]);
@@ -241,6 +244,7 @@ export default function Quiz({
     }
 
     setQuestions(filtered);
+    setIsLoading(false);
   }, [group, track]);
 
   useEffect(() => {
@@ -261,18 +265,6 @@ export default function Quiz({
   }, [questions, onFinish, questionResults]);
 
   const isLast = currentIndex === questions.length - 1;
-
-  if (questions.length === 0) {
-    return (
-      <div className="w-full h-full flex items-center justify-center">
-        <div className="text-white text-xl flex flex-col items-center">
-          <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-4"></div>
-          正在生成专属试卷...
-        </div>
-      </div>
-    );
-  }
-
   const currentQ = questions[currentIndex];
 
   const handleOptionClick = (optionKey: string) => {
@@ -563,6 +555,18 @@ export default function Quiz({
       return { perQuestion, count, total };
     }
   };
+
+  // 加载状态显示
+  if (isLoading || questions.length === 0) {
+    return (
+      <div className="w-full h-full flex items-center justify-center">
+        <div className="text-white text-xl flex flex-col items-center">
+          <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-4"></div>
+          正在生成专属试卷...
+        </div>
+      </div>
+    );
+  }
 
   return (
     <motion.div 
