@@ -3945,1610 +3945,6 @@
     "answer": "诚信"
   },
   {
-    "id": "primary_multiple_1775553179070_1",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "下列属于人工智能应用的是（）",
-    "options": {
-      "A": "智能语音助手",
-      "B": "人脸识别解锁",
-      "C": "手工折纸",
-      "D": "普通铅笔"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_2",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "语音识别技术可以（）",
-    "options": {
-      "A": "声音转文字",
-      "B": "手写转文字",
-      "C": "语音发消息",
-      "D": "手工写字"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_3",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "使用AI时，禁止做的事有（）",
-    "options": {
-      "A": "查学习资料",
-      "B": "泄露隐私",
-      "C": "抄袭作品",
-      "D": "文明提问"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_4",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "给AI写提示词，正确的做法是（）",
-    "options": {
-      "A": "说清任务",
-      "B": "文明用语",
-      "C": "辱骂AI",
-      "D": "说明风格"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_5",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "判断AI内容是否正确，要看（）",
-    "options": {
-      "A": "符合生活常识",
-      "B": "是真实信息",
-      "C": "画面好看",
-      "D": "遵守法律"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_6",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "人工智能运行的基础是（）",
-    "options": {
-      "A": "魔法",
-      "B": "数据",
-      "C": "算法",
-      "D": "算力"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_7",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "生活中的AI应用有（）",
-    "options": {
-      "A": "智能导航",
-      "B": "智能音箱",
-      "C": "人脸支付",
-      "D": "智能翻译"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_8",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "保护个人隐私，要做到（）",
-    "options": {
-      "A": "不透露家庭住址",
-      "B": "不泄露身份证号",
-      "C": "随意发隐私照",
-      "D": "公开父母电话"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_9",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "图像识别能识别的是（）",
-    "options": {
-      "A": "风",
-      "B": "小动物",
-      "C": "花草",
-      "D": "云"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_10",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "用AI做的错误行为有（）",
-    "options": {
-      "A": "学习知识",
-      "B": "代写作业",
-      "C": "考试作弊",
-      "D": "抄袭答案"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_11",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "人机协作创作的正确步骤是（）",
-    "options": {
-      "A": "自己想创意",
-      "B": "AI辅助制作",
-      "C": "自己修改完善",
-      "D": "完全靠AI生成"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_12",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "自然语言处理的应用有（）",
-    "options": {
-      "A": "AI翻译",
-      "B": "手工写字",
-      "C": "智能客服",
-      "D": "AI写短文"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_13",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "选择AI工具，要考虑（）",
-    "options": {
-      "A": "好玩",
-      "B": "安全",
-      "C": "好操作",
-      "D": "适合任务"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_14",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI不能代替人类的地方有（）",
-    "options": {
-      "A": "有情感",
-      "B": "会创新",
-      "C": "明是非",
-      "D": "简单计算"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_15",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "合规使用AI的要求是（）",
-    "options": {
-      "A": "用正规工具",
-      "B": "遵守规则",
-      "C": "泄露隐私",
-      "D": "人机协作"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_16",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "属于AI感知技术的是（）",
-    "options": {
-      "A": "图像识别",
-      "B": "语音识别",
-      "C": "手工触摸",
-      "D": "耳朵听声"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_17",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI生成内容可能存在的问题（）",
-    "options": {
-      "A": "完全正确",
-      "B": "信息错误",
-      "C": "内容低俗",
-      "D": "侵权"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_18",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "符合AI伦理的行为是（）",
-    "options": {
-      "A": "盗版软件",
-      "B": "保护隐私",
-      "C": "传播谣言",
-      "D": "尊重版权"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_19",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "提示词中不能出现（）",
-    "options": {
-      "A": "清晰要求",
-      "B": "辱骂文字",
-      "C": "违法指令",
-      "D": "模糊表述"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_20",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI能帮我们做的事（）",
-    "options": {
-      "A": "辅助学习",
-      "B": "方便生活",
-      "C": "代替所有人",
-      "D": "提高效率"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_21",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "智能家电的AI功能有（）",
-    "options": {
-      "A": "自动扫地",
-      "B": "手动开关",
-      "C": "语音控制",
-      "D": "自动调温"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_22",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "小学生使用AI的正确态度（）",
-    "options": {
-      "A": "合理使用",
-      "B": "完全依赖",
-      "C": "遵守规则",
-      "D": "拒绝使用"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_23",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "正确使用数据的方式（）",
-    "options": {
-      "A": "随意收集",
-      "B": "安全存储",
-      "C": "合理使用",
-      "D": "依法处理"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_24",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI辅助学习的正确做法（）",
-    "options": {
-      "A": "讲解难题",
-      "B": "代写作业",
-      "C": "整理笔记",
-      "D": "解答疑问"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_25",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI创作的正确方式（）",
-    "options": {
-      "A": "自主构思",
-      "B": "抄袭他人",
-      "C": "合理修改",
-      "D": "标注AI辅助"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_26",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "机器学习的特点是（）",
-    "options": {
-      "A": "从数据学习",
-      "B": "固定不变",
-      "C": "不断优化",
-      "D": "辅助做事"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_27",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "智能推荐的依据是（）",
-    "options": {
-      "A": "随机推送",
-      "B": "用户喜好",
-      "C": "手工挑选",
-      "D": "使用习惯"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_28",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "下列属于个人隐私的是（）",
-    "options": {
-      "A": "公开知识",
-      "B": "身份证号",
-      "C": "家庭住址",
-      "D": "父母电话"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_29",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI伦理的核心是（）",
-    "options": {
-      "A": "智能向善",
-      "B": "公平诚信",
-      "C": "违法牟利",
-      "D": "保护隐私"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_30",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI工具的操作要求（）",
-    "options": {
-      "A": "简单规范",
-      "B": "安全可靠",
-      "C": "复杂难懂",
-      "D": "适合小学生"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_31",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "属于AI生活服务的是（）",
-    "options": {
-      "A": "手工扫地",
-      "B": "智能垃圾分类",
-      "C": "智能门锁",
-      "D": "智能快递柜"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_33",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "违反版权的行为有（）",
-    "options": {
-      "A": "原创创作",
-      "B": "盗用作品",
-      "C": "商用侵权",
-      "D": "冒充原创"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_34",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "人工智能的发展趋势（）",
-    "options": {
-      "A": "更智能",
-      "B": "更安全",
-      "C": "更合规",
-      "D": "更混乱"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_35",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI助力绿色低碳的方式（）",
-    "options": {
-      "A": "宣传环保",
-      "B": "浪费资源",
-      "C": "规划节能",
-      "D": "指导垃圾分类"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_36",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "小学生应具备的AI素养（）",
-    "options": {
-      "A": "认识AI",
-      "B": "会AI思维",
-      "C": "依赖AI",
-      "D": "有责任心"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_37",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI助力健康生活的方式（）",
-    "options": {
-      "A": "提醒运动",
-      "B": "熬夜游戏",
-      "C": "规划饮食",
-      "D": "监测健康"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_38",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI生成错误的原因（）",
-    "options": {
-      "A": "数据不足",
-      "B": "提示词模糊",
-      "C": "算法偏差",
-      "D": "永远正确"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_39",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "智能安防的AI应用（）",
-    "options": {
-      "A": "人脸门禁",
-      "B": "手工看门",
-      "C": "智能监控",
-      "D": "异常报警"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_41",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI办公的应用有（）",
-    "options": {
-      "A": "手工写字",
-      "B": "AI写作",
-      "C": "AI翻译",
-      "D": "AI排版"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_42",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "使用AI要避免的行为（）",
-    "options": {
-      "A": "沉迷游戏",
-      "B": "合规学习",
-      "C": "泄露隐私",
-      "D": "违规操作"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_44",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "文明使用AI要做到（）",
-    "options": {
-      "A": "用语礼貌",
-      "B": "指令合法",
-      "C": "需求合理",
-      "D": "辱骂AI"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_45",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "保护数据安全的做法（）",
-    "options": {
-      "A": "加密存储",
-      "B": "权限管控",
-      "C": "随意泄露",
-      "D": "不传播隐私"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_46",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI辅助设计的内容（）",
-    "options": {
-      "A": "创意绘画",
-      "B": "抄袭画作",
-      "C": "制作海报",
-      "D": "撰写文案"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_47",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "公平使用AI要做到（）",
-    "options": {
-      "A": "不歧视他人",
-      "B": "平等对待",
-      "C": "欺负弱小",
-      "D": "公正使用"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_48",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "处理AI生成内容的正确方式（）",
-    "options": {
-      "A": "检查修改",
-      "B": "合规使用",
-      "C": "侵权传播",
-      "D": "合理借鉴"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_49",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "智能交通的AI应用（）",
-    "options": {
-      "A": "智能导航",
-      "B": "驾驶辅助",
-      "C": "手工骑车",
-      "D": "公交调度"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_50",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "学习人工智能的意义（）",
-    "options": {
-      "A": "适应智能时代",
-      "B": "提升科技素养",
-      "C": "培养创新力",
-      "D": "无视科技"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_51",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI在教育中的应用（）",
-    "options": {
-      "A": "个性化学习",
-      "B": "智能批改",
-      "C": "替考作弊",
-      "D": "科普知识"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_52",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "提示词可以设置的风格（）",
-    "options": {
-      "A": "卡通",
-      "B": "低俗",
-      "C": "写实",
-      "D": "可爱"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_53",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "修改AI内容的正确原则（）",
-    "options": {
-      "A": "修正错误",
-      "B": "合规调整",
-      "C": "恶意篡改",
-      "D": "优化表达"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_54",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI对学习的帮助（）",
-    "options": {
-      "A": "答疑解惑",
-      "B": "整理资料",
-      "C": "拓展知识",
-      "D": "代写作业"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_55",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "保护隐私的技术方法（）",
-    "options": {
-      "A": "信息脱敏",
-      "B": "数据加密",
-      "C": "权限管理",
-      "D": "随意公开"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_56",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "智能服务类AI有（）",
-    "options": {
-      "A": "智能客服",
-      "B": "智能咨询",
-      "C": "智能导览",
-      "D": "人工服务"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_57",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "诚信使用AI要做到（）",
-    "options": {
-      "A": "不造假",
-      "B": "不抄袭",
-      "C": "不造谣",
-      "D": "欺骗他人"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_58",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "智能识别能识别的内容（）",
-    "options": {
-      "A": "文字",
-      "B": "图片",
-      "C": "声音",
-      "D": "空气"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_59",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "小学生使用AI的底线（）",
-    "options": {
-      "A": "不违法",
-      "B": "不违规",
-      "C": "不违德",
-      "D": "随意使用"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_62",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "下列属于AI工具的是（）",
-    "options": {
-      "A": "AI绘画",
-      "B": "AI配音",
-      "C": "橡皮",
-      "D": "尺子"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_63",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI生成错误，正确做法是（）",
-    "options": {
-      "A": "无视错误",
-      "B": "及时改正",
-      "C": "反馈开发者",
-      "D": "传播错误"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_64",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI的正确用途有（）",
-    "options": {
-      "A": "违法犯罪",
-      "B": "公益宣传",
-      "C": "抄袭侵权",
-      "D": "科普知识"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_65",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "人机协作的核心原则（）",
-    "options": {
-      "A": "人类主导",
-      "B": "AI辅助",
-      "C": "创意优先",
-      "D": "全靠AI"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_68",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "不能使用的AI工具（）",
-    "options": {
-      "A": "盗版工具",
-      "B": "正规工具",
-      "C": "破解工具",
-      "D": "恶意工具"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_70",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "小学生学习AI的重点（）",
-    "options": {
-      "A": "认识AI",
-      "B": "简单操作",
-      "C": "复杂开发",
-      "D": "了解伦理"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_71",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "智能穿戴的AI功能（）",
-    "options": {
-      "A": "监测健康",
-      "B": "记录运动",
-      "C": "定位提醒",
-      "D": "普通计时"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_72",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "提示词清晰的要求（）",
-    "options": {
-      "A": "任务明确",
-      "B": "要求具体",
-      "C": "逻辑清楚",
-      "D": "模糊不清"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_73",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI可以生成的内容（）",
-    "options": {
-      "A": "手工画",
-      "B": "文字",
-      "C": "图片",
-      "D": "声音"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_76",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "属于AI辅助创作的是（）",
-    "options": {
-      "A": "人写脚本AI画图",
-      "B": "AI初稿人修改",
-      "C": "纯手工制作",
-      "D": "AI配音人剪辑"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_77",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI创作的版权归属（）",
-    "options": {
-      "A": "人类创作者",
-      "B": "无归属",
-      "C": "合规使用者",
-      "D": "AI厂商"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_78",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "防范AI风险的做法（）",
-    "options": {
-      "A": "辨别真假",
-      "B": "保护隐私",
-      "C": "合规使用",
-      "D": "无视风险"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_79",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI情境题的特点（）",
-    "options": {
-      "A": "贴近生活",
-      "B": "结合实际",
-      "C": "通俗易懂",
-      "D": "抽象难懂"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_80",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "人工智能的核心特点（）",
-    "options": {
-      "A": "固定程序",
-      "B": "模拟智能",
-      "C": "自主学习",
-      "D": "数据驱动"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_81",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "语音输入法的优势（）",
-    "options": {
-      "A": "方便快捷",
-      "B": "解放双手",
-      "C": "偶尔出错",
-      "D": "手写更好"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_83",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "人类与AI的关系（）",
-    "options": {
-      "A": "互相配合",
-      "B": "人类主导",
-      "C": "AI辅助",
-      "D": "完全代替"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_85",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI在健康方面的应用（）",
-    "options": {
-      "A": "监测健康",
-      "B": "饮食建议",
-      "C": "运动指导",
-      "D": "熬夜提醒"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_86",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "提示词可以包含的内容（）",
-    "options": {
-      "A": "任务要求",
-      "B": "风格要求",
-      "C": "主题要求",
-      "D": "违法指令"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_88",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI创作的过程材料（）",
-    "options": {
-      "A": "草稿",
-      "B": "协作记录",
-      "C": "素材截图",
-      "D": "空白文件"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_89",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "合规AI工具的特点（）",
-    "options": {
-      "A": "安全可靠",
-      "B": "无不良信息",
-      "C": "正规备案",
-      "D": "盗版破解"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_90",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI辅助生活的应用（）",
-    "options": {
-      "A": "智能导航",
-      "B": "智能翻译",
-      "C": "智能推荐",
-      "D": "沉迷电子产品"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_91",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI使用的公平性（）",
-    "options": {
-      "A": "不歧视",
-      "B": "公平用",
-      "C": "平等对待",
-      "D": "欺负弱小"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_92",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "正确使用数据的要求（）",
-    "options": {
-      "A": "合法收集",
-      "B": "安全存储",
-      "C": "合理使用",
-      "D": "非法贩卖"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_93",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI技术的实际应用（）",
-    "options": {
-      "A": "自动驾驶",
-      "B": "智能客服",
-      "C": "图像识别",
-      "D": "手工制作"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_96",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "人工智能思维包括（）",
-    "options": {
-      "A": "数据思维",
-      "B": "算法思维",
-      "C": "创新思维",
-      "D": "盲目思维"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_97",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "保护他人隐私的做法（）",
-    "options": {
-      "A": "不泄露同学信息",
-      "B": "不公开他人隐私",
-      "C": "不传播他人照片",
-      "D": "随意泄露"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_98",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI在医疗中的应用（）",
-    "options": {
-      "A": "健康监测",
-      "B": "诊断辅助",
-      "C": "健康建议",
-      "D": "手工看病"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_99",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "AI创作的原创性要求（）",
-    "options": {
-      "A": "自主构思",
-      "B": "人机协作",
-      "C": "不抄袭",
-      "D": "纯AI生成"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "primary_multiple_1775553179070_100",
-    "grade": "1-6",
-    "group": "primary",
-    "type": "multiple",
-    "question": "人工智能的应用场景有（）",
-    "options": {
-      "A": "学习",
-      "B": "生活",
-      "C": "交通",
-      "D": "医疗"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
     "id": "primary_short_answer_1775553179080_1",
     "grade": "1-6",
     "group": "primary",
@@ -9837,1890 +8233,6 @@
     "question": "人工智能伦理要求我们做到公平、______、向善，尊重他人、坚守底线。",
     "points": 2,
     "answer": "诚信"
-  },
-  {
-    "id": "junior_multiple_1775553179187_1",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于人工智能核心概念的是（）",
-    "options": {
-      "A": "模拟人类智能",
-      "B": "机器学习",
-      "C": "手工制作",
-      "D": "传统计算"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_2",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "属于AI语音类技术的是（）",
-    "options": {
-      "A": "语音合成",
-      "B": "手工朗读",
-      "C": "语音识别",
-      "D": "文字抄写"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_3",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI伦理禁止行为的是（）",
-    "options": {
-      "A": "合规学习",
-      "B": "侵权抄袭",
-      "C": "造谣传谣",
-      "D": "网络欺凌"
-    },
-    "points": 2,
-    "answer": [
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_4",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "使用AI提示词的正确要素有（）",
-    "options": {
-      "A": "任务清晰",
-      "B": "文明用语",
-      "C": "违法指令",
-      "D": "风格明确"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_5",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "AI生成内容的核查维度包括（）",
-    "options": {
-      "A": "事实真实",
-      "B": "合法合规",
-      "C": "道德正向",
-      "D": "盲目相信"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_6",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "人工智能的基础支撑要素是（）",
-    "options": {
-      "A": "数据",
-      "B": "算法",
-      "C": "算力",
-      "D": "纸张"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_7",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "属于生活中AI应用的组合是（）",
-    "options": {
-      "A": "智能导航",
-      "B": "人脸识别",
-      "C": "手工折纸",
-      "D": "智能音箱"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_8",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "保护个人隐私的正确做法是（）",
-    "options": {
-      "A": "不填身份证号",
-      "B": "不泄露家庭住址",
-      "C": "随意发隐私照",
-      "D": "公开手机号"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_9",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "图像识别技术可识别的内容是（）",
-    "options": {
-      "A": "手写文字",
-      "B": "动物植物",
-      "C": "人脸信息",
-      "D": "空气"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_10",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI工具滥用的是（）",
-    "options": {
-      "A": "辅助学习",
-      "B": "代写作业",
-      "C": "考试作弊",
-      "D": "抄袭创作"
-    },
-    "points": 2,
-    "answer": [
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_11",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "人机协作创作的正确流程是（）",
-    "options": {
-      "A": "人类构思",
-      "B": "AI辅助生成",
-      "C": "人工修改",
-      "D": "纯AI生成"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_12",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "自然语言处理的应用场景有（）",
-    "options": {
-      "A": "智能翻译",
-      "B": "手工写字",
-      "C": "智能客服",
-      "D": "AI写作"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_13",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "选择AI工具的合理依据是（）",
-    "options": {
-      "A": "任务需求",
-      "B": "合规安全",
-      "C": "操作难度",
-      "D": "价格昂贵"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_14",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "人工智能无法替代人类的能力是（）",
-    "options": {
-      "A": "情感共鸣",
-      "B": "道德判断",
-      "C": "创新思维",
-      "D": "简单计算"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_15",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "合规使用AI工具的要求是（）",
-    "options": {
-      "A": "用正规工具",
-      "B": "遵守规则",
-      "C": "泄露隐私",
-      "D": "人机协作"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_16",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI感知技术的是（）",
-    "options": {
-      "A": "图像识别",
-      "B": "语音识别",
-      "C": "手工感知",
-      "D": "触觉感应"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_17",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "AI生成内容的风险包括（）",
-    "options": {
-      "A": "信息错误",
-      "B": "低俗内容",
-      "C": "合规知识",
-      "D": "侵权风险"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_18",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列行为符合AI伦理的是（）",
-    "options": {
-      "A": "保护隐私",
-      "B": "盗版使用",
-      "C": "尊重版权",
-      "D": "传播谣言"
-    },
-    "points": 2,
-    "answer": [
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_19",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "提示词的禁忌内容是（）",
-    "options": {
-      "A": "清晰需求",
-      "B": "辱骂文字",
-      "C": "违法指令",
-      "D": "模糊表述"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_20",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "人工智能的正向作用是（）",
-    "options": {
-      "A": "辅助学习",
-      "B": "方便生活",
-      "C": "取代人类",
-      "D": "提高效率"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_21",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "智能家电的AI功能有（）",
-    "options": {
-      "A": "自动控温",
-      "B": "手动开关",
-      "C": "智能避障",
-      "D": "语音控制"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_22",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "初中生使用AI的正确态度是（）",
-    "options": {
-      "A": "理性使用",
-      "B": "盲目依赖",
-      "C": "遵守规则",
-      "D": "拒绝使用"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_23",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于数据合规使用的是（）",
-    "options": {
-      "A": "非法收集",
-      "B": "安全存储",
-      "C": "合理使用",
-      "D": "依法销毁"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_24",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "AI辅助学习的正确方式是（）",
-    "options": {
-      "A": "答疑解惑",
-      "B": "代写作业",
-      "C": "整理资料",
-      "D": "讲解难题"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_25",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "属于AI创作合规行为的是（）",
-    "options": {
-      "A": "原创构思",
-      "B": "抄袭拼接",
-      "C": "合理修改",
-      "D": "标注辅助"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_26",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于机器学习特点的是（）",
-    "options": {
-      "A": "从数据学习",
-      "B": "固定程序",
-      "C": "持续优化",
-      "D": "辅助决策"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_27",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "智能推荐的依据是（）",
-    "options": {
-      "A": "用户偏好",
-      "B": "随机推送",
-      "C": "历史数据",
-      "D": "使用习惯"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_28",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于隐私信息的是（）",
-    "options": {
-      "A": "公开科普",
-      "B": "身份证号",
-      "C": "家庭住址",
-      "D": "父母电话"
-    },
-    "points": 2,
-    "answer": [
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_29",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "人工智能伦理的核心是（）",
-    "options": {
-      "A": "智能向善",
-      "B": "公平诚信",
-      "C": "违法牟利",
-      "D": "保护隐私"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_30",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "AI工具操作的基本要求是（）",
-    "options": {
-      "A": "简单规范",
-      "B": "安全可靠",
-      "C": "复杂难懂",
-      "D": "适合学生"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_31",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI生活服务应用的是（）",
-    "options": {
-      "A": "智能垃圾分类",
-      "B": "手工扫地",
-      "C": "智能快递柜",
-      "D": "智能门锁"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_32",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "提示词的作用包括（）",
-    "options": {
-      "A": "明确需求",
-      "B": "引导AI",
-      "C": "制造混乱",
-      "D": "提升质量"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_33",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列行为违反版权规范的是（）",
-    "options": {
-      "A": "原创使用",
-      "B": "盗用作品",
-      "C": "商用侵权",
-      "D": "篡改冒充"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_34",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "人工智能的发展趋势是（）",
-    "options": {
-      "A": "更智能",
-      "B": "更安全",
-      "C": "更合规",
-      "D": "更混乱"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_35",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "属于绿色低碳与AI结合的是（）",
-    "options": {
-      "A": "环保宣传",
-      "B": "浪费资源",
-      "C": "节能规划",
-      "D": "垃圾分类指导"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_36",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI核心素养的是（）",
-    "options": {
-      "A": "AI意识",
-      "B": "AI思维",
-      "C": "盲目依赖",
-      "D": "社会责任"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_37",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "健康生活与AI结合的是（）",
-    "options": {
-      "A": "运动提醒",
-      "B": "熬夜游戏",
-      "C": "饮食规划",
-      "D": "健康监测"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_38",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "AI生成错误的原因是（）",
-    "options": {
-      "A": "数据不足",
-      "B": "提示词模糊",
-      "C": "算法偏差",
-      "D": "绝对正确"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_39",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于智能安防AI应用的是（）",
-    "options": {
-      "A": "人脸识别门禁",
-      "B": "手工看门",
-      "C": "智能监控",
-      "D": "异常报警"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_40",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "人机协作的优势是（）",
-    "options": {
-      "A": "提升效率",
-      "B": "激发创意",
-      "C": "完全依赖AI",
-      "D": "优势互补"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_41",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI办公应用的是（）",
-    "options": {
-      "A": "AI写作",
-      "B": "手工写字",
-      "C": "AI排版",
-      "D": "AI翻译"
-    },
-    "points": 2,
-    "answer": [
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_42",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "初中生使用AI需避免的是（）",
-    "options": {
-      "A": "沉迷娱乐",
-      "B": "合规学习",
-      "C": "泄露隐私",
-      "D": "违规操作"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_43",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI技术局限性的是（）",
-    "options": {
-      "A": "无情感",
-      "B": "会出错",
-      "C": "全知全能",
-      "D": "需人工核查"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_44",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "文明使用AI的要求是（）",
-    "options": {
-      "A": "用语礼貌",
-      "B": "指令合法",
-      "C": "需求合理",
-      "D": "辱骂攻击"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_45",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于数据安全保护的是（）",
-    "options": {
-      "A": "加密存储",
-      "B": "权限管控",
-      "C": "随意泄露",
-      "D": "不传播隐私"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_46",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "属于AI辅助设计的是（）",
-    "options": {
-      "A": "创意绘画",
-      "B": "抄袭画作",
-      "C": "海报制作",
-      "D": "文案设计"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_47",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于公平使用AI的是（）",
-    "options": {
-      "A": "不歧视他人",
-      "B": "平等对待",
-      "C": "欺凌弱者",
-      "D": "公正使用"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_48",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "AI内容处理的正确方式是（）",
-    "options": {
-      "A": "检查修改",
-      "B": "合规使用",
-      "C": "侵权传播",
-      "D": "合理借鉴"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_49",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于智能交通AI应用的是（）",
-    "options": {
-      "A": "智能导航",
-      "B": "驾驶辅助",
-      "C": "手动骑车",
-      "D": "公交调度"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_50",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "学习AI的意义是（）",
-    "options": {
-      "A": "适应时代",
-      "B": "提升素养",
-      "C": "培养创新",
-      "D": "无视科技"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_51",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI教育应用的是（）",
-    "options": {
-      "A": "个性化学习",
-      "B": "智能批改",
-      "C": "替考作弊",
-      "D": "知识科普"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_52",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "提示词风格指令可选择（）",
-    "options": {
-      "A": "卡通",
-      "B": "写实",
-      "C": "低俗",
-      "D": "文艺"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_53",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI创作修改原则的是（）",
-    "options": {
-      "A": "修正错误",
-      "B": "合规调整",
-      "C": "恶意篡改",
-      "D": "优化表达"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_54",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "人工智能对学习的帮助是（）",
-    "options": {
-      "A": "答疑解惑",
-      "B": "整理资料",
-      "C": "拓展视野",
-      "D": "代写作业"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_55",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "隐私保护的技术手段是（）",
-    "options": {
-      "A": "信息脱敏",
-      "B": "数据加密",
-      "C": "权限管理",
-      "D": "随意公开"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_56",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于智能服务AI应用的是（）",
-    "options": {
-      "A": "智能客服",
-      "B": "智能咨询",
-      "C": "智能导览",
-      "D": "人工服务"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_57",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于诚信使用AI的是（）",
-    "options": {
-      "A": "不造假",
-      "B": "不抄袭",
-      "C": "不造谣",
-      "D": "不诚信"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_58",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "智能识别可识别的类型是（）",
-    "options": {
-      "A": "文字",
-      "B": "图像",
-      "C": "语音",
-      "D": "虚无信息"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_59",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "初中生使用AI的边界是（）",
-    "options": {
-      "A": "不违法",
-      "B": "不违规",
-      "C": "不违德",
-      "D": "无边界"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_60",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于科技伦理的是（）",
-    "options": {
-      "A": "以人为本",
-      "B": "智能向善",
-      "C": "公平公正",
-      "D": "唯利是图"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_61",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "人工智能的积极影响是（）",
-    "options": {
-      "A": "科技进步",
-      "B": "生活便捷",
-      "C": "学习助力",
-      "D": "取代人类"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_62",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI工具类型的是（）",
-    "options": {
-      "A": "AI绘画",
-      "B": "AI配音",
-      "C": "普通铅笔",
-      "D": "AI剪辑"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_63",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI错误处理方式的是（）",
-    "options": {
-      "A": "无视错误",
-      "B": "及时修正",
-      "C": "反馈开发者",
-      "D": "传播错误"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_64",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI合规用途的是（）",
-    "options": {
-      "A": "公益宣传",
-      "B": "违法生成",
-      "C": "科普知识",
-      "D": "辅助创作"
-    },
-    "points": 2,
-    "answer": [
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_65",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "人机协作的核心原则是（）",
-    "options": {
-      "A": "人类主导",
-      "B": "AI辅助",
-      "C": "创意优先",
-      "D": "纯AI生成"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_66",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI技术分类的是（）",
-    "options": {
-      "A": "感知智能",
-      "B": "认知智能",
-      "C": "手工智能",
-      "D": "执行智能"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_67",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI内容合规的是（）",
-    "options": {
-      "A": "健康正向",
-      "B": "暴力低俗",
-      "C": "合法合理",
-      "D": "积极有益"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_68",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI工具选择误区的是（）",
-    "options": {
-      "A": "盗版工具",
-      "B": "合规工具",
-      "C": "破解工具",
-      "D": "恶意工具"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_69",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI社会责任的是（）",
-    "options": {
-      "A": "抵制虚假信息",
-      "B": "保护隐私",
-      "C": "科技向善",
-      "D": "谋取私利"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_70",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI学习重点的是（）",
-    "options": {
-      "A": "基础认知",
-      "B": "简单操作",
-      "C": "复杂开发",
-      "D": "伦理了解"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_71",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于智能穿戴AI功能的是（）",
-    "options": {
-      "A": "健康监测",
-      "B": "运动记录",
-      "C": "定位提醒",
-      "D": "普通计时"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_72",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于提示词清晰性的是（）",
-    "options": {
-      "A": "任务明确",
-      "B": "要求具体",
-      "C": "逻辑清晰",
-      "D": "表述模糊"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_73",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI生成内容的是（）",
-    "options": {
-      "A": "文字",
-      "B": "图像",
-      "C": "音频",
-      "D": "手工画"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_74",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI伦理底线的是（）",
-    "options": {
-      "A": "不伤害他人",
-      "B": "不侵权",
-      "C": "不违法",
-      "D": "随意行事"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_75",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于绿色出行方式的是（）",
-    "options": {
-      "A": "步行",
-      "B": "自行车",
-      "C": "公交",
-      "D": "单人私家车"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_76",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI辅助创作的是（）",
-    "options": {
-      "A": "人类脚本+AI生图",
-      "B": "AI初稿+人工修改",
-      "C": "纯手工创作",
-      "D": "AI配音+人工剪辑"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_77",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI生成内容版权归属的是（）",
-    "options": {
-      "A": "人类创作者",
-      "B": "AI厂商",
-      "C": "合规使用者",
-      "D": "无归属"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_78",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI风险防范的是（）",
-    "options": {
-      "A": "辨别虚假信息",
-      "B": "保护隐私",
-      "C": "合规使用",
-      "D": "无视风险"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_79",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI情境题特点的是（）",
-    "options": {
-      "A": "贴近生活",
-      "B": "结合实际",
-      "C": "通俗易懂",
-      "D": "抽象理论"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_80",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI核心特点的是（）",
-    "options": {
-      "A": "模拟智能",
-      "B": "自主学习",
-      "C": "数据驱动",
-      "D": "固定程序"
-    },
-    "points": 2,
-    "answer": [
-      "B",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_81",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI语音输入法的优势是（）",
-    "options": {
-      "A": "方便快捷",
-      "B": "解放双手",
-      "C": "有误差",
-      "D": "手动输入更好"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_82",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI绘画合规内容的是（）",
-    "options": {
-      "A": "风景插画",
-      "B": "暴力内容",
-      "C": "健康插画",
-      "D": "动物插画"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_83",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于人类与AI的关系是（）",
-    "options": {
-      "A": "协作互补",
-      "B": "人类主导",
-      "C": "AI辅助",
-      "D": "完全取代"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_84",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI工具禁止用途的是（）",
-    "options": {
-      "A": "违法犯罪",
-      "B": "辅助学习",
-      "C": "侵权抄袭",
-      "D": "网络欺凌"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "C",
-      "D"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_85",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI健康应用的是（）",
-    "options": {
-      "A": "健康监测",
-      "B": "饮食建议",
-      "C": "运动指导",
-      "D": "熬夜提醒"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_86",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI提示词合法内容的是（）",
-    "options": {
-      "A": "任务要求",
-      "B": "风格要求",
-      "C": "主题要求",
-      "D": "违法指令"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_87",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI分类技术的是（）",
-    "options": {
-      "A": "图像分类",
-      "B": "文字分类",
-      "C": "语音分类",
-      "D": "手工分类"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_88",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI创作过程材料的是（）",
-    "options": {
-      "A": "创作草稿",
-      "B": "协作记录",
-      "C": "素材截图",
-      "D": "空白文件"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_89",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI合规工具特点的是（）",
-    "options": {
-      "A": "安全可靠",
-      "B": "无不良信息",
-      "C": "正规备案",
-      "D": "盗版破解"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_90",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI辅助生活的是（）",
-    "options": {
-      "A": "智能导航",
-      "B": "智能翻译",
-      "C": "智能推荐",
-      "D": "沉迷电子产品"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_91",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI伦理公平性的是（）",
-    "options": {
-      "A": "不歧视",
-      "B": "公平使用",
-      "C": "平等对待",
-      "D": "欺凌弱者"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_92",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI数据使用的是（）",
-    "options": {
-      "A": "合法收集",
-      "B": "安全存储",
-      "C": "合理使用",
-      "D": "非法贩卖"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_93",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI技术应用的是（）",
-    "options": {
-      "A": "自动驾驶",
-      "B": "智能客服",
-      "C": "图像识别",
-      "D": "手工制作"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_94",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI使用规范的是（）",
-    "options": {
-      "A": "文明操作",
-      "B": "合规使用",
-      "C": "诚信创作",
-      "D": "盗版使用"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_95",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI创新应用的是（）",
-    "options": {
-      "A": "公益创作",
-      "B": "科普宣传",
-      "C": "创意设计",
-      "D": "抄袭拼接"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_96",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI思维的是（）",
-    "options": {
-      "A": "数据思维",
-      "B": "算法思维",
-      "C": "创新思维",
-      "D": "盲目思维"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_97",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI保护他人隐私的是（）",
-    "options": {
-      "A": "不泄露同学信息",
-      "B": "不公开他人隐私",
-      "C": "不传播他人照片",
-      "D": "随意泄露"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_98",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI智能医疗应用的是（）",
-    "options": {
-      "A": "健康监测",
-      "B": "诊断辅助",
-      "C": "健康建议",
-      "D": "手工看病"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_99",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于AI创作原创性的是（）",
-    "options": {
-      "A": "自主构思",
-      "B": "人机协作",
-      "C": "不抄袭",
-      "D": "纯AI生成"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C"
-    ]
-  },
-  {
-    "id": "junior_multiple_1775553179187_100",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "multiple",
-    "question": "下列属于人工智能全场景应用的是（）",
-    "options": {
-      "A": "教育",
-      "B": "生活",
-      "C": "交通",
-      "D": "医疗"
-    },
-    "points": 2,
-    "answer": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ]
   },
   {
     "id": "junior_short_answer_1775553179199_1",
@@ -23801,5 +20313,3191 @@
     "question": "30. 作为青少年AI技术使用者，你觉得我们在使用AI工具的时候，应该遵守哪些基本的伦理规范？请说出至少3点。 答案：至少要遵守以下规范： ① 合法合规使用：不用AI工具做违法违规的事，比如不用AI生成、传播谣言，不用AI换脸、语音合成技术侮辱、诈骗他人； ② 诚信使用：不用AI代写作业、考试作弊，不把AI生成的内容冒充自己的原创作品，尊重知识产权； ③ 保护隐私：不把自己和他人的敏感隐私信息（家庭住址、身份证号、手机号）随意输入非正规的AI工具，避免信息泄露； ④ 主动抵制不良内容：如果看到AI生成的暴力、低俗、虚假内容，立刻停止查看，不传播，及时告知家长、老师或者向平台举报。",
     "points": 10,
     "answer": null
+  },
+  {
+    "id": "primary_multiple_1775553178000_1",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "1. 下列属于人工智能应用的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B"
+    ],
+    "options": {
+      "A": "智能语音助手 B. 人脸识别解锁 C. 手工折纸 D. 普通铅笔"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178001_2",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "2. 语音识别技术可以（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C"
+    ],
+    "options": {
+      "A": "声音转文字 B. 手写转文字 C. 语音发消息 D. 手工写字"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178002_3",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "3. 使用AI时，禁止做的事有（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "查学习资料 B. 泄露隐私 C. 抄袭作品 D. 文明提问"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178003_4",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "4. 给AI写提示词，正确的做法是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "说清任务 B. 文明用语 C. 辱骂AI D. 说明风格"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178004_5",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "5. 判断AI内容是否正确，要看（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "符合生活常识 B. 是真实信息 C. 画面好看 D. 遵守法律"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178005_6",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "6. 人工智能运行的基础是（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "魔法 B. 数据 C. 算法 D. 算力"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178006_7",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "7. 生活中的AI应用有（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "智能导航 B. 智能音箱 C. 人脸支付 D. 智能翻译"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178007_8",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "8. 保护个人隐私，要做到（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B"
+    ],
+    "options": {
+      "A": "不透露家庭住址 B. 不泄露身份证号 C. 随意发隐私照 D. 公开父母电话"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178008_9",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "9. 图像识别能识别的是（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "风 B. 小动物 C. 花草 D. 云"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178009_10",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "10. 用AI做的错误行为有（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "学习知识 B. 代写作业 C. 考试作弊 D. 抄袭答案"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178010_11",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "11. 人机协作创作的正确步骤是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "自己想创意 B. AI辅助制作 C. 自己修改完善 D. 完全靠AI生成"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178011_12",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "12. 自然语言处理的应用有（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "AI翻译 B. 手工写字 C. 智能客服 D. AI写短文"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178012_13",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "13. 选择AI工具，要考虑（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "好玩 B. 安全 C. 好操作 D. 适合任务"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178013_14",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "14. AI不能代替人类的地方有（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "有情感 B. 会创新 C. 明是非 D. 简单计算"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178014_15",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "15. 合规使用AI的要求是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "用正规工具 B. 遵守规则 C. 泄露隐私 D. 人机协作"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178015_16",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "16. 属于AI感知技术的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B"
+    ],
+    "options": {
+      "A": "图像识别 B. 语音识别 C. 手工触摸 D. 耳朵听声"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178016_17",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "17. AI生成内容可能存在的问题（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "完全正确 B. 信息错误 C. 内容低俗 D. 侵权"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178017_18",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "18. 符合AI伦理的行为是（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "盗版软件 B. 保护隐私 C. 传播谣言 D. 尊重版权"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178018_19",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "19. 提示词中不能出现（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "清晰要求 B. 辱骂文字 C. 违法指令 D. 模糊表述"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178019_20",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "20. AI能帮我们做的事（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "辅助学习 B. 方便生活 C. 代替所有人 D. 提高效率"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178020_21",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "21. 智能家电的AI功能有（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "自动扫地 B. 手动开关 C. 语音控制 D. 自动调温"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178021_22",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "22. 小学生使用AI的正确态度（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C"
+    ],
+    "options": {
+      "A": "合理使用 B. 完全依赖 C. 遵守规则 D. 拒绝使用"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178022_23",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "23. 正确使用数据的方式（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "随意收集 B. 安全存储 C. 合理使用 D. 依法处理"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178023_24",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "24. AI辅助学习的正确做法（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "讲解难题 B. 代写作业 C. 整理笔记 D. 解答疑问"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178024_25",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "25. AI创作的正确方式（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "自主构思 B. 抄袭他人 C. 合理修改 D. 标注AI辅助"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178025_26",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "26. 机器学习的特点是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "从数据学习 B. 固定不变 C. 不断优化 D. 辅助做事"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178026_27",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "27. 智能推荐的依据是（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "随机推送 B. 用户喜好 C. 手工挑选 D. 使用习惯"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178027_28",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "28. 下列属于个人隐私的是（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "公开知识 B. 身份证号 C. 家庭住址 D. 父母电话"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178028_29",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "29. AI伦理的核心是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "智能向善 B. 公平诚信 C. 违法牟利 D. 保护隐私"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178029_30",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "30. AI工具的操作要求（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "简单规范 B. 安全可靠 C. 复杂难懂 D. 适合小学生"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178030_31",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "31. 属于AI生活服务的是（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "手工扫地 B. 智能垃圾分类 C. 智能门锁 D. 智能快递柜"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178031_32",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "32. 提示词的作用是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "明确任务 B. 引导AI C. 让AI混乱 D. 提升效果"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178032_33",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "33. 违反版权的行为有（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "原创创作 B. 盗用作品 C. 商用侵权 D. 冒充原创"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178033_34",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "34. 人工智能的发展趋势（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "更智能 B. 更安全 C. 更合规 D. 更混乱"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178034_35",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "35. AI助力绿色低碳的方式（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "宣传环保 B. 浪费资源 C. 规划节能 D. 指导垃圾分类"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178035_36",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "36. 小学生应具备的AI素养（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "认识AI B. 会AI思维 C. 依赖AI D. 有责任心"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178036_37",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "37. AI助力健康生活的方式（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "提醒运动 B. 熬夜游戏 C. 规划饮食 D. 监测健康"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178037_38",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "38. AI生成错误的原因（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "数据不足 B. 提示词模糊 C. 算法偏差 D. 永远正确"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178038_39",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "39. 智能安防的AI应用（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "人脸门禁 B. 手工看门 C. 智能监控 D. 异常报警"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178039_40",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "40. 人机协作的优势（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "提升效率 B. 激发创意 C. 完全靠AI D. 优势互补"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178040_41",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "41. AI办公的应用有（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "手工写字 B. AI写作 C. AI翻译 D. AI排版"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178041_42",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "42. 使用AI要避免的行为（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "沉迷游戏 B. 合规学习 C. 泄露隐私 D. 违规操作"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178042_43",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "43. AI的局限性有（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "没有情感 B. 会出错 C. 无所不知 D. 需要人检查"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178043_44",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "44. 文明使用AI要做到（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "用语礼貌 B. 指令合法 C. 需求合理 D. 辱骂AI"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178044_45",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "45. 保护数据安全的做法（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "加密存储 B. 权限管控 C. 随意泄露 D. 不传播隐私"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178045_46",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "46. AI辅助设计的内容（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "创意绘画 B. 抄袭画作 C. 制作海报 D. 撰写文案"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178046_47",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "47. 公平使用AI要做到（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "不歧视他人 B. 平等对待 C. 欺负弱小 D. 公正使用"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178047_48",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "48. 处理AI生成内容的正确方式（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "检查修改 B. 合规使用 C. 侵权传播 D. 合理借鉴"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178048_49",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "49. 智能交通的AI应用（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "智能导航 B. 驾驶辅助 C. 手工骑车 D. 公交调度"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178049_50",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "50. 学习人工智能的意义（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "适应智能时代 B. 提升科技素养 C. 培养创新力 D. 无视科技"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178050_51",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "51. AI在教育中的应用（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "个性化学习 B. 智能批改 C. 替考作弊 D. 科普知识"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178051_52",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "52. 提示词可以设置的风格（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "卡通 B. 低俗 C. 写实 D. 可爱"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178052_53",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "53. 修改AI内容的正确原则（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "修正错误 B. 合规调整 C. 恶意篡改 D. 优化表达"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178053_54",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "54. AI对学习的帮助（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "答疑解惑 B. 整理资料 C. 拓展知识 D. 代写作业"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178054_55",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "55. 保护隐私的技术方法（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "信息脱敏 B. 数据加密 C. 权限管理 D. 随意公开"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178055_56",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "56. 智能服务类AI有（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "智能客服 B. 智能咨询 C. 智能导览 D. 人工服务"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178056_57",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "57. 诚信使用AI要做到（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "不造假 B. 不抄袭 C. 不造谣 D. 欺骗他人"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178057_58",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "58. 智能识别能识别的内容（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "文字 B. 图片 C. 声音 D. 空气"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178058_59",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "59. 小学生使用AI的底线（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "不违法 B. 不违规 C. 不违德 D. 随意使用"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178059_60",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "60. 科技伦理的核心（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "以人为本 B. 智能向善 C. 公平公正 D. 唯利是图"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178060_61",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "61. AI带来的好处（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "科技进步 B. 生活便捷 C. 学习助力 D. 代替人类"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178061_62",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "62. 下列属于AI工具的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B"
+    ],
+    "options": {
+      "A": "AI绘画 B. AI配音 C. 橡皮 D. 尺子"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178062_63",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "63. AI生成错误，正确做法是（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "无视错误 B. 及时改正 C. 反馈开发者 D. 传播错误"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178063_64",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "64. AI的正确用途有（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "违法犯罪 B. 公益宣传 C. 抄袭侵权 D. 科普知识"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178064_65",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "65. 人机协作的核心原则（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "人类主导 B. AI辅助 C. 创意优先 D. 全靠AI"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178065_66",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "66. AI技术的分类（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "感知智能 B. 认知智能 C. 手工智能 D. 执行智能"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178066_67",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "67. AI生成内容要（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "健康向上 B. 暴力低俗 C. 合法合理 D. 积极有益"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178067_68",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "68. 不能使用的AI工具（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "盗版工具 B. 正规工具 C. 破解工具 D. 恶意工具"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178068_69",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "69. AI的社会责任（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "抵制谣言 B. 保护隐私 C. 科技向善 D. 谋取私利"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178069_70",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "70. 小学生学习AI的重点（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "认识AI B. 简单操作 C. 复杂开发 D. 了解伦理"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178070_71",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "71. 智能穿戴的AI功能（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "监测健康 B. 记录运动 C. 定位提醒 D. 普通计时"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178071_72",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "72. 提示词清晰的要求（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "任务明确 B. 要求具体 C. 逻辑清楚 D. 模糊不清"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178072_73",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "73. AI可以生成的内容（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "手工画 B. 文字 C. 图片 D. 声音"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178073_74",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "74. AI伦理的底线（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "不伤害人 B. 不侵权 C. 不违法 D. 随意行事"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178074_75",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "75. AI可助力推广的绿色出行方式是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "步行 B. 骑自行车 C. 坐公交 D. 单人开车"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178075_76",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "76. 属于AI辅助创作的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "人写脚本AI画图 B. AI初稿人修改 C. 纯手工制作 D. AI配音人剪辑"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178076_77",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "77. AI创作的版权归属（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C"
+    ],
+    "options": {
+      "A": "人类创作者 B. 无归属 C. 合规使用者 D. AI厂商"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178077_78",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "78. 防范AI风险的做法（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "辨别真假 B. 保护隐私 C. 合规使用 D. 无视风险"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178078_79",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "79. AI情境题的特点（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "贴近生活 B. 结合实际 C. 通俗易懂 D. 抽象难懂"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178079_80",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "80. 人工智能的核心特点（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "固定程序 B. 模拟智能 C. 自主学习 D. 数据驱动"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178080_81",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "81. 语音输入法的优势（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B"
+    ],
+    "options": {
+      "A": "方便快捷 B. 解放双手 C. 偶尔出错 D. 手写更好"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178081_82",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "82. AI绘画可以画（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "风景 B. 暴力内容 C. 小动物 D. 健康插画"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178082_83",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "83. 人类与AI的关系（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "互相配合 B. 人类主导 C. AI辅助 D. 完全代替"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178083_84",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "84. AI不能用来做（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "违法犯罪 B. 辅助学习 C. 侵权抄袭 D. 网络欺凌"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178084_85",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "85. AI在健康方面的应用（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "监测健康 B. 饮食建议 C. 运动指导 D. 熬夜提醒"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178085_86",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "86. 提示词可以包含的内容（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "任务要求 B. 风格要求 C. 主题要求 D. 违法指令"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178086_87",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "87. AI分类技术有（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "图像分类 B. 文字分类 C. 语音分类 D. 手工分类"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178087_88",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "88. AI创作的过程材料（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "草稿 B. 协作记录 C. 素材截图 D. 空白文件"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178088_89",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "89. 合规AI工具的特点（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "安全可靠 B. 无不良信息 C. 正规备案 D. 盗版破解"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178089_90",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "90. AI辅助生活的应用（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "智能导航 B. 智能翻译 C. 智能推荐 D. 沉迷电子产品"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178090_91",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "91. AI使用的公平性（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "不歧视 B. 公平用 C. 平等对待 D. 欺负弱小"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178091_92",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "92. 正确使用数据的要求（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "合法收集 B. 安全存储 C. 合理使用 D. 非法贩卖"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178092_93",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "93. AI技术的实际应用（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "自动驾驶 B. 智能客服 C. 图像识别 D. 手工制作"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178093_94",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "94. 使用AI的规范（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "文明操作 B. 合规使用 C. 诚信创作 D. 盗版使用"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178094_95",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "95. AI的创新应用（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "公益创作 B. 科普宣传 C. 创意设计 D. 抄袭拼接"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178095_96",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "96. 人工智能思维包括（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "数据思维 B. 算法思维 C. 创新思维 D. 盲目思维"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178096_97",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "97. 保护他人隐私的做法（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "不泄露同学信息 B. 不公开他人隐私 C. 不传播他人照片 D. 随意泄露"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178097_98",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "98. AI在医疗中的应用（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "健康监测 B. 诊断辅助 C. 健康建议 D. 手工看病"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178098_99",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "99. AI创作的原创性要求（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "自主构思 B. 人机协作 C. 不抄袭 D. 纯AI生成"
+    }
+  },
+  {
+    "id": "primary_multiple_1775553178099_100",
+    "grade": "1-6",
+    "group": "primary",
+    "type": "multiple",
+    "question": "100. 人工智能的应用场景有（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "学习 B. 生活 C. 交通 D. 医疗"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178000_1",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "1. 下列属于人工智能核心概念的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B"
+    ],
+    "options": {
+      "A": "模拟人类智能 B. 机器学习 C. 手工制作 D. 传统计算"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178001_2",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "2. 属于AI语音类技术的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C"
+    ],
+    "options": {
+      "A": "语音合成 B. 手工朗读 C. 语音识别 D. 文字抄写"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178002_3",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "3. 下列属于AI伦理禁止行为的是（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "合规学习 B. 侵权抄袭 C. 造谣传谣 D. 网络欺凌"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178003_4",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "4. 使用AI提示词的正确要素有（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "任务清晰 B. 文明用语 C. 违法指令 D. 风格明确"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178004_5",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "5. AI生成内容的核查维度包括（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "事实真实 B. 合法合规 C. 道德正向 D. 盲目相信"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178005_6",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "6. 人工智能的基础支撑要素是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "数据 B. 算法 C. 算力 D. 纸张"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178006_7",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "7. 属于生活中AI应用的组合是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "智能导航 B. 人脸识别 C. 手工折纸 D. 智能音箱"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178007_8",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "8. 保护个人隐私的正确做法是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B"
+    ],
+    "options": {
+      "A": "不填身份证号 B. 不泄露家庭住址 C. 随意发隐私照 D. 公开手机号"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178008_9",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "9. 图像识别技术可识别的内容是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "手写文字 B. 动物植物 C. 人脸信息 D. 空气"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178009_10",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "10. 下列属于AI工具滥用的是（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "辅助学习 B. 代写作业 C. 考试作弊 D. 抄袭创作"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178010_11",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "11. 人机协作创作的正确流程是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "人类构思 B. AI辅助生成 C. 人工修改 D. 纯AI生成"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178011_12",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "12. 自然语言处理的应用场景有（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "智能翻译 B. 手工写字 C. 智能客服 D. AI写作"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178012_13",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "13. 选择AI工具的合理依据是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "任务需求 B. 合规安全 C. 操作难度 D. 价格昂贵"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178013_14",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "14. 人工智能无法替代人类的能力是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "情感共鸣 B. 道德判断 C. 创新思维 D. 简单计算"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178014_15",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "15. 合规使用AI工具的要求是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B"
+    ],
+    "options": {
+      "A": "用正规工具 B. 遵守规则 C. 泄露隐私 D. 人机协作"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178015_16",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "16. 下列属于AI感知技术的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B"
+    ],
+    "options": {
+      "A": "图像识别 B. 语音识别 C. 手工感知 D. 触觉感应"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178016_17",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "17. AI生成内容的风险包括（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "信息错误 B. 低俗内容 C. 合规知识 D. 侵权风险"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178017_18",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "18. 下列行为符合AI伦理的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C"
+    ],
+    "options": {
+      "A": "保护隐私 B. 盗版使用 C. 尊重版权 D. 传播谣言"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178018_19",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "19. 提示词的禁忌内容是（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "C",
+      "D",
+      "⚠",
+      "️",
+      "定",
+      "义",
+      "模",
+      "糊"
+    ],
+    "options": {
+      "A": "清晰需求 B. 辱骂文字 C. 违法指令 D. 模糊表述"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178019_20",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "20. 人工智能的正向作用是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "辅助学习 B. 方便生活 C. 取代人类 D. 提高效率"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178020_21",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "21. 智能家电的AI功能有（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "自动控温 B. 手动开关 C. 智能避障 D. 语音控制"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178021_22",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "22. 初中生使用AI的正确态度是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C"
+    ],
+    "options": {
+      "A": "理性使用 B. 盲目依赖 C. 遵守规则 D. 拒绝使用"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178022_23",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "23. 下列属于数据合规使用的是（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "非法收集 B. 安全存储 C. 合理使用 D. 依法销毁"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178023_24",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "24. AI辅助学习的正确方式是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "答疑解惑 B. 代写作业 C. 整理资料 D. 讲解难题"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178024_25",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "25. 属于AI创作合规行为的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "原创构思 B. 抄袭拼接 C. 合理修改 D. 标注辅助"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178025_26",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "26. 下列属于机器学习特点的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C"
+    ],
+    "options": {
+      "A": "从数据学习 B. 固定程序 C. 持续优化 D. 辅助决策"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178026_27",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "27. 智能推荐的依据是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "用户偏好 B. 随机推送 C. 历史数据 D. 使用习惯"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178027_28",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "28. 下列属于隐私信息的是（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "公开科普 B. 身份证号 C. 家庭住址 D. 父母电话"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178028_29",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "29. 人工智能伦理的核心是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "智能向善 B. 公平诚信 C. 违法牟利 D. 保护隐私"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178029_30",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "30. AI工具操作的基本要求是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "简单规范 B. 安全可靠 C. 复杂难懂 D. 适合学生"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178030_31",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "31. 下列属于AI生活服务应用的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "智能垃圾分类 B. 手工扫地 C. 智能快递柜 D. 智能门锁"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178031_32",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "32. 提示词的作用包括（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "明确需求 B. 引导AI C. 制造混乱 D. 提升质量"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178032_33",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "33. 下列行为违反版权规范的是（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "原创使用 B. 盗用作品 C. 商用侵权 D. 篡改冒充"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178033_34",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "34. 人工智能的发展趋势是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "更智能 B. 更安全 C. 更合规 D. 更混乱"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178034_35",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "35. 属于绿色低碳与AI结合的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "环保宣传 B. 浪费资源 C. 节能规划 D. 垃圾分类指导"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178035_36",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "36. 下列属于AI核心素养的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "AI意识 B. AI思维 C. 盲目依赖 D. 社会责任"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178036_37",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "37. 健康生活与AI结合的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "运动提醒 B. 熬夜游戏 C. 饮食规划 D. 健康监测"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178037_38",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "38. AI生成错误的原因是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "数据不足 B. 提示词模糊 C. 算法偏差 D. 绝对正确"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178038_39",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "39. 下列属于智能安防AI应用的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "人脸识别门禁 B. 手工看门 C. 智能监控 D. 异常报警"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178039_40",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "40. 人机协作的优势是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "提升效率 B. 激发创意 C. 完全依赖AI D. 优势互补"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178040_41",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "41. 下列属于AI办公应用的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "AI写作 B. 手工写字 C. AI排版 D. AI翻译"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178041_42",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "42. 初中生使用AI需避免的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "沉迷娱乐 B. 合规学习 C. 泄露隐私 D. 违规操作"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178042_43",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "43. 下列属于AI技术局限性的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "无情感 B. 会出错 C. 全知全能 D. 需人工核查"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178043_44",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "44. 文明使用AI的要求是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "用语礼貌 B. 指令合法 C. 需求合理 D. 辱骂攻击"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178044_45",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "45. 下列属于数据安全保护的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "加密存储 B. 权限管控 C. 随意泄露 D. 不传播隐私"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178045_46",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "46. 属于AI辅助设计的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "创意绘画 B. 抄袭画作 C. 海报制作 D. 文案设计"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178046_47",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "47. 下列属于公平使用AI的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "不歧视他人 B. 平等对待 C. 欺凌弱者 D. 公正使用"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178047_48",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "48. AI内容处理的正确方式是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "检查修改 B. 合规使用 C. 侵权传播 D. 合理借鉴"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178048_49",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "49. 下列属于智能交通AI应用的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "智能导航 B. 驾驶辅助 C. 手动骑车 D. 公交调度"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178049_50",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "50. 学习AI的意义是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "适应时代 B. 提升素养 C. 培养创新 D. 无视科技"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178050_51",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "51. 下列属于AI教育应用的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "个性化学习 B. 智能批改 C. 替考作弊 D. 知识科普"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178051_52",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "52. 提示词风格指令可选择（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "卡通 B. 写实 C. 低俗 D. 文艺"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178052_53",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "53. 下列属于AI创作修改原则的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "修正错误 B. 合规调整 C. 恶意篡改 D. 优化表达"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178053_54",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "54. 人工智能对学习的帮助是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "答疑解惑 B. 整理资料 C. 拓展视野 D. 代写作业"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178054_55",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "55. 隐私保护的技术手段是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "信息脱敏 B. 数据加密 C. 权限管理 D. 随意公开"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178055_56",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "56. 下列属于智能服务AI应用的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "智能客服 B. 智能咨询 C. 智能导览 D. 人工服务"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178056_57",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "57. 下列属于诚信使用AI的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "不造假 B. 不抄袭 C. 不造谣 D. 不诚信"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178057_58",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "58. 智能识别可识别的类型是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "文字 B. 图像 C. 语音 D. 虚无信息"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178058_59",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "59. 初中生使用AI的边界是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "不违法 B. 不违规 C. 不违德 D. 无边界"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178059_60",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "60. 下列属于科技伦理的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "以人为本 B. 智能向善 C. 公平公正 D. 唯利是图"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178060_61",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "61. 人工智能的积极影响是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "科技进步 B. 生活便捷 C. 学习助力 D. 取代人类"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178061_62",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "62. 下列属于AI工具类型的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "AI绘画 B. AI配音 C. 普通铅笔 D. AI剪辑"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178062_63",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "63. 下列属于AI错误处理方式的是（）",
+    "points": 2,
+    "answer": [
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "无视错误 B. 及时修正 C. 反馈开发者 D. 传播错误"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178063_64",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "64. 下列属于AI合规用途的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "公益宣传 B. 违法生成 C. 科普知识 D. 辅助创作"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178064_65",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "65. 人机协作的核心原则是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "人类主导 B. AI辅助 C. 创意优先 D. 纯AI生成"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178065_66",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "66. 下列属于AI技术分类的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "感知智能 B. 认知智能 C. 手工智能 D. 执行智能"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178066_67",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "67. 下列属于AI内容合规的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "健康正向 B. 暴力低俗 C. 合法合理 D. 积极有益"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178067_68",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "68. 下列属于AI工具选择误区的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "盗版工具 B. 合规工具 C. 破解工具 D. 恶意工具"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178068_69",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "69. 下列属于AI社会责任的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "抵制虚假信息 B. 保护隐私 C. 科技向善 D. 谋取私利"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178069_70",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "70. 下列属于AI学习重点的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "基础认知 B. 简单操作 C. 复杂开发 D. 伦理了解"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178070_71",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "71. 下列属于智能穿戴AI功能的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "健康监测 B. 运动记录 C. 定位提醒 D. 普通计时"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178071_72",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "72. 下列属于提示词清晰性的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "任务明确 B. 要求具体 C. 逻辑清晰 D. 表述模糊"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178072_73",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "73. 下列属于AI生成内容的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "文字 B. 图像 C. 音频 D. 手工画"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178073_74",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "74. 下列属于AI伦理底线的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "不伤害他人 B. 不侵权 C. 不违法 D. 随意行事"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178074_75",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "75. 下列属于绿色出行方式的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "步行 B. 自行车 C. 公交 D. 单人私家车"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178075_76",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "76. 下列属于AI辅助创作的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "options": {
+      "A": "人类脚本+AI生图 B. AI初稿+人工修改 C. 纯手工创作 D. AI配音+人工剪辑"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178076_77",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "77. 下列属于AI生成内容版权归属的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C"
+    ],
+    "options": {
+      "A": "人类创作者 B. AI厂商 C. 合规使用者 D. 无归属"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178077_78",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "78. 下列属于AI风险防范的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "辨别虚假信息 B. 保护隐私 C. 合规使用 D. 无视风险"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178078_79",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "79. 下列属于AI情境题特点的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "贴近生活 B. 结合实际 C. 通俗易懂 D. 抽象理论"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178079_80",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "80. 下列属于AI核心特点的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "模拟智能 B. 自主学习 C. 数据驱动 D. 固定程序"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178080_81",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "81. 下列属于AI语音输入法的优势是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B"
+    ],
+    "options": {
+      "A": "方便快捷 B. 解放双手 C. 有误差 D. 手动输入更好"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178081_82",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "82. 下列属于AI绘画合规内容的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "风景插画 B. 暴力内容 C. 健康插画 D. 动物插画"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178082_83",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "83. 下列属于人类与AI的关系是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "协作互补 B. 人类主导 C. AI辅助 D. 完全取代"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178083_84",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "84. 下列属于AI工具禁止用途的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "违法犯罪 B. 辅助学习 C. 侵权抄袭 D. 网络欺凌"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178084_85",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "85. 下列属于AI健康应用的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "健康监测 B. 饮食建议 C. 运动指导 D. 熬夜提醒"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178085_86",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "86. 下列属于AI提示词合法内容的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "任务要求 B. 风格要求 C. 主题要求 D. 违法指令"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178086_87",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "87. 下列属于AI分类技术的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "图像分类 B. 文字分类 C. 语音分类 D. 手工分类"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178087_88",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "88. 下列属于AI创作过程材料的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "创作草稿 B. 协作记录 C. 素材截图 D. 空白文件"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178088_89",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "89. 下列属于AI合规工具特点的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "安全可靠 B. 无不良信息 C. 正规备案 D. 盗版破解"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178089_90",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "90. 下列属于AI辅助生活的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "智能导航 B. 智能翻译 C. 智能推荐 D. 沉迷电子产品"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178090_91",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "91. 下列属于AI伦理公平性的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "不歧视 B. 公平使用 C. 平等对待 D. 欺凌弱者"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178091_92",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "92. 下列属于AI数据使用的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "合法收集 B. 安全存储 C. 合理使用 D. 非法贩卖"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178092_93",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "93. 下列属于AI技术应用的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "自动驾驶 B. 智能客服 C. 图像识别 D. 手工制作"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178093_94",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "94. 下列属于AI使用规范的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "文明操作 B. 合规使用 C. 诚信创作 D. 盗版使用"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178094_95",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "95. 下列属于AI创新应用的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "公益创作 B. 科普宣传 C. 创意设计 D. 抄袭拼接"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178095_96",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "96. 下列属于AI思维的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "数据思维 B. 算法思维 C. 创新思维 D. 盲目思维"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178096_97",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "97. 下列属于AI保护他人隐私的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C",
+      "。"
+    ],
+    "options": {
+      "A": "不泄露同学信息 B. 不公开他人隐私 C. 不传播他人照片 D. 随意泄露"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178097_98",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "98. 下列属于AI智能医疗应用的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "健康监测 B. 诊断辅助 C. 健康建议 D. 手工看病"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178098_99",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "99. 下列属于AI创作原创性的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "options": {
+      "A": "自主构思 B. 人机协作 C. 不抄袭 D. 纯AI生成"
+    }
+  },
+  {
+    "id": "junior_multiple_1775553178099_100",
+    "grade": "7-9",
+    "group": "junior",
+    "type": "multiple",
+    "question": "100. 下列属于人工智能全场景应用的是（）",
+    "points": 2,
+    "answer": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "options": {
+      "A": "教育 B. 生活 C. 交通 D. 医疗"
+    }
   }
 ]
