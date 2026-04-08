@@ -1,9 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Clock, CheckCircle2, XCircle, Loader2 } from 'lucide-react';
 import { Question } from '../types';
 import questionsData from '../data/questions.json';
 import { scoreWithAI } from '../services/aiScoring';
+
+// 动画配置
+const SLIDE_DURATION = 0.4; // 滑动动画时长
+const FEEDBACK_DURATION = 1000; // 反馈显示时长(ms)
 
 function calculateFillInBlanksScore(userAnswer: string, correctAnswer: string, maxPoints: number): number {
   if (!userAnswer.trim()) return 0;
@@ -172,6 +176,10 @@ export default function Quiz({
   const [aiFeedback, setAiFeedback] = useState('');
   const [aiScore, setAiScore] = useState<number | null>(null);
   
+  // 题目切换动画状态
+  const [slideDirection, setSlideDirection] = useState<'left' | 'right'>('left');
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  
   // 记录每道题的答题情况
   const [questionResults, setQuestionResults] = useState<{
     question: Question;
@@ -329,7 +337,10 @@ export default function Quiz({
       };
       setQuestionResults(prev => [...prev, result]);
       
-      handleNext();
+      // 延迟后自动切题
+      setTimeout(() => {
+        handleNext();
+      }, FEEDBACK_DURATION);
       return;
     }
 
@@ -347,7 +358,9 @@ export default function Quiz({
           isCorrect: false
         };
         setQuestionResults(prev => [...prev, result]);
-        handleNext();
+        setTimeout(() => {
+          handleNext();
+        }, FEEDBACK_DURATION);
         return;
       }
       
@@ -419,7 +432,10 @@ export default function Quiz({
         setIsAiScoring(false);
       }
       
-      handleNext();
+      // AI评分完成后，延迟自动切题
+      setTimeout(() => {
+        handleNext();
+      }, FEEDBACK_DURATION);
       return;
     }
 
@@ -440,28 +456,45 @@ export default function Quiz({
       setFeedback('wrong');
     }
 
-    handleNext();
+    // 延迟后自动切题
+    setTimeout(() => {
+      handleNext();
+    }, FEEDBACK_DURATION);
   };
 
   // 四舍五入到最近的 0.5
   const roundToHalf = (num: number) => Math.round(num * 2) / 2;
   
-  const handleNext = () => {
-    setSelectedAnswers([]);
-    setFeedback(null);
-    setIsAiScoring(false);
-    setAiFeedback('');
-    setAiScore(null);
+  // 平滑切换到下一题
+  const handleNext = useCallback(() => {
+    if (isTransitioning) return; // 防止重复触发
     
-    if (isLast) {
-      // 计算最终得分并传递详细结果
-      const finalScore = roundToHalf(questionResults.reduce((acc, r) => acc + r.earnedPoints, 0));
-      const totalPoints = questions.reduce((acc, q) => acc + q.points, 0);
-      onFinish(finalScore, totalPoints, questionResults);
-    } else {
-      setCurrentIndex(prev => prev + 1);
-    }
-  };
+    setIsTransitioning(true);
+    setSlideDirection('left'); // 向左滑出
+    
+    // 等待滑出动画完成后再切换数据
+    setTimeout(() => {
+      setSelectedAnswers([]);
+      setFeedback(null);
+      setIsAiScoring(false);
+      setAiFeedback('');
+      setAiScore(null);
+      
+      if (isLast) {
+        // 计算最终得分并传递详细结果
+        const finalScore = roundToHalf(questionResults.reduce((acc, r) => acc + r.earnedPoints, 0));
+        const totalPoints = questions.reduce((acc, q) => acc + q.points, 0);
+        onFinish(finalScore, totalPoints, questionResults);
+      } else {
+        setCurrentIndex(prev => prev + 1);
+      }
+      
+      // 重置过渡状态
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 50);
+    }, SLIDE_DURATION * 1000);
+  }, [isTransitioning, isLast, questionResults, questions, onFinish]);
 
   const formatTime = (seconds: number) => {
     const m = Math.floor(seconds / 60);
@@ -565,13 +598,28 @@ export default function Quiz({
       </div>
 
       {/* Question Card */}
-      <AnimatePresence>
-        <motion.div 
+      <AnimatePresence mode="wait">
+        <motion.div
           key={currentQ.id}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.15 }}
+          initial={{ 
+            opacity: 0, 
+            x: slideDirection === 'left' ? 100 : -100,
+            scale: 0.95
+          }}
+          animate={{ 
+            opacity: 1, 
+            x: 0,
+            scale: 1
+          }}
+          exit={{ 
+            opacity: 0, 
+            x: slideDirection === 'left' ? -100 : 100,
+            scale: 0.95
+          }}
+          transition={{ 
+            duration: SLIDE_DURATION,
+            ease: [0.4, 0, 0.2, 1] // 使用缓动函数使动画更自然
+          }}
           className="flex-1 flex flex-col min-h-0 glass-card p-4 md:p-8"
         >
           <div className="flex-1 overflow-y-auto pr-2 pb-2">
@@ -582,42 +630,107 @@ export default function Quiz({
             <div className="space-y-3">
               {currentQ.type === 'boolean' && (
                 <>
-                  {['True', 'False'].map(opt => (
-                    <button
-                      key={opt}
-                      onClick={() => handleOptionClick(opt)}
-                      className={`w-full text-left p-4 rounded-xl border-2 transition-all ${
-                        selectedAnswers.includes(opt)
-                          ? 'bg-blue-500/20 border-blue-400/50 shadow-[0_4px_15px_rgba(59,130,246,0.2)]'
-                          : 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20'
-                      }`}
-                    >
-                      <span className="text-base md:text-lg font-medium text-white">{opt === 'True' ? '正确' : '错误'}</span>
-                    </button>
-                  ))}
+                  {['True', 'False'].map(opt => {
+                    const isSelected = selectedAnswers.includes(opt);
+                    const answerStr = String(currentQ.answer).trim();
+                    const isAnswerTrue = answerStr === 'True' || answerStr === '正确' || answerStr === '√' || answerStr === '对';
+                    const correctOpt = isAnswerTrue ? 'True' : 'False';
+                    const isCorrect = opt === correctOpt;
+                    const showResult = feedback !== null;
+                    
+                    let btnClass = 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20';
+                    
+                    if (showResult) {
+                      if (isCorrect) {
+                        btnClass = 'bg-emerald-500/20 border-emerald-400/50 shadow-[0_4px_15px_rgba(16,185,129,0.2)]';
+                      } else if (isSelected && !isCorrect) {
+                        btnClass = 'bg-red-500/20 border-red-400/50 shadow-[0_4px_15px_rgba(239,68,68,0.2)]';
+                      }
+                    } else if (isSelected) {
+                      btnClass = 'bg-blue-500/20 border-blue-400/50 shadow-[0_4px_15px_rgba(59,130,246,0.2)]';
+                    }
+                    
+                    return (
+                      <motion.button
+                        key={opt}
+                        onClick={() => !showResult && handleOptionClick(opt)}
+                        disabled={showResult}
+                        initial={false}
+                        animate={{
+                          scale: isSelected ? 1.02 : 1
+                        }}
+                        transition={{ duration: 0.2 }}
+                        className={`w-full text-left p-4 rounded-xl border-2 transition-all flex items-center justify-between ${btnClass} ${showResult ? 'cursor-default' : 'cursor-pointer'}`}
+                      >
+                        <span className="text-base md:text-lg font-medium text-white">{opt === 'True' ? '正确' : '错误'}</span>
+                        {showResult && isCorrect && (
+                          <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+                        )}
+                        {showResult && isSelected && !isCorrect && (
+                          <XCircle className="w-5 h-5 text-red-400" />
+                        )}
+                      </motion.button>
+                    );
+                  })}
                 </>
               )}
 
               {(currentQ.type === 'single' || currentQ.type === 'multiple') && currentQ.options && (
                 Object.entries(currentQ.options).map(([key, val]) => {
                   const isSelected = selectedAnswers.includes(key);
+                  const correctAnswers = currentQ.type === 'multiple' 
+                    ? (currentQ.answer as string[]) 
+                    : [currentQ.answer as string];
+                  const isCorrect = correctAnswers.includes(key);
+                  const showResult = feedback !== null; // 提交后显示结果
                   
+                  // 根据状态确定样式
                   let optionStateClass = 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20';
-                  if (isSelected) optionStateClass = 'bg-blue-500/20 border-blue-400/50 shadow-[0_4px_15px_rgba(59,130,246,0.2)]';
+                  let keyClass = 'bg-white/10 text-white/70';
+                  
+                  if (showResult) {
+                    // 提交后显示正确/错误状态
+                    if (isCorrect) {
+                      // 正确答案显示绿色
+                      optionStateClass = 'bg-emerald-500/20 border-emerald-400/50 shadow-[0_4px_15px_rgba(16,185,129,0.2)]';
+                      keyClass = 'bg-emerald-500 text-white';
+                    } else if (isSelected && !isCorrect) {
+                      // 选错的显示红色
+                      optionStateClass = 'bg-red-500/20 border-red-400/50 shadow-[0_4px_15px_rgba(239,68,68,0.2)]';
+                      keyClass = 'bg-red-500 text-white';
+                    }
+                  } else if (isSelected) {
+                    // 未提交时，选中状态
+                    optionStateClass = 'bg-blue-500/20 border-blue-400/50 shadow-[0_4px_15px_rgba(59,130,246,0.2)]';
+                    keyClass = 'bg-blue-500 text-white';
+                  }
 
                   return (
-                    <button
+                    <motion.button
                       key={key}
-                      onClick={() => handleOptionClick(key)}
-                      className={`w-full text-left p-3 md:p-4 rounded-xl border-2 transition-all flex items-center ${optionStateClass}`}
+                      onClick={() => !showResult && handleOptionClick(key)}
+                      disabled={showResult}
+                      initial={false}
+                      animate={{
+                        scale: isSelected ? 1.02 : 1,
+                        backgroundColor: showResult 
+                          ? (isCorrect ? 'rgba(16,185,129,0.2)' : (isSelected && !isCorrect ? 'rgba(239,68,68,0.2)' : 'rgba(255,255,255,0.05)'))
+                          : (isSelected ? 'rgba(59,130,246,0.2)' : 'rgba(255,255,255,0.05)')
+                      }}
+                      transition={{ duration: 0.2 }}
+                      className={`w-full text-left p-3 md:p-4 rounded-xl border-2 transition-all flex items-center ${optionStateClass} ${showResult ? 'cursor-default' : 'cursor-pointer'}`}
                     >
-                      <span className={`w-8 h-8 rounded-lg flex items-center justify-center mr-3 md:mr-4 font-bold shrink-0 ${
-                        isSelected ? 'bg-blue-500 text-white' : 'bg-white/10 text-white/70'
-                      }`}>
+                      <span className={`w-8 h-8 rounded-lg flex items-center justify-center mr-3 md:mr-4 font-bold shrink-0 transition-colors ${keyClass}`}>
                         {key}
                       </span>
                       <span className="text-base md:text-lg font-medium text-white">{val}</span>
-                    </button>
+                      {showResult && isCorrect && (
+                        <CheckCircle2 className="w-5 h-5 ml-auto text-emerald-400" />
+                      )}
+                      {showResult && isSelected && !isCorrect && (
+                        <XCircle className="w-5 h-5 ml-auto text-red-400" />
+                      )}
+                    </motion.button>
                   );
                 })
               )}
