@@ -858,6 +858,16 @@ export default function Quiz({
                       )}
                     </div>
                   )}
+
+                  {/* 填空题正确答案显示 */}
+                  {currentQ.type === 'fill_in_the_blanks' && feedback !== null && (
+                    <div className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-emerald-400 font-bold text-lg">正确答案</span>
+                      </div>
+                      <p className="text-white text-lg leading-relaxed">{currentQ.answer}</p>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
