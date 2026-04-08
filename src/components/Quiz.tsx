@@ -256,31 +256,62 @@ export default function Quiz({
       );
     }
 
+    // 辅助函数：从数组中随机选择指定数量的不重复题目
+    const selectRandomQuestions = (questions: Question[], count: number): Question[] => {
+      const shuffled = [...questions].sort(() => Math.random() - 0.5);
+      return shuffled.slice(0, Math.min(count, shuffled.length));
+    };
+
+    // 辅助函数：根据题目ID去重
+    const removeDuplicates = (questions: Question[]): Question[] => {
+      const seen = new Set<string>();
+      return questions.filter(q => {
+        if (seen.has(q.id)) {
+          return false;
+        }
+        seen.add(q.id);
+        return true;
+      });
+    };
+
     if (track === 'track2') {
-      const singleQs = filtered.filter(q => q.type === 'single').sort(() => Math.random() - 0.5).slice(0, 10);
-      const multiQs = filtered.filter(q => q.type === 'multiple').sort(() => Math.random() - 0.5).slice(0, 10);
-      const boolQs = filtered.filter(q => q.type === 'boolean').sort(() => Math.random() - 0.5).slice(0, 10);
-      const fillQs = filtered.filter(q => q.type === 'fill_in_the_blanks').sort(() => Math.random() - 0.5).slice(0, 10);
-      const shortQs = filtered.filter(q => q.type === 'short_answer').sort(() => Math.random() - 0.5).slice(0, 2);
+      // 赛道2：单选10道、多选10道、判断10道、填空10道、简答2道
+      const singlePool = filtered.filter(q => q.type === 'single');
+      const multiPool = filtered.filter(q => q.type === 'multiple');
+      const boolPool = filtered.filter(q => q.type === 'boolean');
+      const fillPool = filtered.filter(q => q.type === 'fill_in_the_blanks');
+      const shortPool = filtered.filter(q => q.type === 'short_answer');
+
+      const singleQs = selectRandomQuestions(singlePool, 10);
+      const multiQs = selectRandomQuestions(multiPool, 10);
+      const boolQs = selectRandomQuestions(boolPool, 10);
+      const fillQs = selectRandomQuestions(fillPool, 10);
+      const shortQs = selectRandomQuestions(shortPool, 2);
 
       [...singleQs, ...multiQs, ...boolQs, ...fillQs].forEach(q => q.points = 2);
       shortQs.forEach(q => q.points = 10);
 
-      filtered = [...singleQs, ...multiQs, ...boolQs, ...fillQs, ...shortQs];
+      filtered = removeDuplicates([...singleQs, ...multiQs, ...boolQs, ...fillQs, ...shortQs]);
       
       if (filtered.length === 0) {
         filtered = (questionsData as Question[]).slice(0, 10);
       }
     } else {
-      const singleQs = filtered.filter(q => q.type === 'single').sort(() => Math.random() - 0.5).slice(0, 10);
-      const multiQs = filtered.filter(q => q.type === 'multiple').sort(() => Math.random() - 0.5).slice(0, 5);
-      const boolQs = filtered.filter(q => q.type === 'boolean').sort(() => Math.random() - 0.5).slice(0, 5);
-      const shortQs = filtered.filter(q => q.type === 'short_answer').sort(() => Math.random() - 0.5).slice(0, 1);
+      // 赛道1：单选10道、多选5道、判断5道、主观题1道
+      const singlePool = filtered.filter(q => q.type === 'single');
+      const multiPool = filtered.filter(q => q.type === 'multiple');
+      const boolPool = filtered.filter(q => q.type === 'boolean');
+      const shortPool = filtered.filter(q => q.type === 'short_answer');
+
+      const singleQs = selectRandomQuestions(singlePool, 10);
+      const multiQs = selectRandomQuestions(multiPool, 5);
+      const boolQs = selectRandomQuestions(boolPool, 5);
+      const shortQs = selectRandomQuestions(shortPool, 1);
 
       [...singleQs, ...multiQs, ...boolQs].forEach(q => q.points = 2);
       shortQs.forEach(q => q.points = 60);
 
-      filtered = [...singleQs, ...multiQs, ...boolQs, ...shortQs];
+      filtered = removeDuplicates([...singleQs, ...multiQs, ...boolQs, ...shortQs]);
       if (filtered.length === 0) {
         filtered = (questionsData as Question[]).slice(0, 10);
       }
