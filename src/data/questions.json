@@ -6,7 +6,7 @@
     "type": "short_answer",
     "question": "1. 生活中我们发微信时常常会用到“说话自动转文字”的功能，不用手动打字就能快速输入内容，请问这项功能用到了哪项人工智能基础技术？请简单说一说这项技术的作用。",
     "points": 10,
-    "answer": "无答案"
+    "answer": "这项功能用到了语音识别技术。它的作用是将人类的语音信号转换成计算机可以识别的文字信息，除了语音转文字输入之外，还能帮助听障人士识别他人说话内容、给视频自动生成字幕等，大幅提升信息输入的效率。"
   },
   {
     "id": "track1_primary_boolean_1775553178696_1",
@@ -7894,15 +7894,6 @@
     "type": "multiple",
     "question": "解析：生成恶搞内容不符合科技向善的要求。",
     "points": 2,
-    "answer": "无答案"
-  },
-  {
-    "id": "track1_junior_short_answer_1775553178869_1",
-    "grade": "7-9",
-    "group": "track1_junior",
-    "type": "short_answer",
-    "question": "修改后初中组AI大赛练习简答题（共30道）",
-    "points": 10,
     "answer": "无答案"
   },
   {
@@ -26255,14 +26246,5 @@
     "question": "简述AI辅助创作（写作、绘画、配音）的正确流程。",
     "points": 10,
     "answer": "①人类构思创意、主题、框架；②写规范提示词，让AI生成初稿；③人工审核、修正、完善；④不直接使用AI一次性生成内容。"
-  },
-  {
-    "id": "junior_short_answer_1775553179199_31",
-    "grade": "7-9",
-    "group": "junior",
-    "type": "short_answer",
-    "question": "|（注：文档部分内容可能由 AI 生成)",
-    "points": 10,
-    "answer": "无答案"
   }
 ]
