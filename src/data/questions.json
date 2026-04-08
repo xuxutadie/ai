@@ -31,7 +31,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "4. 我们用普通计算器做数学计算题，这个过程用到了人工智能技术。",
+    "question": "4. 在网上使用AI工具的时候，要保护好自己的账号密码，不要随便告诉别人。",
     "points": 2,
     "answer": "错"
   },
@@ -40,7 +40,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "5. 手机上的人脸解锁功能用到了人工智能技术。",
+    "question": "5. 我们和AI聊天机器人说话的时候，不能随便告诉它自己家的地址、父母的电话等隐私信息。",
     "points": 2,
     "answer": "对"
   },
@@ -49,7 +49,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "6. 超市的普通自动感应门，人靠近就会打开，属于人工智能应用。",
+    "question": "6. 人工智能技术发展的目的是帮助人类，让生活变得更好，而不是伤害人类。",
     "points": 2,
     "answer": "错"
   },
@@ -67,7 +67,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "8. 普通的机械手表能够自动走时，属于人工智能产品。",
+    "question": "8. 如果有人用AI技术做违法的事，会受到法律的惩罚。",
     "points": 2,
     "answer": "错"
   },
@@ -76,7 +76,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "9. 上网课时老师用的人脸识别自动点名签到系统，用到了人工智能技术。",
+    "question": "9. 为了方便，我们可以把自己的人脸信息随便录入到不知名的小网站、小应用里。",
     "points": 2,
     "answer": "对"
   },
@@ -85,7 +85,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "10. 我们用的普通有线鼠标，点击就能操作电脑，属于人工智能硬件。",
+    "question": "10. 我们在使用AI工具的时候，要遵守相关的规则和道德，不能做伤害别人的事。",
     "points": 2,
     "answer": "错"
   },
@@ -103,7 +103,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "12. 家里的普通遥控电视，用遥控器换台，这个过程用到了人工智能。",
+    "question": "12. 逻辑判断就是“如果满足条件，就做什么事”的思考过程，我们生活中经常会用到。",
     "points": 2,
     "answer": "错"
   },
@@ -112,7 +112,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "13. 翻译软件能实时把英文翻译成中文，属于人工智能的应用。",
+    "question": "13. 计算机解决问题的速度永远比人快，所以不需要考虑解决方法的效率。",
     "points": 2,
     "answer": "对"
   },
@@ -130,7 +130,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "15. 我们平时玩的普通积木玩具，拼搭后可以变成小车，属于人工智能产品。",
+    "question": "15. 我们在玩闯关游戏的时候，一步步总结经验通关，和AI学习知识的思路有相似之处。",
     "points": 2,
     "answer": "错"
   },
@@ -166,7 +166,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "19. 公园里的普通音乐喷泉，到点就会喷水放音乐，属于人工智能应用。",
+    "question": "19. 我们做数学题的时候，先审题、再分析、再计算、最后检查，这个步骤就是解决数学题的合理流程。",
     "points": 2,
     "answer": "错"
   },
@@ -175,7 +175,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "20. 智能客服机器人能自动回答我们提出的常见问题，是人工智能的应用。",
+    "question": "20. AI的“学习”过程和人类小朋友学习的过程完全一样，不需要看任何资料就可以学会新知识。",
     "points": 2,
     "answer": "对"
   },
@@ -184,7 +184,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "21. 人工智能可以完全代替人类做所有的工作。",
+    "question": "21. 在Scratch中，背景是固定不能更换的，只能用系统默认的白色背景。",
     "points": 2,
     "answer": "错"
   },
@@ -193,7 +193,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "22. 现在的人工智能已经拥有和人类一样的自主意识，可以自己决定做任何事。",
+    "question": "22. 我们在测试AI图像识别工具的时候，把物体放在光线充足的地方，识别的准确率会更高。",
     "points": 2,
     "answer": "错"
   },
@@ -211,7 +211,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "24. 普通的台式电风扇，按按钮就能调节风速，属于人工智能产品。",
+    "question": "24. 使用AI客服的时候，把问题描述得越清楚，越容易得到想要的答案。",
     "points": 2,
     "answer": "错"
   },
@@ -229,7 +229,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "26. 学校里上下课的电铃，到时间就自动响，属于人工智能应用。",
+    "question": "26. 有些AI工具可以把图片里的文字转换成可以编辑的电子文字，方便我们修改内容。",
     "points": 2,
     "answer": "错"
   },
@@ -238,7 +238,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "27. 自动驾驶汽车能自动识别路况、躲避障碍，是人工智能技术的应用。",
+    "question": "27. 能把图片里的文字转换成可编辑电子文字的AI工具，只能识别打印出来的字，不能识别我们手写的字。",
     "points": 2,
     "answer": "对"
   },
@@ -247,7 +247,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "28. 我们用的普通U盘，能储存文件，属于人工智能硬件产品。",
+    "question": "28. 语音识别技术只能识别成年人的声音，不能识别小朋友的声音。",
     "points": 2,
     "answer": "错"
   },
@@ -274,7 +274,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "31. 我们用普通扫码枪扫商品条码结账，这个过程用到了人工智能技术。",
+    "question": "31. 只要给计算机看一张猫的图片，它就永远能认出所有的猫，不需要学习大量的猫的图片。",
     "points": 2,
     "answer": "错"
   },
@@ -283,7 +283,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "32. 智能音箱能听懂我们说的话并执行指令，是人工智能的应用。",
+    "question": "32. 我们用智能手表发语音消息的时候，说的话会自动转换成文字，用到了人工智能技术。",
     "points": 2,
     "answer": "对"
   },
@@ -292,7 +292,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "33. 普通的放大镜可以把字放大，属于人工智能工具。",
+    "question": "33. AI美颜技术是通过识别脸部的五官位置，再进行美化调整的。",
     "points": 2,
     "answer": "错"
   },
@@ -391,7 +391,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "5. AI可以听懂我们说的话的意思，还能和我们进行简单对话，这是人工智能的能力之一。",
+    "question": "5. 我们和AI聊天机器人说话的时候，不能随便告诉它自己家的地址、父母的电话等隐私信息。",
     "points": 2,
     "answer": "对"
   },
@@ -400,7 +400,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "6. 现在的语音识别技术可以100%准确识别所有的语音内容，不会出错。",
+    "question": "6. 人工智能技术发展的目的是帮助人类，让生活变得更好，而不是伤害人类。",
     "points": 2,
     "answer": "错"
   },
@@ -427,7 +427,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "9. 人工智能的图像识别技术可以应用在安防领域，识别可疑人员。",
+    "question": "9. 为了方便，我们可以把自己的人脸信息随便录入到不知名的小网站、小应用里。",
     "points": 2,
     "answer": "对"
   },
@@ -436,7 +436,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "10. AI可以把文字内容变成类似真人的声音读出来，这属于人工智能的能力。",
+    "question": "10. 我们在使用AI工具的时候，要遵守相关的规则和道德，不能做伤害别人的事。",
     "points": 2,
     "answer": "对"
   },
@@ -454,7 +454,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "12. AI翻译工具能实现中文和英文等不同语言的互相转换，属于人工智能的应用。",
+    "question": "12. 逻辑判断就是“如果满足条件，就做什么事”的思考过程，我们生活中经常会用到。",
     "points": 2,
     "answer": "对"
   },
@@ -463,7 +463,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "13. 图像分类技术只能识别彩色图片，不能识别黑白图片。",
+    "question": "13. 计算机解决问题的速度永远比人快，所以不需要考虑解决方法的效率。",
     "points": 2,
     "answer": "错"
   },
@@ -481,7 +481,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "15. 语音识别技术只能识别普通话，不能识别其他方言。",
+    "question": "15. 我们在玩闯关游戏的时候，一步步总结经验通关，和AI学习知识的思路有相似之处。",
     "points": 2,
     "answer": "错"
   },
@@ -490,7 +490,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "16. 人脸识别技术属于人工智能图像识别的一个分支。",
+    "question": "16. 解决问题的时候，不需要检查步骤是否正确，直接做就可以了。",
     "points": 2,
     "answer": "对"
   },
@@ -499,7 +499,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "17. AI翻译工具只能翻译中文，不能翻译英文等其他语言。",
+    "question": "17. 计算思维就是教我们怎么用清晰的逻辑来思考和解决问题。",
     "points": 2,
     "answer": "错"
   },
@@ -508,7 +508,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "18. AI换脸技术用到了人工智能的图像处理相关技术。",
+    "question": "18. 只要指令正确，不管顺序怎么排，计算机都能得到正确的结果。",
     "points": 2,
     "answer": "对"
   },
@@ -517,7 +517,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "19. 用AI技术识别手写的汉字，属于图像识别的应用场景。",
+    "question": "19. 我们做数学题的时候，先审题、再分析、再计算、最后检查，这个步骤就是解决数学题的合理流程。",
     "points": 2,
     "answer": "对"
   },
@@ -526,7 +526,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "20. 语音识别技术不需要网络，所有设备都能离线100%准确识别。",
+    "question": "20. AI的“学习”过程和人类小朋友学习的过程完全一样，不需要看任何资料就可以学会新知识。",
     "points": 2,
     "answer": "错"
   },
@@ -535,7 +535,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "21. 人工智能的自动驾驶技术，需要用到图像识别来识别交通信号灯、行人等。",
+    "question": "21. 在Scratch中，背景是固定不能更换的，只能用系统默认的白色背景。",
     "points": 2,
     "answer": "对"
   },
@@ -544,7 +544,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "22. 计算机可以通过图像识别技术自动识别垃圾分类，帮助大家正确扔垃圾。",
+    "question": "22. 我们在测试AI图像识别工具的时候，把物体放在光线充足的地方，识别的准确率会更高。",
     "points": 2,
     "answer": "对"
   },
@@ -553,7 +553,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "23. AI生成的语音和真人说话完全没有区别，没人能分辨出来。",
+    "question": "23. 所有的AI工具使用的时候都必须付费，没有免费的AI工具可以用。",
     "points": 2,
     "answer": "错"
   },
@@ -697,7 +697,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "5. 使用人脸识别解锁手机的时候，正脸对准摄像头比侧脸的识别成功率更高。",
+    "question": "5. 我们和AI聊天机器人说话的时候，不能随便告诉它自己家的地址、父母的电话等隐私信息。",
     "points": 2,
     "answer": "对"
   },
@@ -706,7 +706,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "6. 用Scratch编程的时候，积木块的顺序不会影响最终的运行效果。",
+    "question": "6. 人工智能技术发展的目的是帮助人类，让生活变得更好，而不是伤害人类。",
     "points": 2,
     "answer": "错"
   },
@@ -742,7 +742,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "10. 在Scratch中，角色只能有一个造型，不能更换多个造型。",
+    "question": "10. 我们在使用AI工具的时候，要遵守相关的规则和道德，不能做伤害别人的事。",
     "points": 2,
     "answer": "错"
   },
@@ -760,7 +760,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "12. 我们用AI工具生成的内容，可以随意冒充自己的原创作品提交给老师。",
+    "question": "12. 逻辑判断就是“如果满足条件，就做什么事”的思考过程，我们生活中经常会用到。",
     "points": 2,
     "answer": "错"
   },
@@ -787,7 +787,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "15. 用语音转文字工具的时候，说话的语速越快，识别的准确率越高。",
+    "question": "15. 我们在玩闯关游戏的时候，一步步总结经验通关，和AI学习知识的思路有相似之处。",
     "points": 2,
     "answer": "错"
   },
@@ -823,7 +823,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "19. 我们可以使用AI语音助手设置闹钟、查询天气，这些操作都是可行的。",
+    "question": "19. 我们做数学题的时候，先审题、再分析、再计算、最后检查，这个步骤就是解决数学题的合理流程。",
     "points": 2,
     "answer": "对"
   },
@@ -904,7 +904,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "4. 做一件事的时候，步骤的顺序不会影响最终的结果。",
+    "question": "4. 在网上使用AI工具的时候，要保护好自己的账号密码，不要随便告诉别人。",
     "points": 2,
     "answer": "错"
   },
@@ -913,7 +913,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "5. 我们规划周末一天的行程，把要做的事按时间排序，这个过程用到了逻辑排序的思维。",
+    "question": "5. 我们和AI聊天机器人说话的时候，不能随便告诉它自己家的地址、父母的电话等隐私信息。",
     "points": 2,
     "answer": "对"
   },
@@ -949,7 +949,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "boolean",
-    "question": "9. 要让AI识别出什么是苹果，只需要给它看1张苹果的图片就足够了。",
+    "question": "9. 为了方便，我们可以把自己的人脸信息随便录入到不知名的小网站、小应用里。",
     "points": 2,
     "answer": "错"
   },
@@ -2758,7 +2758,7 @@
     "grade": "1-6",
     "group": "track1_primary",
     "type": "single",
-    "question": "113. 你要做一个“保护动物”的主题演讲，需要用AI帮忙找资料，以下步骤正确的顺序是？",
+    "question": "113. 你要做一个“保护动物”的主题演讲，需要用AI帮忙找资料，以下步骤正确的顺序是？ ① 让AI帮忙整理资料，分成不同的部分 ② 确定演讲需要包含的内容方向，比如珍稀动物有哪些、怎么保护动物 ③ 让AI帮你找对应方向的资料 ④ 检查资料是不是正确，有没有不合适的内容",
     "options": {
       "A": "②③①④",
       "B": "①②③④",
