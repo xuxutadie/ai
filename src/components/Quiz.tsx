@@ -203,8 +203,11 @@ export default function Quiz({
     return questions.map(q => {
       // 只对单选题和多选题打乱选项
       if ((q.type === 'single' || q.type === 'multiple') && q.options) {
+        // 深拷贝题目，避免修改原始数据
+        const questionCopy = JSON.parse(JSON.stringify(q));
+        
         // 创建选项数组并记录原始key
-        const optionEntries = Object.entries(q.options);
+        const optionEntries = Object.entries(questionCopy.options);
         // 随机打乱
         const shuffled = [...optionEntries].sort(() => Math.random() - 0.5);
         
@@ -214,26 +217,27 @@ export default function Quiz({
         
         shuffled.forEach(([oldKey, value], index) => {
           const newKey = String.fromCharCode(65 + index); // A, B, C, D...
-          newOptions[newKey] = value;
-          keyMapping[oldKey] = newKey;
+          newOptions[newKey] = value as string;
+          keyMapping[oldKey as string] = newKey;
         });
         
         // 更新答案映射
         let newAnswer: string | string[];
-        if (q.type === 'single') {
-          newAnswer = keyMapping[q.answer as string];
+        if (questionCopy.type === 'single') {
+          newAnswer = keyMapping[questionCopy.answer as string];
         } else {
           // 多选题
-          newAnswer = (q.answer as string[]).map(oldKey => keyMapping[oldKey]);
+          newAnswer = (questionCopy.answer as string[]).map(oldKey => keyMapping[oldKey]);
         }
         
         return {
-          ...q,
+          ...questionCopy,
           options: newOptions,
           answer: newAnswer
         };
       }
-      return q;
+      // 对于非选择题，直接深拷贝返回
+      return JSON.parse(JSON.stringify(q));
     });
   };
 
