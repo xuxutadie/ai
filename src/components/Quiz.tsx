@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Clock, CheckCircle2, XCircle, Loader2 } from 'lucide-react';
 import { Question } from '../types';
@@ -188,6 +188,12 @@ export default function Quiz({
     maxPoints: number;
     isCorrect: boolean;
   }[]>([]);
+  
+  // 使用ref来同步记录结果，避免竞态条件
+  const questionResultsRef = useRef(questionResults);
+  useEffect(() => {
+    questionResultsRef.current = questionResults;
+  }, [questionResults]);
 
   useEffect(() => {
     let filtered = (questionsData as Question[]);
@@ -481,10 +487,10 @@ export default function Quiz({
       setAiScore(null);
       
       if (isLast) {
-        // 计算最终得分并传递详细结果
-        const finalScore = roundToHalf(questionResults.reduce((acc, r) => acc + r.earnedPoints, 0));
+        // 计算最终得分并传递详细结果 - 使用ref获取最新数据
+        const finalScore = roundToHalf(questionResultsRef.current.reduce((acc, r) => acc + r.earnedPoints, 0));
         const totalPoints = questions.reduce((acc, q) => acc + q.points, 0);
-        onFinish(finalScore, totalPoints, questionResults);
+        onFinish(finalScore, totalPoints, questionResultsRef.current);
       } else {
         setCurrentIndex(prev => prev + 1);
       }
@@ -494,7 +500,7 @@ export default function Quiz({
         setIsTransitioning(false);
       }, 50);
     }, SLIDE_DURATION * 1000);
-  }, [isTransitioning, isLast, questionResults, questions, onFinish]);
+  }, [isTransitioning, isLast, questions, onFinish]);
 
   const formatTime = (seconds: number) => {
     const m = Math.floor(seconds / 60);
