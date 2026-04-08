@@ -12,7 +12,8 @@ interface ScoringResult {
 // 内置的豆包API密钥
 const DOUBAO_API_KEY = '514aeade-bdda-41ee-9d41-fa096a3af597';
 const DOUBAO_API_URL = 'https://ark.cn-beijing.volces.com/api/v3/chat/completions';
-const DOUBAO_MODEL = 'doubao-pro-32k'; // 或 doubao-lite-32k
+// 使用ep-前缀的推理接入点ID格式
+const DOUBAO_MODEL = 'ep-20260408101534-vcd4v'; // 用户的推理接入点ID
 
 /**
  * 使用豆包大模型进行评分
@@ -160,15 +161,20 @@ export async function scoreWithAI(
   studentAnswer: string,
   maxPoints: number
 ): Promise<{ score: number; feedback: string }> {
+  console.log('scoreWithAI called:', { question: question.substring(0, 50), referenceAnswer: referenceAnswer?.substring(0, 50), studentAnswer: studentAnswer.substring(0, 50), maxPoints });
+  
   // 空答案直接0分
   if (!studentAnswer || !studentAnswer.trim()) {
+    console.log('空答案，返回0分');
     return { score: 0, feedback: '未作答' };
   }
 
   const result = await scoreWithDoubao(question, referenceAnswer, studentAnswer);
+  console.log('scoreWithDoubao result:', result);
 
   // 将10分制转换为实际分数
   const actualScore = (result.score / 10) * maxPoints;
+  console.log('转换后分数:', actualScore);
 
   return {
     score: Math.round(actualScore * 10) / 10, // 保留1位小数

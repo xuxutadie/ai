@@ -414,6 +414,13 @@ export default function Quiz({
       setIsAiScoring(true);
       setAiFeedback('AI正在评分，请稍候...');
       
+      console.log('开始AI评分:', {
+        question: currentQ.question,
+        referenceAnswer: currentQ.answer,
+        userAnswer: userAnswer,
+        maxPoints: currentQ.points
+      });
+      
       try {
         const aiResult = await scoreWithAI(
           currentQ.question,
@@ -421,6 +428,8 @@ export default function Quiz({
           userAnswer,
           currentQ.points
         );
+        
+        console.log('AI评分结果:', aiResult);
         
         earnedPoints = aiResult.score;
         isCorrect = earnedPoints >= currentQ.points * 0.6;
