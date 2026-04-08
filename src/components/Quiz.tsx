@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Clock, CheckCircle2, XCircle } from 'lucide-react';
+import { Clock, CheckCircle2, XCircle, Loader2 } from 'lucide-react';
 import { Question } from '../types';
 import questionsData from '../data/questions.json';
+import { scoreWithAI } from '../services/aiScoring';
 
 function calculateFillInBlanksScore(userAnswer: string, correctAnswer: string, maxPoints: number): number {
   if (!userAnswer.trim()) return 0;
@@ -166,6 +167,11 @@ export default function Quiz({
   const [timeLeft, setTimeLeft] = useState(3600); // 60 minutes
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | 'partial' | null>(null);
   
+  // AI评分相关状态
+  const [isAiScoring, setIsAiScoring] = useState(false);
+  const [aiFeedback, setAiFeedback] = useState('');
+  const [aiScore, setAiScore] = useState<number | null>(null);
+  
   // 记录每道题的答题情况
   const [questionResults, setQuestionResults] = useState<{
     question: Question;
@@ -267,7 +273,7 @@ export default function Quiz({
     }
   };
 
-  const handleConfirm = () => {
+  const handleConfirm = async () => {
     if (selectedAnswers.length === 0 && currentQ.type !== 'short_answer' && currentQ.type !== 'fill_in_the_blanks') return;
 
     let isCorrect = false;
@@ -329,29 +335,89 @@ export default function Quiz({
 
     if (currentQ.type === 'short_answer') {
       const userAnswer = selectedAnswers[0] || '';
-      const correctAnswer = currentQ.answer as string;
-      const points = calculateShortAnswerScore(userAnswer, correctAnswer, currentQ.points);
-      earnedPoints = points;
-      isCorrect = points >= currentQ.points * 0.6;
       
-      // 设置反馈
-      if (earnedPoints >= currentQ.points * 0.6) {
-        setFeedback('correct');
-      } else if (earnedPoints >= currentQ.points * 0.3) {
-        setFeedback('partial');
-      } else {
+      // 如果没有输入答案，直接0分
+      if (!userAnswer.trim()) {
         setFeedback('wrong');
+        const result = {
+          question: currentQ,
+          userAnswer: [...selectedAnswers],
+          earnedPoints: 0,
+          maxPoints: currentQ.points,
+          isCorrect: false
+        };
+        setQuestionResults(prev => [...prev, result]);
+        handleNext();
+        return;
       }
       
-      // 记录结果
-      const result = {
-        question: currentQ,
-        userAnswer: [...selectedAnswers],
-        earnedPoints: points,
-        maxPoints: currentQ.points,
-        isCorrect: isCorrect
-      };
-      setQuestionResults(prev => [...prev, result]);
+      // 使用AI评分
+      setIsAiScoring(true);
+      setAiFeedback('AI正在评分，请稍候...');
+      
+      try {
+        const aiResult = await scoreWithAI(
+          currentQ.question,
+          currentQ.answer as string,
+          userAnswer,
+          currentQ.points
+        );
+        
+        earnedPoints = aiResult.score;
+        isCorrect = earnedPoints >= currentQ.points * 0.6;
+        
+        setAiScore(aiResult.score);
+        setAiFeedback(aiResult.feedback);
+        
+        // 设置反馈状态
+        if (earnedPoints >= currentQ.points * 0.6) {
+          setFeedback('correct');
+        } else if (earnedPoints >= currentQ.points * 0.3) {
+          setFeedback('partial');
+        } else {
+          setFeedback('wrong');
+        }
+        
+        // 记录结果
+        const result = {
+          question: currentQ,
+          userAnswer: [...selectedAnswers],
+          earnedPoints: aiResult.score,
+          maxPoints: currentQ.points,
+          isCorrect: isCorrect
+        };
+        setQuestionResults(prev => [...prev, result]);
+        
+      } catch (error) {
+        console.error('AI评分失败:', error);
+        // AI评分失败，使用本地评分作为备用
+        const correctAnswer = currentQ.answer as string;
+        const points = calculateShortAnswerScore(userAnswer, correctAnswer, currentQ.points);
+        earnedPoints = points;
+        isCorrect = points >= currentQ.points * 0.6;
+        
+        setAiScore(points);
+        setAiFeedback('AI评分服务暂时不可用，已使用本地评分');
+        
+        if (earnedPoints >= currentQ.points * 0.6) {
+          setFeedback('correct');
+        } else if (earnedPoints >= currentQ.points * 0.3) {
+          setFeedback('partial');
+        } else {
+          setFeedback('wrong');
+        }
+        
+        const result = {
+          question: currentQ,
+          userAnswer: [...selectedAnswers],
+          earnedPoints: points,
+          maxPoints: currentQ.points,
+          isCorrect: isCorrect
+        };
+        setQuestionResults(prev => [...prev, result]);
+      } finally {
+        setIsAiScoring(false);
+      }
       
       handleNext();
       return;
@@ -383,6 +449,9 @@ export default function Quiz({
   const handleNext = () => {
     setSelectedAnswers([]);
     setFeedback(null);
+    setIsAiScoring(false);
+    setAiFeedback('');
+    setAiScore(null);
     
     if (isLast) {
       // 计算最终得分并传递详细结果
@@ -554,12 +623,27 @@ export default function Quiz({
               )}
               
               {(currentQ.type === 'short_answer' || currentQ.type === 'fill_in_the_blanks') && (
-                <div className="bg-white/5 rounded-xl p-2 border-2 border-white/10 focus-within:border-blue-400/50 focus-within:bg-white/10 transition-colors shadow-sm">
-                  <textarea 
-                    className="w-full h-24 md:h-32 bg-transparent p-3 md:p-4 text-white outline-none resize-none placeholder:text-white/30"
-                    placeholder={currentQ.type === 'fill_in_the_blanks' ? "请输入填空答案（多个空用逗号分隔）..." : "请输入你的答案..."}
-                    onChange={(e) => setSelectedAnswers([e.target.value])}
-                  />
+                <div className="space-y-3">
+                  <div className="bg-white/5 rounded-xl p-2 border-2 border-white/10 focus-within:border-blue-400/50 focus-within:bg-white/10 transition-colors shadow-sm">
+                    <textarea
+                      className="w-full h-24 md:h-32 bg-transparent p-3 md:p-4 text-white outline-none resize-none placeholder:text-white/30"
+                      placeholder={currentQ.type === 'fill_in_the_blanks' ? "请输入填空答案（多个空用逗号分隔）..." : "请输入你的答案..."}
+                      onChange={(e) => setSelectedAnswers([e.target.value])}
+                    />
+                  </div>
+                  
+                  {/* AI评分结果显示 */}
+                  {currentQ.type === 'short_answer' && aiScore !== null && (
+                    <div className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-blue-400 font-bold text-lg">AI评分结果</span>
+                        <span className="text-white font-bold text-xl">{aiScore.toFixed(1)}/{currentQ.points}分</span>
+                      </div>
+                      {aiFeedback && (
+                        <p className="text-gray-300 text-sm leading-relaxed">{aiFeedback}</p>
+                      )}
+                    </div>
+                  )}
                 </div>
               )}
             </div>
@@ -568,20 +652,28 @@ export default function Quiz({
           {/* Bottom Action Area */}
           <div className="mt-4 pt-4 border-t border-white/10 flex justify-between items-center relative shrink-0">
             <div className="absolute left-1/2 -translate-x-1/2 top-0 mt-4 flex items-center justify-center">
-              {feedback === 'correct' && (
-                <div className="text-emerald-400 flex items-center bg-emerald-500/20 px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-base md:text-xl shadow-lg border border-emerald-500/30 backdrop-blur-md">
-                  <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 mr-2" /> 回答正确
+              {isAiScoring ? (
+                <div className="text-blue-400 flex items-center bg-blue-500/20 px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-base md:text-xl shadow-lg border border-blue-500/30 backdrop-blur-md">
+                  <Loader2 className="w-5 h-5 md:w-6 md:h-6 mr-2 animate-spin" /> AI评分中...
                 </div>
-              )}
-              {feedback === 'wrong' && (
-                <div className="text-red-400 flex items-center bg-red-500/20 px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-base md:text-xl shadow-lg border border-red-500/30 backdrop-blur-md">
-                  <XCircle className="w-5 h-5 md:w-6 md:h-6 mr-2" /> 回答错误
-                </div>
-              )}
-              {feedback === 'partial' && (
-                <div className="text-amber-400 flex items-center bg-amber-500/20 px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-base md:text-xl shadow-lg border border-amber-500/30 backdrop-blur-md">
-                  <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 mr-2" /> 部分正确
-                </div>
+              ) : (
+                <>
+                  {feedback === 'correct' && (
+                    <div className="text-emerald-400 flex items-center bg-emerald-500/20 px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-base md:text-xl shadow-lg border border-emerald-500/30 backdrop-blur-md">
+                      <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 mr-2" /> 回答正确
+                    </div>
+                  )}
+                  {feedback === 'wrong' && (
+                    <div className="text-red-400 flex items-center bg-red-500/20 px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-base md:text-xl shadow-lg border border-red-500/30 backdrop-blur-md">
+                      <XCircle className="w-5 h-5 md:w-6 md:h-6 mr-2" /> 回答错误
+                    </div>
+                  )}
+                  {feedback === 'partial' && (
+                    <div className="text-amber-400 flex items-center bg-amber-500/20 px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-base md:text-xl shadow-lg border border-amber-500/30 backdrop-blur-md">
+                      <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 mr-2" /> 部分正确
+                    </div>
+                  )}
+                </>
               )}
             </div>
 
