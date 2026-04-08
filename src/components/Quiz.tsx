@@ -7,7 +7,7 @@ import { scoreWithAI } from '../services/aiScoring';
 
 // 动画配置
 const SLIDE_DURATION = 0.4; // 滑动动画时长
-const FEEDBACK_DURATION = 1000; // 反馈显示时长(ms)
+const FEEDBACK_DURATION = 500; // 反馈显示时长(ms)
 
 function calculateFillInBlanksScore(userAnswer: string, correctAnswer: string, maxPoints: number): number {
   if (!userAnswer.trim()) return 0;
