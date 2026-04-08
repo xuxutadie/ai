@@ -234,7 +234,7 @@ export default function Quiz({
       const boolQs = filtered.filter(q => q.type === 'boolean').sort(() => Math.random() - 0.5).slice(0, 5);
       const shortQs = filtered.filter(q => q.type === 'short_answer').sort(() => Math.random() - 0.5).slice(0, 1);
 
-      [...singleQs, ...multiQs, ...boolQs].forEach(q => q.points = 4);
+      [...singleQs, ...multiQs, ...boolQs].forEach(q => q.points = 2);
       shortQs.forEach(q => q.points = 60);
 
       filtered = [...singleQs, ...multiQs, ...boolQs, ...shortQs];
@@ -501,11 +501,14 @@ export default function Quiz({
   };
 
   const getTypeLabel = (type: string) => {
+    // 赛道一的主观题显示为"主观题"，赛道二显示为"简答题"
+    if (type === 'short_answer') {
+      return track === 'track1' ? '主观题' : '简答题';
+    }
     const map: Record<string, string> = {
       single: '单选题',
       multiple: '多选题',
       boolean: '判断题',
-      short_answer: '简答题',
       fill_in_the_blanks: '填空题'
     };
     return map[type] || '未知题型';
@@ -534,11 +537,11 @@ export default function Quiz({
       const total = perQuestion * count;
       return { perQuestion, count, total };
     } else {
-      // 赛道一：10单选(4分) + 5多选(4分) + 5判断(4分) + 1简答(60分) = 100分
+      // 赛道一：10单选(2分) + 5多选(2分) + 5判断(2分) + 1简答(60分) = 100分
       const scoreMap: Record<string, number> = {
-        single: 4,
-        multiple: 4,
-        boolean: 4,
+        single: 2,
+        multiple: 2,
+        boolean: 2,
         short_answer: 60,
         fill_in_the_blanks: 2
       };
@@ -549,7 +552,7 @@ export default function Quiz({
         short_answer: 1,
         fill_in_the_blanks: 0
       };
-      const perQuestion = scoreMap[type] || 4;
+      const perQuestion = scoreMap[type] || 2;
       const count = countMap[type] || 1;
       const total = perQuestion * count;
       return { perQuestion, count, total };
