@@ -104,7 +104,7 @@ export default function App() {
           />
         )}
         {currentScreen === 'result' && <Result score={score} total={totalQuestions} questionResults={questionResults} onRetry={() => setCurrentScreen('selection')} />}
-        {currentScreen === 'admin' && <AdminPanel onExit={() => setCurrentScreen('auth')} />}
+        {currentScreen === 'admin' && <AdminPanel onExit={() => setCurrentScreen('selection')} />}
       </div>
     </div>
   );
