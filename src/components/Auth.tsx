@@ -1,4 +1,4 @@
-﻿﻿import { useState, useEffect } from 'react';
+﻿﻿﻿import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Key, Sparkles, ShieldAlert, Loader2 } from 'lucide-react';
 import { AuthStatus } from '../types';
@@ -31,7 +31,7 @@ export default function Auth({ onAuthSuccess }: { onAuthSuccess: (status: AuthSt
 
     const normalizedCode = code.toUpperCase().trim();
 
-    if (normalizedCode === 'ADMIN888') {
+    if (normalizedCode === 'XXXB520') {
       onAuthSuccess({ code: normalizedCode, type: 'ADMIN', remaining: 999 });
       return;
     }

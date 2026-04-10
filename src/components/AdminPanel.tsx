@@ -75,7 +75,7 @@ export default function AdminPanel({ onExit }: { onExit: () => void }) {
           <div className="glass-card p-6 relative overflow-hidden group border-amber-500/30">
             <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/20 rounded-full blur-2xl -mr-10 -mt-10 group-hover:bg-amber-400/30 transition-colors"></div>
             <h3 className="text-xl font-bold text-white mb-2 relative z-10 drop-shadow-md">高级授权</h3>
-            <p className="text-white/60 text-sm mb-6 relative z-10 font-medium">39.9元 / 1年无限次</p>
+            <p className="text-white/60 text-sm mb-6 relative z-10 font-medium">59.9元 / 1年无限次</p>
             <button 
               onClick={() => generateCode('1年')}
               className="w-full py-3 bg-amber-600 hover:bg-amber-500 text-white font-bold rounded-xl active:scale-95 transition-all flex items-center justify-center relative z-10 shadow-[0_4px_15px_rgba(245,158,11,0.3)] border border-amber-500/50"
