@@ -1,12 +1,13 @@
-﻿﻿﻿﻿﻿﻿﻿﻿import { useState, useEffect } from 'react';
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Key, Sparkles, ShieldAlert, Loader2 } from 'lucide-react';
+import { ShieldCheck, Key, Sparkles, ShieldAlert, Loader2, Eye, EyeOff } from 'lucide-react';
 import { AuthStatus } from '../types';
 import ElectricBorder from './ElectricBorder';
 import { LicenseData } from '../services/licenseValidation';
 
 export default function Auth({ onAuthSuccess }: { onAuthSuccess: (status: AuthStatus) => void }) {
   const [code, setCode] = useState('');
+  const [showCode, setShowCode] = useState(false);
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(true);
@@ -25,7 +26,7 @@ export default function Auth({ onAuthSuccess }: { onAuthSuccess: (status: AuthSt
   }, []);
 
   const handleVerify = () => {
-    if (loading || !licenseData) {
+    if (loading) {
       return;
     }
 
@@ -129,15 +130,22 @@ export default function Auth({ onAuthSuccess }: { onAuthSuccess: (status: AuthSt
                 <Key className="w-5 h-5 text-white/50" />
               </div>
               <input
-                type="text"
+                type={showCode ? "text" : "password"}
                 value={code}
                 onChange={(e) => setCode(e.target.value.toUpperCase())}
                 placeholder="请输入系统授权码"
-                className={`w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-blue-400/50 focus:bg-white/10 focus:ring-4 focus:ring-blue-500/20 transition-all placeholder:text-white/30 ${
+                className={`w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-12 text-white focus:outline-none focus:border-blue-400/50 focus:bg-white/10 focus:ring-4 focus:ring-blue-500/20 transition-all placeholder:text-white/30 ${
                   error ? 'border-red-400/50 focus:border-red-400/50 focus:ring-red-500/20' : ''
                 }`}
                 onKeyDown={(e) => e.key === 'Enter' && handleVerify()}
               />
+              <button
+                type="button"
+                onClick={() => setShowCode(!showCode)}
+                className="absolute inset-y-0 right-0 pr-4 flex items-center text-white/40 hover:text-white/80 transition-colors"
+              >
+                {showCode ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+              </button>
               {error && (
                 <div className="absolute -bottom-7 left-0 flex items-center text-red-400 text-sm font-medium">
                   <ShieldAlert className="w-4 h-4 mr-1" />

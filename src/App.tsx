@@ -33,12 +33,14 @@ export default function App() {
   }, []);
 
   const handleAuthSuccess = (status: AuthStatus) => {
+    setAuthStatus(status);
+    localStorage.setItem('ai_quiz_auth', JSON.stringify(status));
+    
     if (status.type === 'ADMIN') {
       setCurrentScreen('admin');
       return;
     }
-    setAuthStatus(status);
-    localStorage.setItem('ai_quiz_auth', JSON.stringify(status));
+    
     setCurrentScreen('selection');
   };
 
