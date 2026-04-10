@@ -11,6 +11,6 @@ export interface Question {
 
 export interface AuthStatus {
   code: string;
-  type: 'FREE' | 'PAID_5' | 'UNLIMITED_1Y' | 'ADMIN';
+  type: 'FREE' | 'PAID_5' | 'UNLIMITED_1Y' | 'UNLIMITED' | 'ADMIN';
   remaining: number;
 }

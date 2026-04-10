@@ -1,0 +1,507 @@
+{
+  "version": "1.0",
+  "generatedAt": "2026-04-10T02:33:25.503Z",
+  "totalCodes": 100,
+  "codes": [
+    {
+      "code": "AI-20260410-80BB-CEA8",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-BE2D-5A70",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-A9DC-B64E",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-6C25-67FE",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-6AFC-919C",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-01BE-D3FC",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-5A7D-5C58",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-261E-998C",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-0F67-951A",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-0431-E378",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-880C-976C",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-B798-093D",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-8043-86C7",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-5722-7DB9",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-46CF-6313",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-38A8-F8D9",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-8037-7036",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-C989-1935",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-0BF4-7E11",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-B3EF-F4E0",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-543F-3B5E",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-A161-9136",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-AB7D-047D",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-DA1C-72E2",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-242E-4D8F",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-8EAA-FDBE",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-6826-264A",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-55C1-38F2",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-72CD-53D5",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-145C-270F",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-3A82-9EB6",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-CA35-0A41",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-D2AD-9A66",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-5A3A-97AA",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-3397-6DE3",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-E97A-72AC",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-074A-94F7",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-F8BC-85CE",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-F99F-B2F3",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-E049-6781",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-21BA-939F",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-B3B7-A994",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-5B0D-953C",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-68D4-0DE4",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-48F0-544D",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-8E24-F7C3",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-796E-EE54",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-038A-53D6",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-7208-0B39",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-F516-9FA8",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-44D9-5131",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-CB81-91EA",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-4939-4F15",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-F3A2-C541",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-B5DB-B566",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-E235-2BA0",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-344B-3196",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-24E5-3F40",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-1114-D978",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-7A25-0FE9",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-127A-8DA7",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-260D-A97B",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-449B-1050",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-8814-9F29",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-C1A5-CBF6",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-D0CE-ADFA",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-315A-2E15",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-27EE-26C2",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-4A98-B919",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-9A6D-6BFE",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-DBF6-1668",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-5328-2356",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-C2B4-4E42",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-C63E-574E",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-6804-78BA",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-C95C-7C4D",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-8F13-6663",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-421A-48E5",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-CFF5-DEA4",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-507D-0D6F",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-E710-1981",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-4FA9-686F",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-45ED-DE35",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-1982-5869",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-A372-5ADB",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-E5EC-8071",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-51DB-8C4D",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-91A0-C7B8",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-243A-5BCF",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-B80C-94F4",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-7AA8-A606",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-EF7D-8F99",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-EFA7-E8B6",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-EBB9-BEF0",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-D66F-2610",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-4A08-71AA",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-0D7B-7E6F",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-B329-261C",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-0BA4-2358",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    },
+    {
+      "code": "AI-20260410-E43D-BD07",
+      "createdAt": "2026-04-10T02:33:25.503Z",
+      "isUsed": false
+    }
+  ]
+}

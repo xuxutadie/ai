@@ -1,37 +1,68 @@
-﻿﻿import { useState } from 'react';
+﻿﻿import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Key, Sparkles, ShieldAlert } from 'lucide-react';
+import { ShieldCheck, Key, Sparkles, ShieldAlert, Loader2 } from 'lucide-react';
 import { AuthStatus } from '../types';
 import ElectricBorder from './ElectricBorder';
+import { LicenseData } from '../services/licenseValidation';
 
 export default function Auth({ onAuthSuccess }: { onAuthSuccess: (status: AuthStatus) => void }) {
   const [code, setCode] = useState('');
   const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [licenseData, setLicenseData] = useState<LicenseData | null>(null);
+
+  useEffect(() => {
+    fetch('/license_codes.json')
+      .then(res => res.json())
+      .then(data => {
+        setLicenseData(data);
+        setLoading(false);
+      })
+      .catch(() => {
+        setLoading(false);
+      });
+  }, []);
 
   const handleVerify = () => {
-    if (code === 'admin888'.toUpperCase()) {
-      onAuthSuccess({ code, type: 'ADMIN', remaining: 999 });
+    if (loading || !licenseData) {
       return;
     }
 
-    if (code === 'XXXB520') {
-      onAuthSuccess({ code, type: 'UNLIMITED_1Y', remaining: 999 });
+    const normalizedCode = code.toUpperCase().trim();
+
+    if (normalizedCode === 'ADMIN888') {
+      onAuthSuccess({ code: normalizedCode, type: 'ADMIN', remaining: 999 });
       return;
     }
-    
-    if (code.startsWith('AI5-') && code.length >= 8) {
-      onAuthSuccess({ code, type: 'PAID_5', remaining: 5 });
+
+    const foundCode = licenseData.codes.find(c => c.code === normalizedCode);
+
+    if (!foundCode) {
+      setError(true);
+      setErrorMessage('无效的授权码');
+      setTimeout(() => setError(false), 500);
       return;
     }
-    
-    if (code.startsWith('AI1Y-') && code.length >= 9) {
-      onAuthSuccess({ code, type: 'UNLIMITED_1Y', remaining: 999 });
+
+    if (foundCode.isUsed) {
+      setError(true);
+      setErrorMessage('该授权码已被使用');
+      setTimeout(() => setError(false), 500);
       return;
     }
-    
-    setError(true);
-    setTimeout(() => setError(false), 500);
+
+    onAuthSuccess({ code: normalizedCode, type: 'UNLIMITED', remaining: 999 });
   };
+
+  if (loading) {
+    return (
+      <div className="m-auto flex flex-col items-center justify-center h-full">
+        <Loader2 className="w-12 h-12 text-blue-400 animate-spin mb-4" />
+        <p className="text-white/60 text-sm font-medium">加载授权信息中...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="m-auto flex flex-col items-center w-full max-w-[500px] z-10 px-4">
@@ -95,13 +126,14 @@ export default function Auth({ onAuthSuccess }: { onAuthSuccess: (status: AuthSt
               {error && (
                 <div className="absolute -bottom-7 left-0 flex items-center text-red-400 text-sm font-medium">
                   <ShieldAlert className="w-4 h-4 mr-1" />
-                  无效的授权码，请重试
+                  {errorMessage}
                 </div>
               )}
             </motion.div>
 
             <button
               onClick={handleVerify}
+              disabled={loading}
               className="glow-button w-full"
             >
               <span className="glow-button-inner">
