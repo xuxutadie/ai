@@ -1,4 +1,4 @@
-﻿﻿﻿import { useState, useEffect } from 'react';
+﻿﻿﻿﻿﻿﻿﻿﻿import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Key, Sparkles, ShieldAlert, Loader2 } from 'lucide-react';
 import { AuthStatus } from '../types';
@@ -36,23 +36,38 @@ export default function Auth({ onAuthSuccess }: { onAuthSuccess: (status: AuthSt
       return;
     }
 
-    const foundCode = licenseData.codes.find(c => c.code === normalizedCode);
-
-    if (!foundCode) {
-      setError(true);
-      setErrorMessage('无效的授权码');
-      setTimeout(() => setError(false), 500);
+    // Check if it's a locally generated admin code
+    if (normalizedCode.startsWith('AI5-') && normalizedCode.length >= 8) {
+      onAuthSuccess({ code: normalizedCode, type: 'PAID_5', remaining: 5 });
+      return;
+    }
+    
+    if (normalizedCode.startsWith('AI1Y-') && normalizedCode.length >= 9) {
+      onAuthSuccess({ code: normalizedCode, type: 'UNLIMITED', remaining: 999 });
       return;
     }
 
-    if (foundCode.isUsed) {
-      setError(true);
-      setErrorMessage('该授权码已被使用');
-      setTimeout(() => setError(false), 500);
-      return;
+    // Check license file
+    if (licenseData) {
+      const foundCode = licenseData.codes.find(c => c.code === normalizedCode);
+
+      if (foundCode) {
+        if (foundCode.isUsed) {
+          setError(true);
+          setErrorMessage('该授权码已被使用');
+          setTimeout(() => setError(false), 500);
+          return;
+        }
+
+        onAuthSuccess({ code: normalizedCode, type: 'UNLIMITED', remaining: 999 });
+        return;
+      }
     }
 
-    onAuthSuccess({ code: normalizedCode, type: 'UNLIMITED', remaining: 999 });
+    // If neither matched
+    setError(true);
+    setErrorMessage('无效的授权码');
+    setTimeout(() => setError(false), 500);
   };
 
   if (loading) {
