@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿import { useState, useEffect } from 'react';
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Key, Sparkles, ShieldAlert, Loader2, Eye, EyeOff } from 'lucide-react';
 import { AuthStatus } from '../types';

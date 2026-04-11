@@ -85,6 +85,26 @@ export default function App() {
     <div className="relative w-full h-screen overflow-hidden flex items-center justify-center">
       <Background />
       
+      {/* 全局 Logo 区域 */}
+      <div className="absolute top-4 left-4 md:top-8 md:left-8 z-50">
+        <img 
+          src="/logo.svg" 
+          alt="LOGO" 
+          className="h-10 md:h-12 w-auto object-contain drop-shadow-lg"
+          onError={(e) => {
+            // 如果找不到图片，可以显示一段默认文字或者隐藏
+            const target = e.target as HTMLImageElement;
+            target.style.display = 'none';
+            if (target.nextElementSibling) {
+              (target.nextElementSibling as HTMLElement).style.display = 'block';
+            }
+          }}
+        />
+        <div className="hidden text-white/90 font-black text-2xl tracking-widest drop-shadow-md">
+          LOGO
+        </div>
+      </div>
+
       <div className="relative z-10 w-full max-w-4xl h-full max-h-[900px] flex flex-col p-4 md:p-8">
         {currentScreen === 'auth' && <Auth onAuthSuccess={handleAuthSuccess} />}
         {currentScreen === 'selection' && (

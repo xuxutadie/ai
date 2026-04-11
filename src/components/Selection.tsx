@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿﻿import { useState } from 'react';
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LogOut, Zap, GraduationCap, Rocket, Settings, ArrowLeft, Brain, Target } from 'lucide-react';
 import { AuthStatus } from '../types';
