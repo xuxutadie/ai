@@ -105,6 +105,17 @@ export default function App() {
         </div>
       </div>
 
+      {/* 左侧装饰图片 (仅在授权页显示) */}
+      {currentScreen === 'auth' && (
+        <div className="hidden md:flex absolute left-4 md:left-8 lg:left-12 top-24 bottom-12 z-0 w-[250px] lg:w-[350px] xl:w-[450px] pointer-events-none items-center justify-start animate-[fadeIn_1s_ease-out]">
+          <img 
+            src="/ce.png" 
+            alt="Decoration" 
+            className="w-full h-full object-contain object-left drop-shadow-2xl"
+          />
+        </div>
+      )}
+
       <div className="relative z-10 w-full max-w-4xl h-full max-h-[900px] flex flex-col p-4 md:p-8">
         {currentScreen === 'auth' && <Auth onAuthSuccess={handleAuthSuccess} />}
         {currentScreen === 'selection' && (
