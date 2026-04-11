@@ -118,13 +118,13 @@ export default function App() {
 
       {/* 右侧赛事列表 (仅在授权页显示) */}
       {currentScreen === 'auth' && (
-        <div className="hidden md:flex absolute right-4 lg:right-12 top-1/2 -translate-y-1/2 z-10 w-[280px] md:w-[350px] lg:w-[420px] xl:w-[480px] flex-col gap-3 animate-fadeIn [animation-delay:300ms] [animation-fill-mode:both]">
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 shadow-2xl">
+        <div className="hidden md:flex absolute right-4 lg:right-12 top-24 bottom-12 z-10 w-[280px] md:w-[350px] lg:w-[420px] xl:w-[480px] flex-col gap-3 animate-fadeIn [animation-delay:300ms] [animation-fill-mode:both] items-center justify-center">
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 shadow-2xl w-full">
             <h3 className="text-white font-bold text-lg mb-4 flex items-center justify-center gap-2 border-b border-white/10 pb-3">
               <span className="w-1.5 h-4 bg-blue-400 rounded-full"></span>
               2020 AI 相关白名单赛事
             </h3>
-            <div className="flex flex-col gap-2.5 max-h-[75vh] overflow-y-auto pr-2 custom-scrollbar">
+            <div className="flex flex-col gap-2.5 max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar">
               {[
                 "全国青少年人工智能大赛",
                 "全国青少年心理成长知识与应用创新大赛",
