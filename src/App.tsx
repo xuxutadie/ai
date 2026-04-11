@@ -88,7 +88,7 @@ export default function App() {
       {/* 全局 Logo 区域 */}
       <div className="absolute top-4 left-4 md:top-8 md:left-8 z-50">
         <img 
-          src="/logo.svg" 
+          src="/LOGO.png" 
           alt="LOGO" 
           className="h-10 md:h-12 w-auto object-contain drop-shadow-lg"
           onError={(e) => {
