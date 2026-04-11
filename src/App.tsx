@@ -116,6 +116,40 @@ export default function App() {
         </div>
       )}
 
+      {/* 右侧赛事列表 (仅在授权页显示) */}
+      {currentScreen === 'auth' && (
+        <div className="hidden lg:flex absolute right-4 lg:right-12 top-1/2 -translate-y-1/2 z-10 w-[300px] xl:w-[350px] flex-col gap-3 animate-[fadeIn_1s_ease-out_0.3s_both] opacity-0">
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 shadow-2xl">
+            <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2 border-b border-white/10 pb-3">
+              <span className="w-1.5 h-4 bg-blue-400 rounded-full"></span>
+              2026 AI 相关赛事
+            </h3>
+            <div className="flex flex-col gap-2.5 max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar">
+              {[
+                "全国青少年人工智能大赛",
+                "全国青少年心理成长知识与应用创新大赛",
+                "全球发明大会(中国)竞赛活动官网",
+                "全国青少年人工智能辅助生成数字艺术创作者大赛",
+                "全国青少年红色文化传承与实践创新大赛",
+                "全国青少年人工智能创新挑战赛",
+                "中国宋庆龄基金会少年儿童发明奖",
+                "全国青少年劳动技能与智能设计大赛",
+                "全国青少年安全与应急科普创新大赛",
+                "全国青少年信息素养大赛"
+              ].map((item, index) => (
+                <button
+                  key={index}
+                  className="text-left w-full text-sm text-blue-100/80 hover:text-white bg-white/5 hover:bg-white/10 border border-transparent hover:border-white/20 rounded-xl px-4 py-3 transition-all duration-300 group relative overflow-hidden"
+                >
+                  <span className="relative z-10 line-clamp-2 leading-snug">{item}</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="relative z-10 w-full max-w-4xl h-full max-h-[900px] flex flex-col p-4 md:p-8">
         {currentScreen === 'auth' && <Auth onAuthSuccess={handleAuthSuccess} />}
         {currentScreen === 'selection' && (
