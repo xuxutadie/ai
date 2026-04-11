@@ -109,7 +109,7 @@ export default function App() {
       {currentScreen === 'auth' && (
         <div className="hidden md:flex absolute left-4 md:left-8 lg:left-12 top-24 bottom-12 z-0 w-[250px] lg:w-[350px] xl:w-[450px] pointer-events-none items-center justify-start animate-[fadeIn_1s_ease-out]">
           <img 
-            src="/ce.png" 
+            src="/zuo.png" 
             alt="Decoration" 
             className="w-full h-full object-contain object-left drop-shadow-2xl"
           />
