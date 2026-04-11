@@ -118,13 +118,13 @@ export default function App() {
 
       {/* 右侧赛事列表 (仅在授权页显示) */}
       {currentScreen === 'auth' && (
-        <div className="hidden lg:flex absolute right-4 lg:right-12 top-1/2 -translate-y-1/2 z-10 w-[300px] xl:w-[350px] flex-col gap-3 animate-[fadeIn_1s_ease-out_0.3s_both] opacity-0">
+        <div className="hidden md:flex absolute right-4 lg:right-12 top-1/2 -translate-y-1/2 z-10 w-[280px] md:w-[350px] lg:w-[420px] xl:w-[480px] flex-col gap-3 animate-fadeIn [animation-delay:300ms] [animation-fill-mode:both]">
           <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 shadow-2xl">
-            <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2 border-b border-white/10 pb-3">
+            <h3 className="text-white font-bold text-lg mb-4 flex items-center justify-center gap-2 border-b border-white/10 pb-3">
               <span className="w-1.5 h-4 bg-blue-400 rounded-full"></span>
-              2026 AI 相关赛事
+              2020 AI 相关白名单赛事
             </h3>
-            <div className="flex flex-col gap-2.5 max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar">
+            <div className="flex flex-col gap-2.5 max-h-[75vh] overflow-y-auto pr-2 custom-scrollbar">
               {[
                 "全国青少年人工智能大赛",
                 "全国青少年心理成长知识与应用创新大赛",
@@ -139,7 +139,7 @@ export default function App() {
               ].map((item, index) => (
                 <button
                   key={index}
-                  className="text-left w-full text-sm text-blue-100/80 hover:text-white bg-white/5 hover:bg-white/10 border border-transparent hover:border-white/20 rounded-xl px-4 py-3 transition-all duration-300 group relative overflow-hidden"
+                  className="text-center w-full text-sm text-blue-100/80 hover:text-white bg-white/5 hover:bg-white/10 border border-transparent hover:border-white/20 rounded-xl px-4 py-3 transition-all duration-300 group relative overflow-hidden"
                 >
                   <span className="relative z-10 line-clamp-2 leading-snug">{item}</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
