@@ -7,7 +7,8 @@ import { scoreWithAI } from '../services/aiScoring';
 
 // 动画配置
 const SLIDE_DURATION = 0.4; // 滑动动画时长
-const FEEDBACK_DURATION = 500; // 反馈显示时长(ms)
+const FEEDBACK_DURATION_CORRECT = 1000; // 正确时反馈显示时长(ms)
+const FEEDBACK_DURATION_WRONG = 3000; // 错误时反馈显示时长(ms)
 
 function calculateFillInBlanksScore(userAnswer: string, correctAnswer: string, maxPoints: number): number {
   if (!userAnswer.trim()) return 0;
@@ -267,10 +268,22 @@ export default function Quiz({
       );
     }
 
-    // 辅助函数：从数组中随机选择指定数量的不重复题目，并优先避开历史题目
+    // 辅助函数：从数组中随机选择指定数量的不重复题目（基于题目正文去重），并优先避开历史题目
     const selectRandomQuestions = (pool: Question[], count: number): Question[] => {
-      // 1. 先尝试从不在历史记录中的题目中选
-      const freshPool = pool.filter(q => !usedIds.includes(q.id));
+      // 1. 先根据题目文本进行初步去重，确保同一次测试不会出现文本完全相同的题
+      const uniquePoolByText: Question[] = [];
+      const seenTexts = new Set<string>();
+      
+      for (const q of pool) {
+        const cleanText = q.question.trim();
+        if (!seenTexts.has(cleanText)) {
+          seenTexts.add(cleanText);
+          uniquePoolByText.push(q);
+        }
+      }
+
+      // 2. 尝试从不在历史记录中的题目中选
+      const freshPool = uniquePoolByText.filter(q => !usedIds.includes(q.id));
       
       let selected: Question[] = [];
       if (freshPool.length >= count) {
@@ -281,21 +294,24 @@ export default function Quiz({
         // 如果新题不够，先拿走所有新题，剩下的从旧题（历史记录）中选
         selected = [...freshPool];
         const remainingCount = count - freshPool.length;
-        const usedPool = pool.filter(q => usedIds.includes(q.id));
+        const usedPool = uniquePoolByText.filter(q => usedIds.includes(q.id));
         const shuffledUsed = [...usedPool].sort(() => Math.random() - 0.5);
-        selected = [...selected, ...shuffledUsed.slice(0, remainingCount)];
+        selected = [...selected, ...shuffledUsed.slice(0, Math.min(remainingCount, shuffledUsed.length))];
       }
       return selected;
     };
 
-    // 辅助函数：根据题目ID去重
+    // 辅助函数：根据题目ID或内容去重
     const removeDuplicates = (questions: Question[]): Question[] => {
-      const seen = new Set<string>();
+      const seenIds = new Set<string>();
+      const seenTexts = new Set<string>();
       return questions.filter(q => {
-        if (seen.has(q.id)) {
+        const cleanText = q.question.trim().replace(/\s+/g, '');
+        if (seenIds.has(q.id) || seenTexts.has(cleanText)) {
           return false;
         }
-        seen.add(q.id);
+        seenIds.add(q.id);
+        seenTexts.add(cleanText);
         return true;
       });
     };
@@ -475,10 +491,10 @@ export default function Quiz({
       };
       setQuestionResults(prev => [...prev, result]);
       
-      // 延迟后自动切题
+      // 延迟后自动切题 - 根据正确与否设置不同延迟
       setTimeout(() => {
         handleNext();
-      }, FEEDBACK_DURATION);
+      }, isCorrect ? FEEDBACK_DURATION_CORRECT : FEEDBACK_DURATION_WRONG);
       return;
     }
 
@@ -498,7 +514,7 @@ export default function Quiz({
         setQuestionResults(prev => [...prev, result]);
         setTimeout(() => {
           handleNext();
-        }, FEEDBACK_DURATION);
+        }, FEEDBACK_DURATION_WRONG);
         return;
       }
       
@@ -579,10 +595,10 @@ export default function Quiz({
         setIsAiScoring(false);
       }
       
-      // AI评分完成后，延迟自动切题
+      // AI评分完成后，延迟自动切题 - 根据得分情况设置不同延迟
       setTimeout(() => {
         handleNext();
-      }, FEEDBACK_DURATION);
+      }, isCorrect ? FEEDBACK_DURATION_CORRECT : FEEDBACK_DURATION_WRONG);
       return;
     }
 
@@ -605,10 +621,10 @@ export default function Quiz({
       setFeedback('wrong');
     }
 
-    // 延迟后自动切题
+    // 延迟后自动切题 - 根据正确与否设置不同延迟
     setTimeout(() => {
       handleNext();
-    }, FEEDBACK_DURATION);
+    }, isCorrect ? FEEDBACK_DURATION_CORRECT : FEEDBACK_DURATION_WRONG);
   };
 
   // 四舍五入到最近的 0.5
@@ -938,7 +954,12 @@ export default function Quiz({
                 <div className="space-y-3">
                   <div className="bg-white/5 rounded-xl p-2 border-2 border-white/10 focus-within:border-blue-400/50 focus-within:bg-white/10 transition-colors shadow-sm">
                     <textarea
-                      key={`${currentQ.id}_${currentSubIndex}`} // 强制重新渲染 textarea
+                      key={`q_${currentIndex}_${currentSubIndex}`} // 强制重新渲染 textarea
+                      value={selectedAnswers[0] || ''}
+                      autoComplete="off"
+                      autoCorrect="off"
+                      autoCapitalize="off"
+                      spellCheck="false"
                       className="w-full h-24 md:h-32 bg-transparent p-3 md:p-4 text-white outline-none resize-none placeholder:text-white/30"
                       placeholder={q.type === 'fill_in_the_blanks' ? "请输入填空答案（数值、代码或符号）..." : "请输入你的答案..."}
                       onChange={(e) => setSelectedAnswers([e.target.value])}
@@ -960,11 +981,16 @@ export default function Quiz({
 
                   {/* 填空题正确答案显示 */}
                   {q.type === 'fill_in_the_blanks' && feedback !== null && (
-                    <div className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30">
+                    <div className="bg-emerald-500/20 rounded-xl p-4 border-2 border-emerald-400/50 shadow-[0_0_20px_rgba(16,185,129,0.2)] animate-fadeIn">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-emerald-400 font-bold text-lg">正确答案</span>
+                        <span className="text-emerald-400 font-bold text-lg flex items-center gap-2">
+                          <CheckCircle2 className="w-5 h-5" />
+                          正确答案
+                        </span>
                       </div>
-                      <p className="text-white text-lg leading-relaxed">{q.answer}</p>
+                      <p className="text-white text-xl font-bold leading-relaxed bg-black/20 p-3 rounded-lg border border-white/10">
+                        {Array.isArray(q.answer) ? q.answer.join(' / ') : q.answer}
+                      </p>
                     </div>
                   )}
                 </div>
