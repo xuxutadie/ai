@@ -161,12 +161,13 @@ export default function Quiz({
   onExit 
 }: { 
   group: 'primary' | 'junior';
-  track: 'track1' | 'track2';
+  track: 'track1' | 'track2' | 'track3';
   onFinish: (score: number, total: number, results?: { question: Question; userAnswer: string[]; earnedPoints: number; maxPoints: number; isCorrect: boolean }[]) => void;
   onExit: () => void;
 }) {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentSubIndex, setCurrentSubIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
   const [timeLeft, setTimeLeft] = useState(3600); // 60 minutes
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | 'partial' | null>(null);
@@ -249,6 +250,11 @@ export default function Quiz({
         (group === 'primary' && q.group === 'track1_primary') ||
         (group === 'junior' && q.group === 'track1_junior')
       );
+    } else if (track === 'track3') {
+      filtered = filtered.filter(q => 
+        (group === 'primary' && q.group === 'track3_primary') ||
+        (group === 'junior' && q.group === 'track3_junior')
+      );
     } else {
       filtered = filtered.filter(q =>
         (group === 'primary' && q.group === 'primary') ||
@@ -274,7 +280,25 @@ export default function Quiz({
       });
     };
 
-    if (track === 'track2') {
+    if (track === 'track3') {
+      // 赛道3：单选25% 多选25% 填空50%
+      // 设总共20道题：5单选(5分) + 5多选(5分) + 10填空(5分) = 100分
+      const singlePool = filtered.filter(q => q.type === 'single');
+      const multiPool = filtered.filter(q => q.type === 'multiple');
+      const fillPool = filtered.filter(q => q.type === 'fill_in_the_blanks');
+
+      const singleQs = selectRandomQuestions(singlePool, 5);
+      const multiQs = selectRandomQuestions(multiPool, 5);
+      const fillQs = selectRandomQuestions(fillPool, 10);
+
+      [...singleQs, ...multiQs, ...fillQs].forEach(q => q.points = 5);
+
+      filtered = removeDuplicates([...singleQs, ...multiQs, ...fillQs]);
+      
+      if (filtered.length === 0) {
+        filtered = (questionsData as Question[]).slice(0, 10);
+      }
+    } else if (track === 'track2') {
       // 赛道2：单选10道、多选10道、判断10道、填空10道、简答2道
       const singlePool = filtered.filter(q => q.type === 'single');
       const multiPool = filtered.filter(q => q.type === 'multiple');
@@ -343,13 +367,24 @@ export default function Quiz({
 
   const isLast = currentIndex === questions.length - 1;
   const currentQ = questions[currentIndex];
+  
+  // 获取当前实际渲染的题目（如果是综合题则获取当前子题目）
+  const q = currentQ?.type === 'comprehensive' && currentQ.subQuestions 
+    ? currentQ.subQuestions[currentSubIndex] 
+    : currentQ;
 
   const handleOptionClick = (optionKey: string) => {
     // 直接从 questions 和 currentIndex 获取当前题目，避免闭包问题
     const q = questions[currentIndex];
-    if (q.type === 'single' || q.type === 'boolean') {
+    
+    // 如果是综合大题，需要获取当前子题目
+    const currentQuestion = q.type === 'comprehensive' && q.subQuestions 
+      ? q.subQuestions[currentSubIndex] 
+      : q;
+
+    if (currentQuestion.type === 'single' || currentQuestion.type === 'boolean') {
       setSelectedAnswers([optionKey]);
-    } else if (q.type === 'multiple') {
+    } else if (currentQuestion.type === 'multiple') {
       setSelectedAnswers(prev => 
         prev.includes(optionKey) 
           ? prev.filter(k => k !== optionKey)
@@ -359,18 +394,23 @@ export default function Quiz({
   };
 
   const handleConfirm = async () => {
-    if (selectedAnswers.length === 0 && currentQ.type !== 'short_answer' && currentQ.type !== 'fill_in_the_blanks') return;
+    // 获取当前实际题目（如果是综合题则获取当前子题目）
+    const q = currentQ.type === 'comprehensive' && currentQ.subQuestions 
+      ? currentQ.subQuestions[currentSubIndex] 
+      : currentQ;
+
+    if (selectedAnswers.length === 0 && q.type !== 'short_answer' && q.type !== 'fill_in_the_blanks') return;
 
     let isCorrect = false;
     let earnedPoints = 0;
     
-    if (currentQ.type === 'single') {
-      isCorrect = selectedAnswers[0] === currentQ.answer;
-      earnedPoints = isCorrect ? currentQ.points : 0;
-    } else if (currentQ.type === 'boolean') {
+    if (q.type === 'single') {
+      isCorrect = selectedAnswers[0] === q.answer;
+      earnedPoints = isCorrect ? q.points : 0;
+    } else if (q.type === 'boolean') {
       const isUserTrue = selectedAnswers[0] === '正确' || selectedAnswers[0] === 'True' || selectedAnswers[0] === '√' || selectedAnswers[0] === '对';
       
-      const answerStr = String(currentQ.answer).trim();
+      const answerStr = String(q.answer).trim();
       const isAnswerTrue = answerStr === 'True' || answerStr === '正确' || answerStr === '√' || answerStr === '对';
       const isAnswerFalse = answerStr === 'False' || answerStr === '错误' || answerStr === '×' || answerStr === '错';
       
@@ -381,21 +421,21 @@ export default function Quiz({
       } else {
         isCorrect = false;
       }
-      earnedPoints = isCorrect ? currentQ.points : 0;
-    } else if (currentQ.type === 'multiple') {
-      const correctAnswers = currentQ.answer as string[];
+      earnedPoints = isCorrect ? q.points : 0;
+    } else if (q.type === 'multiple') {
+      const correctAnswers = q.answer as string[];
       isCorrect = 
         selectedAnswers.length === correctAnswers.length && 
         selectedAnswers.every(a => correctAnswers.includes(a));
-      earnedPoints = isCorrect ? currentQ.points : 0;
+      earnedPoints = isCorrect ? q.points : 0;
     }
 
-    if (currentQ.type === 'fill_in_the_blanks') {
+    if (q.type === 'fill_in_the_blanks') {
       const userAnswer = selectedAnswers[0] || '';
-      const correctAnswer = currentQ.answer as string;
-      const points = calculateFillInBlanksScore(userAnswer, correctAnswer, currentQ.points);
+      const correctAnswer = q.answer as string;
+      const points = calculateFillInBlanksScore(userAnswer, correctAnswer, q.points);
       earnedPoints = points;
-      isCorrect = points >= currentQ.points;
+      isCorrect = points >= q.points;
       
       // 设置反馈
       if (isCorrect) {
@@ -406,10 +446,10 @@ export default function Quiz({
       
       // 记录结果
       const result = {
-        question: currentQ,
+        question: { ...q, id: `${currentQ.id}_${q.id}` } as Question, // 给子题目生成一个唯一ID
         userAnswer: [...selectedAnswers],
         earnedPoints: points,
-        maxPoints: currentQ.points,
+        maxPoints: q.points,
         isCorrect: isCorrect
       };
       setQuestionResults(prev => [...prev, result]);
@@ -421,17 +461,17 @@ export default function Quiz({
       return;
     }
 
-    if (currentQ.type === 'short_answer') {
+    if (q.type === 'short_answer') {
       const userAnswer = selectedAnswers[0] || '';
       
       // 如果没有输入答案，直接0分
       if (!userAnswer.trim()) {
         setFeedback('wrong');
         const result = {
-          question: currentQ,
+          question: { ...q, id: `${currentQ.id}_${q.id}` } as Question,
           userAnswer: [...selectedAnswers],
           earnedPoints: 0,
-          maxPoints: currentQ.points,
+          maxPoints: q.points,
           isCorrect: false
         };
         setQuestionResults(prev => [...prev, result]);
@@ -446,32 +486,32 @@ export default function Quiz({
       setAiFeedback('AI正在评分，请稍候...');
       
       console.log('开始AI评分:', {
-        question: currentQ.question,
-        referenceAnswer: currentQ.answer,
+        question: q.question,
+        referenceAnswer: q.answer,
         userAnswer: userAnswer,
-        maxPoints: currentQ.points
+        maxPoints: q.points
       });
       
       try {
         const aiResult = await scoreWithAI(
-          currentQ.question,
-          currentQ.answer as string,
+          q.question,
+          q.answer as string,
           userAnswer,
-          currentQ.points
+          q.points
         );
         
         console.log('AI评分结果:', aiResult);
         
         earnedPoints = aiResult.score;
-        isCorrect = earnedPoints >= currentQ.points * 0.6;
+        isCorrect = earnedPoints >= q.points * 0.6;
         
         setAiScore(aiResult.score);
         setAiFeedback(aiResult.feedback);
         
         // 设置反馈状态
-        if (earnedPoints >= currentQ.points * 0.6) {
+        if (earnedPoints >= q.points * 0.6) {
           setFeedback('correct');
-        } else if (earnedPoints >= currentQ.points * 0.3) {
+        } else if (earnedPoints >= q.points * 0.3) {
           setFeedback('partial');
         } else {
           setFeedback('wrong');
@@ -479,10 +519,10 @@ export default function Quiz({
         
         // 记录结果
         const result = {
-          question: currentQ,
+          question: { ...q, id: `${currentQ.id}_${q.id}` } as Question,
           userAnswer: [...selectedAnswers],
           earnedPoints: aiResult.score,
-          maxPoints: currentQ.points,
+          maxPoints: q.points,
           isCorrect: isCorrect
         };
         setQuestionResults(prev => [...prev, result]);
@@ -490,27 +530,27 @@ export default function Quiz({
       } catch (error) {
         console.error('AI评分失败:', error);
         // AI评分失败，使用本地评分作为备用
-        const correctAnswer = currentQ.answer as string;
-        const points = calculateShortAnswerScore(userAnswer, correctAnswer, currentQ.points);
+        const correctAnswer = q.answer as string;
+        const points = calculateShortAnswerScore(userAnswer, correctAnswer, q.points);
         earnedPoints = points;
-        isCorrect = points >= currentQ.points * 0.6;
+        isCorrect = points >= q.points * 0.6;
         
         setAiScore(points);
         setAiFeedback('AI评分服务暂时不可用，已使用本地评分');
         
-        if (earnedPoints >= currentQ.points * 0.6) {
+        if (earnedPoints >= q.points * 0.6) {
           setFeedback('correct');
-        } else if (earnedPoints >= currentQ.points * 0.3) {
+        } else if (earnedPoints >= q.points * 0.3) {
           setFeedback('partial');
         } else {
           setFeedback('wrong');
         }
         
         const result = {
-          question: currentQ,
+          question: { ...q, id: `${currentQ.id}_${q.id}` } as Question,
           userAnswer: [...selectedAnswers],
           earnedPoints: points,
-          maxPoints: currentQ.points,
+          maxPoints: q.points,
           isCorrect: isCorrect
         };
         setQuestionResults(prev => [...prev, result]);
@@ -527,10 +567,12 @@ export default function Quiz({
 
     // 记录选择题结果
     const result = {
-      question: currentQ,
+      question: currentQ.type === 'comprehensive'
+        ? ({ ...q, id: `${currentQ.id}_${q.id}` } as Question)
+        : currentQ,
       userAnswer: [...selectedAnswers],
       earnedPoints: earnedPoints,
-      maxPoints: currentQ.points,
+      maxPoints: q.points,
       isCorrect: isCorrect
     };
     setQuestionResults(prev => [...prev, result]);
@@ -555,6 +597,17 @@ export default function Quiz({
   const handleNext = useCallback(() => {
     if (isTransitioning) return; // 防止重复触发
     
+    // 如果是综合大题，检查是否还有子题目
+    if (currentQ.type === 'comprehensive' && currentQ.subQuestions && currentSubIndex < currentQ.subQuestions.length - 1) {
+      setSelectedAnswers([]);
+      setFeedback(null);
+      setIsAiScoring(false);
+      setAiFeedback('');
+      setAiScore(null);
+      setCurrentSubIndex(prev => prev + 1);
+      return;
+    }
+
     setIsTransitioning(true);
     setSlideDirection('left'); // 向左滑出
     
@@ -565,11 +618,17 @@ export default function Quiz({
       setIsAiScoring(false);
       setAiFeedback('');
       setAiScore(null);
+      setCurrentSubIndex(0); // 重置子题目索引
       
       if (isLast) {
         // 计算最终得分并传递详细结果 - 使用ref获取最新数据
         const finalScore = roundToHalf(questionResultsRef.current.reduce((acc, r) => acc + r.earnedPoints, 0));
-        const totalPoints = questions.reduce((acc, q) => acc + q.points, 0);
+        const totalPoints = questions.reduce((acc, q) => {
+          if (q.type === 'comprehensive' && q.subQuestions) {
+            return acc + q.subQuestions.reduce((sum, sub) => sum + sub.points, 0);
+          }
+          return acc + q.points;
+        }, 0);
         onFinish(finalScore, totalPoints, questionResultsRef.current);
       } else {
         setCurrentIndex(prev => prev + 1);
@@ -580,7 +639,7 @@ export default function Quiz({
         setIsTransitioning(false);
       }, 50);
     }, SLIDE_DURATION * 1000);
-  }, [isTransitioning, isLast, questions, onFinish]);
+  }, [isTransitioning, isLast, questions, onFinish, currentQ, currentSubIndex]);
 
   const formatTime = (seconds: number) => {
     const m = Math.floor(seconds / 60);
@@ -597,14 +656,18 @@ export default function Quiz({
       single: '单选题',
       multiple: '多选题',
       boolean: '判断题',
-      fill_in_the_blanks: '填空题'
+      fill_in_the_blanks: '填空题',
+      comprehensive: '综合大题'
     };
     return map[type] || '未知题型';
   };
 
   const getTypeScoreInfo = (type: string) => {
     // 根据当前赛道和题型计算分数
-    if (track === 'track2') {
+    if (track === 'track3') {
+      // 赛道三：单选(25%)+多选(25%)+填空(50%) = 100分
+      return { perQuestion: 5, count: 20, total: 100 };
+    } else if (track === 'track2') {
       // 赛道二：10单选(2分) + 10多选(2分) + 10判断(2分) + 10填空(2分) + 2简答(10分) = 100分
       const scoreMap: Record<string, number> = {
         single: 2,
@@ -724,16 +787,30 @@ export default function Quiz({
           className="flex-1 flex flex-col min-h-0 glass-card p-4 md:p-8 w-full max-w-6xl mx-auto"
         >
           <div className="flex-1 overflow-y-auto pr-2 pb-2">
+            {currentQ.type === 'comprehensive' && currentQ.scenario && (
+              <div className="mb-6 p-4 md:p-6 bg-white/5 rounded-2xl border border-white/10 shadow-inner group">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="px-2 py-0.5 bg-blue-500/20 text-blue-400 text-xs font-bold rounded-md border border-blue-500/30">情境背景</span>
+                  <div className="h-px flex-1 bg-white/10"></div>
+                </div>
+                <div className="text-gray-200 text-base md:text-lg leading-relaxed whitespace-pre-wrap font-medium">
+                  {currentQ.scenario}
+                </div>
+              </div>
+            )}
+
             <h2 className="text-xl md:text-2xl font-bold text-white mb-6 leading-relaxed drop-shadow-md whitespace-pre-wrap">
-              {currentQ.question.replace(/^\d+[.、：:]\s*/, '')}
+              {currentQ.type === 'comprehensive' && currentQ.subQuestions 
+                ? `(${currentSubIndex + 1}/${currentQ.subQuestions.length}) ${q.question.replace(/^\d+[.、：:]\s*/, '')}`
+                : q.question.replace(/^\d+[.、：:]\s*/, '')}
             </h2>
 
             <div className="space-y-3">
-              {currentQ.type === 'boolean' && (
+              {q.type === 'boolean' && (
                 <>
                   {['True', 'False'].map(opt => {
                     const isSelected = selectedAnswers.includes(opt);
-                    const answerStr = String(currentQ.answer).trim();
+                    const answerStr = String(q.answer).trim();
                     const isAnswerTrue = answerStr === 'True' || answerStr === '正确' || answerStr === '√' || answerStr === '对';
                     const correctOpt = isAnswerTrue ? 'True' : 'False';
                     const isCorrect = opt === correctOpt;
@@ -776,12 +853,12 @@ export default function Quiz({
                 </>
               )}
 
-              {(currentQ.type === 'single' || currentQ.type === 'multiple') && currentQ.options && (
-                Object.entries(currentQ.options).map(([key, val]) => {
+              {(q.type === 'single' || q.type === 'multiple') && q.options && (
+                Object.entries(q.options).map(([key, val]) => {
                   const isSelected = selectedAnswers.includes(key);
-                  const correctAnswers = currentQ.type === 'multiple' 
-                    ? (currentQ.answer as string[]) 
-                    : [currentQ.answer as string];
+                  const correctAnswers = q.type === 'multiple' 
+                    ? (q.answer as string[]) 
+                    : [q.answer as string];
                   const isCorrect = correctAnswers.includes(key);
                   const showResult = feedback !== null; // 提交后显示结果
                   
@@ -836,22 +913,23 @@ export default function Quiz({
                 })
               )}
               
-              {(currentQ.type === 'short_answer' || currentQ.type === 'fill_in_the_blanks') && (
+              {(q.type === 'short_answer' || q.type === 'fill_in_the_blanks') && (
                 <div className="space-y-3">
                   <div className="bg-white/5 rounded-xl p-2 border-2 border-white/10 focus-within:border-blue-400/50 focus-within:bg-white/10 transition-colors shadow-sm">
                     <textarea
+                      key={`${currentQ.id}_${currentSubIndex}`} // 强制重新渲染 textarea
                       className="w-full h-24 md:h-32 bg-transparent p-3 md:p-4 text-white outline-none resize-none placeholder:text-white/30"
-                      placeholder={currentQ.type === 'fill_in_the_blanks' ? "请输入填空答案（多个空用逗号分隔）..." : "请输入你的答案..."}
+                      placeholder={q.type === 'fill_in_the_blanks' ? "请输入填空答案（数值、代码或符号）..." : "请输入你的答案..."}
                       onChange={(e) => setSelectedAnswers([e.target.value])}
                     />
                   </div>
                   
                   {/* AI评分结果显示 */}
-                  {currentQ.type === 'short_answer' && aiScore !== null && (
+                  {q.type === 'short_answer' && aiScore !== null && (
                     <div className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-blue-400 font-bold text-lg">AI评分结果</span>
-                        <span className="text-white font-bold text-xl">{aiScore.toFixed(1)}/{currentQ.points}分</span>
+                        <span className="text-white font-bold text-xl">{aiScore.toFixed(1)}/{q.points}分</span>
                       </div>
                       {aiFeedback && (
                         <p className="text-gray-300 text-sm leading-relaxed">{aiFeedback}</p>
@@ -860,12 +938,12 @@ export default function Quiz({
                   )}
 
                   {/* 填空题正确答案显示 */}
-                  {currentQ.type === 'fill_in_the_blanks' && feedback !== null && (
+                  {q.type === 'fill_in_the_blanks' && feedback !== null && (
                     <div className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30">
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-emerald-400 font-bold text-lg">正确答案</span>
                       </div>
-                      <p className="text-white text-lg leading-relaxed">{currentQ.answer}</p>
+                      <p className="text-white text-lg leading-relaxed">{q.answer}</p>
                     </div>
                   )}
                 </div>
@@ -901,18 +979,22 @@ export default function Quiz({
               )}
             </div>
 
-            <div /> {/* Spacer */}
+            <div className="text-white/60 text-sm font-medium">
+              {currentQ.type === 'comprehensive' && currentQ.subQuestions && (
+                <span>第 {currentIndex + 1} 题 · 子问题 {currentSubIndex + 1}/{currentQ.subQuestions.length}</span>
+              )}
+            </div>
             
             <button
               onClick={handleConfirm}
-              disabled={selectedAnswers.length === 0 && currentQ.type !== 'short_answer' && currentQ.type !== 'fill_in_the_blanks'}
+              disabled={selectedAnswers.length === 0 && q.type !== 'short_answer' && q.type !== 'fill_in_the_blanks'}
               className={`h-12 md:h-14 px-6 md:px-8 rounded-xl transition-all flex items-center justify-center text-white font-bold text-base md:text-lg group z-10 ${
-                selectedAnswers.length === 0 && currentQ.type !== 'short_answer' && currentQ.type !== 'fill_in_the_blanks'
+                selectedAnswers.length === 0 && q.type !== 'short_answer' && q.type !== 'fill_in_the_blanks'
                   ? 'bg-white/10 text-white/40 cursor-not-allowed border border-white/5'
                   : 'bg-blue-600 hover:bg-blue-500 active:scale-95 shadow-[0_4px_15px_rgba(37,99,235,0.3)] border border-blue-500/50'
               }`}
             >
-              {currentQ.type === 'short_answer' || currentQ.type === 'fill_in_the_blanks' ? '确认答案' : '确认答案'}
+              {q.type === 'short_answer' || q.type === 'fill_in_the_blanks' ? '确认答案' : '确认答案'}
             </button>
           </div>
         </motion.div>
