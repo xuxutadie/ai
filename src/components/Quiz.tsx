@@ -245,6 +245,11 @@ export default function Quiz({
   useEffect(() => {
     let filtered = (questionsData as Question[]);
 
+    // 获取并过滤掉最近使用过的题目ID
+    const historyKey = `quiz_history_${track}_${group}`;
+    const usedIdsRaw = localStorage.getItem(historyKey);
+    const usedIds: string[] = usedIdsRaw ? JSON.parse(usedIdsRaw) : [];
+
     if (track === 'track1') {
       filtered = filtered.filter(q => 
         (group === 'primary' && q.group === 'track1_primary') ||
@@ -262,10 +267,25 @@ export default function Quiz({
       );
     }
 
-    // 辅助函数：从数组中随机选择指定数量的不重复题目
-    const selectRandomQuestions = (questions: Question[], count: number): Question[] => {
-      const shuffled = [...questions].sort(() => Math.random() - 0.5);
-      return shuffled.slice(0, Math.min(count, shuffled.length));
+    // 辅助函数：从数组中随机选择指定数量的不重复题目，并优先避开历史题目
+    const selectRandomQuestions = (pool: Question[], count: number): Question[] => {
+      // 1. 先尝试从不在历史记录中的题目中选
+      const freshPool = pool.filter(q => !usedIds.includes(q.id));
+      
+      let selected: Question[] = [];
+      if (freshPool.length >= count) {
+        // 如果新题足够，直接从新题中随机选
+        const shuffled = [...freshPool].sort(() => Math.random() - 0.5);
+        selected = shuffled.slice(0, count);
+      } else {
+        // 如果新题不够，先拿走所有新题，剩下的从旧题（历史记录）中选
+        selected = [...freshPool];
+        const remainingCount = count - freshPool.length;
+        const usedPool = pool.filter(q => usedIds.includes(q.id));
+        const shuffledUsed = [...usedPool].sort(() => Math.random() - 0.5);
+        selected = [...selected, ...shuffledUsed.slice(0, remainingCount)];
+      }
+      return selected;
     };
 
     // 辅助函数：根据题目ID去重
@@ -280,6 +300,8 @@ export default function Quiz({
       });
     };
 
+    let selectedQuestions: Question[] = [];
+
     if (track === 'track3') {
       // 赛道3：单选25% 多选25% 填空50%
       // 设总共20道题：5单选(5分) + 5多选(5分) + 10填空(5分) = 100分
@@ -293,11 +315,7 @@ export default function Quiz({
 
       [...singleQs, ...multiQs, ...fillQs].forEach(q => q.points = 5);
 
-      filtered = removeDuplicates([...singleQs, ...multiQs, ...fillQs]);
-      
-      if (filtered.length === 0) {
-        filtered = (questionsData as Question[]).slice(0, 10);
-      }
+      selectedQuestions = removeDuplicates([...singleQs, ...multiQs, ...fillQs]);
     } else if (track === 'track2') {
       // 赛道2：单选10道、多选10道、判断10道、填空10道、简答2道
       const singlePool = filtered.filter(q => q.type === 'single');
@@ -315,11 +333,7 @@ export default function Quiz({
       [...singleQs, ...multiQs, ...boolQs, ...fillQs].forEach(q => q.points = 2);
       shortQs.forEach(q => q.points = 10);
 
-      filtered = removeDuplicates([...singleQs, ...multiQs, ...boolQs, ...fillQs, ...shortQs]);
-      
-      if (filtered.length === 0) {
-        filtered = (questionsData as Question[]).slice(0, 10);
-      }
+      selectedQuestions = removeDuplicates([...singleQs, ...multiQs, ...boolQs, ...fillQs, ...shortQs]);
     } else {
       // 赛道1：单选10道、多选5道、判断5道、主观题1道
       const singlePool = filtered.filter(q => q.type === 'single');
@@ -335,16 +349,23 @@ export default function Quiz({
       [...singleQs, ...multiQs, ...boolQs].forEach(q => q.points = 2);
       shortQs.forEach(q => q.points = 60);
 
-      filtered = removeDuplicates([...singleQs, ...multiQs, ...boolQs, ...shortQs]);
-      if (filtered.length === 0) {
-        filtered = (questionsData as Question[]).slice(0, 10);
-      }
+      selectedQuestions = removeDuplicates([...singleQs, ...multiQs, ...boolQs, ...shortQs]);
+    }
+
+    if (selectedQuestions.length === 0) {
+      selectedQuestions = (questionsData as Question[]).slice(0, 10);
     }
 
     // 随机打乱选项顺序
-    filtered = shuffleOptions(filtered);
+    selectedQuestions = shuffleOptions(selectedQuestions);
 
-    setQuestions(filtered);
+    // 更新历史记录：保存当前选中的题目ID，并限制历史长度（防止以后没题出）
+    // 策略：保留最近 3 次测试的题目量（大约 60 道）
+    const currentIds = selectedQuestions.map(q => q.id);
+    const updatedUsedIds = [...currentIds, ...usedIds].slice(0, 100); 
+    localStorage.setItem(historyKey, JSON.stringify(updatedUsedIds));
+
+    setQuestions(selectedQuestions);
     setIsLoading(false);
   }, [group, track]);
 
