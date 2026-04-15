@@ -13,7 +13,7 @@ export default function App() {
   const [currentScreen, setCurrentScreen] = useState<Screen>('auth');
   const [authStatus, setAuthStatus] = useState<AuthStatus | null>(null);
   const [selectedGroup, setSelectedGroup] = useState<'primary' | 'junior' | null>(null);
-  const [track, setTrack] = useState<'track1' | 'track2' | null>(null);
+  const [track, setTrack] = useState<'track1' | 'track2' | 'track3' | null>(null);
   const [score, setScore] = useState<number>(0);
   const [totalQuestions, setTotalQuestions] = useState<number>(0);
   const [questionResults, setQuestionResults] = useState<{
@@ -44,7 +44,7 @@ export default function App() {
     setCurrentScreen('selection');
   };
 
-  const handleStartQuiz = (group: 'primary' | 'junior', selectedTrack: 'track1' | 'track2') => {
+  const handleStartQuiz = (group: 'primary' | 'junior', selectedTrack: 'track1' | 'track2' | 'track3') => {
     if (authStatus?.remaining !== undefined && authStatus.remaining <= 0) {
       alert('您的能量已耗尽，请重新激活！');
       setCurrentScreen('auth');

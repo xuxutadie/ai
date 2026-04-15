@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿﻿﻿import { useState } from 'react';
+﻿﻿﻿﻿﻿﻿import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LogOut, Zap, GraduationCap, Rocket, Settings, ArrowLeft, Brain, Target } from 'lucide-react';
 import { AuthStatus } from '../types';
@@ -158,8 +158,8 @@ export default function Selection({
                         <Rocket className="w-8 h-8 md:w-12 md:h-12 text-blue-400" />
                       </div>
                       <h3 className="text-2xl md:text-3xl font-black text-white mb-1 md:mb-3 tracking-wide">开始挑战</h3>
-                      <p className="text-blue-100/80 text-sm md:text-lg mb-3 md:mb-6">不区分学段</p>
-                      <div className="mt-auto inline-flex items-center text-xs md:text-sm font-bold text-blue-300 bg-blue-500/20 px-4 md:px-5 py-2 md:py-2.5 rounded-full border border-blue-500/30">扣除 1 次能量</div>
+                       <p className="text-blue-100/80 text-sm md:text-lg mb-3 md:mb-6">初中/高中</p>
+                       <div className="mt-auto inline-flex items-center text-xs md:text-sm font-bold text-blue-300 bg-blue-500/20 px-4 md:px-5 py-2 md:py-2.5 rounded-full border border-blue-500/30">扣除 1 次能量</div>
                     </motion.div>
                   </ElectricBorder>
                 ) : (

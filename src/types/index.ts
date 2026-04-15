@@ -1,9 +1,20 @@
+export interface SubQuestion {
+  id: string;
+  type: 'single' | 'multiple' | 'fill_in_the_blanks';
+  question: string;
+  options?: Record<string, string>;
+  answer: string | string[];
+  points: number;
+}
+
 export interface Question {
   id: string;
   grade: string;
-  group?: 'primary' | 'junior' | 'both' | 'track1_primary' | 'track1_junior';
-  type: 'single' | 'multiple' | 'boolean' | 'fill_in_the_blanks' | 'short_answer';
+  group?: 'primary' | 'junior' | 'both' | 'track1_primary' | 'track1_junior' | 'track3_primary' | 'track3_junior';
+  type: 'single' | 'multiple' | 'boolean' | 'fill_in_the_blanks' | 'short_answer' | 'comprehensive';
   question: string;
+  scenario?: string; // For comprehensive questions
+  subQuestions?: SubQuestion[]; // For comprehensive questions
   options?: Record<string, string>;
   answer: string | string[];
   points: number;

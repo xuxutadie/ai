@@ -60,7 +60,8 @@ export default function Result({
       multiple: '多选题',
       boolean: '判断题',
       short_answer: '简答题',
-      fill_in_the_blanks: '填空题'
+      fill_in_the_blanks: '填空题',
+      comprehensive: '综合题'
     };
     return map[type] || '未知题型';
   };
