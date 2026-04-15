@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿import { useState } from 'react';
+﻿﻿﻿﻿﻿﻿﻿﻿﻿import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LogOut, Zap, GraduationCap, Rocket, Settings, ArrowLeft, Brain, Target } from 'lucide-react';
 import { AuthStatus } from '../types';
@@ -11,11 +11,11 @@ export default function Selection({
   onLogout 
 }: { 
   authStatus: AuthStatus; 
-  onStart: (group: 'primary' | 'junior', track: 'track1' | 'track2') => void;
+  onStart: (group: 'primary' | 'junior', track: 'track1' | 'track2' | 'track3') => void;
   onAdmin: () => void;
   onLogout: () => void;
 }) {
-  const [selectedTrack, setSelectedTrack] = useState<'track1' | 'track2' | null>(null);
+  const [selectedTrack, setSelectedTrack] = useState<'track1' | 'track2' | 'track3' | null>(null);
   const [showAdmin, setShowAdmin] = useState(false);
   const [adminCode, setAdminCode] = useState('');
 
@@ -67,7 +67,7 @@ export default function Selection({
             >
               <h2 className="text-2xl md:text-3xl font-black text-white mb-6 md:mb-8 text-center">选择赛道</h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full max-w-4xl flex-1 min-h-0">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 w-full max-w-6xl flex-1 min-h-0">
                 <ElectricBorder color="#8b5cf6" speed={1} chaos={0.12} borderRadius={32} className="cursor-pointer h-full">
                   <motion.div
                     whileHover={{ y: -5 }}
@@ -75,12 +75,12 @@ export default function Selection({
                     onClick={() => setSelectedTrack('track1')}
                     className="w-full h-full p-4 md:p-8 group flex flex-col items-center text-center justify-center"
                   >
-                    <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl bg-purple-500/20 border border-purple-400/30 flex items-center justify-center mb-3 md:mb-8 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(139,92,246,0.2)] shrink-0">
-                      <Brain className="w-8 h-8 md:w-12 md:h-12 text-purple-400" />
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl bg-purple-500/20 border border-purple-400/30 flex items-center justify-center mb-3 md:mb-6 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(139,92,246,0.2)] shrink-0">
+                      <Brain className="w-8 h-8 md:w-10 md:h-10 text-purple-400" />
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-black text-white mb-1 md:mb-3 tracking-wide">赛道一</h3>
-                    <p className="text-purple-100/80 text-sm md:text-lg mb-3 md:mb-6">基础知识训练</p>
-                    <div className="mt-auto inline-flex items-center text-xs md:text-sm font-bold text-purple-300 bg-purple-500/20 px-4 md:px-5 py-2 md:py-2.5 rounded-full border border-purple-500/30">扣除 1 次能量</div>
+                    <h3 className="text-xl md:text-2xl font-black text-white mb-1 md:mb-2 tracking-wide">赛道一</h3>
+                    <p className="text-purple-100/80 text-xs md:text-sm mb-3 md:mb-4">基础知识训练</p>
+                    <div className="mt-auto inline-flex items-center text-xs font-bold text-purple-300 bg-purple-500/20 px-4 py-2 rounded-full border border-purple-500/30 whitespace-nowrap">扣除 1 次能量</div>
                   </motion.div>
                 </ElectricBorder>
 
@@ -91,12 +91,28 @@ export default function Selection({
                     onClick={() => setSelectedTrack('track2')}
                     className="w-full h-full p-4 md:p-8 group flex flex-col items-center text-center justify-center"
                   >
-                    <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl bg-amber-500/20 border border-amber-400/30 flex items-center justify-center mb-3 md:mb-8 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(245,158,11,0.2)] shrink-0">
-                      <Target className="w-8 h-8 md:w-12 md:h-12 text-amber-400" />
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl bg-amber-500/20 border border-amber-400/30 flex items-center justify-center mb-3 md:mb-6 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(245,158,11,0.2)] shrink-0">
+                      <Target className="w-8 h-8 md:w-10 md:h-10 text-amber-400" />
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-black text-white mb-1 md:mb-3 tracking-wide">赛道二</h3>
-                    <p className="text-amber-100/80 text-sm md:text-lg mb-3 md:mb-6">工具应用问答</p>
-                    <div className="mt-auto inline-flex items-center text-xs md:text-sm font-bold text-amber-300 bg-amber-500/20 px-4 md:px-5 py-2 md:py-2.5 rounded-full border border-amber-500/30">扣除 1 次能量</div>
+                    <h3 className="text-xl md:text-2xl font-black text-white mb-1 md:mb-2 tracking-wide">赛道二</h3>
+                    <p className="text-amber-100/80 text-xs md:text-sm mb-3 md:mb-4">工具应用问答</p>
+                    <div className="mt-auto inline-flex items-center text-xs font-bold text-amber-300 bg-amber-500/20 px-4 py-2 rounded-full border border-amber-500/30 whitespace-nowrap">扣除 1 次能量</div>
+                  </motion.div>
+                </ElectricBorder>
+
+                <ElectricBorder color="#3b82f6" speed={1} chaos={0.12} borderRadius={32} className="cursor-pointer h-full">
+                  <motion.div
+                    whileHover={{ y: -5 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => setSelectedTrack('track3')}
+                    className="w-full h-full p-4 md:p-8 group flex flex-col items-center text-center justify-center"
+                  >
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl bg-blue-500/20 border border-blue-400/30 flex items-center justify-center mb-3 md:mb-6 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(59,130,246,0.2)] shrink-0">
+                      <Rocket className="w-8 h-8 md:w-10 md:h-10 text-blue-400" />
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-black text-white mb-1 md:mb-2 tracking-wide">赛道三</h3>
+                    <p className="text-blue-100/80 text-xs md:text-sm mb-3 md:mb-4">综合大题挑战</p>
+                    <div className="mt-auto inline-flex items-center text-xs font-bold text-blue-300 bg-blue-500/20 px-4 py-2 rounded-full border border-blue-500/30 whitespace-nowrap">扣除 1 次能量</div>
                   </motion.div>
                 </ElectricBorder>
               </div>
@@ -109,50 +125,78 @@ export default function Selection({
               exit={{ opacity: 0, x: -20 }}
               className="w-full h-full flex flex-col items-center"
             >
-              <div className="flex items-center justify-between w-full max-w-4xl mb-6">
-                <button
-                  onClick={() => setSelectedTrack(null)}
-                  className="text-white/70 hover:text-white flex items-center text-sm font-medium transition-colors"
-                >
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  返回赛道选择
-                </button>
-                <h2 className="text-2xl md:text-3xl font-black text-white text-center">选择考试组别</h2>
-                <div className="w-24"></div>
+              <div className="flex flex-col items-center w-full max-w-4xl mb-6 md:mb-8">
+                <div className="flex items-center justify-between w-full mb-4">
+                  <button
+                    onClick={() => setSelectedTrack(null)}
+                    className="text-white/70 hover:text-white flex items-center text-sm font-medium transition-colors"
+                  >
+                    <ArrowLeft className="w-4 h-4 mr-2" />
+                    返回赛道选择
+                  </button>
+                  <div className="w-24"></div>
+                </div>
+                <h2 className="text-2xl md:text-3xl font-black text-white text-center">
+                  {selectedTrack === 'track1' ? '基础知识训练' : 
+                   selectedTrack === 'track2' ? '工具应用问答' : '综合大题挑战'}
+                </h2>
+                <p className="text-white/60 text-sm md:text-base mt-2 text-center">
+                  {selectedTrack === 'track3' ? '点击下方按钮立即开始挑战' : '请选择您的学段以开始练习'}
+                </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full max-w-4xl flex-1 min-h-0">
-                <ElectricBorder color="#10b981" speed={1} chaos={0.12} borderRadius={32} className="cursor-pointer h-full">
-                  <motion.div
-                    whileHover={{ y: -5 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => handleStart('primary')}
-                    className="w-full h-full p-4 md:p-8 group flex flex-col items-center text-center justify-center"
-                  >
-                    <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center mb-3 md:mb-8 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(16,185,129,0.2)] shrink-0">
-                      <GraduationCap className="w-8 h-8 md:w-12 md:h-12 text-emerald-400" />
-                    </div>
-                    <h3 className="text-2xl md:text-3xl font-black text-white mb-1 md:mb-3 tracking-wide">小学组<span className="text-lg md:text-xl font-bold opacity-80">(Primary)</span></h3>
-                    <p className="text-emerald-100/80 text-sm md:text-lg mb-3 md:mb-6">适合 3-6 年级</p>
-                    <div className="mt-auto inline-flex items-center text-xs md:text-sm font-bold text-emerald-300 bg-emerald-500/20 px-4 md:px-5 py-2 md:py-2.5 rounded-full border border-emerald-500/30">扣除 1 次能量</div>
-                  </motion.div>
-                </ElectricBorder>
+              <div className={`grid ${selectedTrack === 'track3' ? 'grid-cols-1 max-w-xl' : 'grid-cols-1 md:grid-cols-2 max-w-4xl'} gap-4 md:gap-8 w-full flex-1 min-h-0`}>
+                {selectedTrack === 'track3' ? (
+                  <ElectricBorder color="#3b82f6" speed={1} chaos={0.12} borderRadius={32} className="cursor-pointer h-full">
+                    <motion.div
+                      whileHover={{ y: -5 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => handleStart('junior')}
+                      className="w-full h-full p-4 md:p-8 group flex flex-col items-center text-center justify-center"
+                    >
+                      <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl bg-blue-500/20 border border-blue-400/30 flex items-center justify-center mb-3 md:mb-8 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(59,130,246,0.2)] shrink-0">
+                        <Rocket className="w-8 h-8 md:w-12 md:h-12 text-blue-400" />
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-black text-white mb-1 md:mb-3 tracking-wide">开始挑战</h3>
+                      <p className="text-blue-100/80 text-sm md:text-lg mb-3 md:mb-6">不区分学段</p>
+                      <div className="mt-auto inline-flex items-center text-xs md:text-sm font-bold text-blue-300 bg-blue-500/20 px-4 md:px-5 py-2 md:py-2.5 rounded-full border border-blue-500/30">扣除 1 次能量</div>
+                    </motion.div>
+                  </ElectricBorder>
+                ) : (
+                  <>
+                    <ElectricBorder color="#10b981" speed={1} chaos={0.12} borderRadius={32} className="cursor-pointer h-full">
+                      <motion.div
+                        whileHover={{ y: -5 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => handleStart('primary')}
+                        className="w-full h-full p-4 md:p-8 group flex flex-col items-center text-center justify-center"
+                      >
+                        <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center mb-3 md:mb-8 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(16,185,129,0.2)] shrink-0">
+                          <GraduationCap className="w-8 h-8 md:w-12 md:h-12 text-emerald-400" />
+                        </div>
+                        <h3 className="text-2xl md:text-3xl font-black text-white mb-1 md:mb-3 tracking-wide">小学组<span className="text-lg md:text-xl font-bold opacity-80">(Primary)</span></h3>
+                        <p className="text-emerald-100/80 text-sm md:text-lg mb-3 md:mb-6">适合 3-6 年级</p>
+                        <div className="mt-auto inline-flex items-center text-xs md:text-sm font-bold text-emerald-300 bg-emerald-500/20 px-4 md:px-5 py-2 md:py-2.5 rounded-full border border-emerald-500/30">扣除 1 次能量</div>
+                      </motion.div>
+                    </ElectricBorder>
 
-                <ElectricBorder color="#3b82f6" speed={1} chaos={0.12} borderRadius={32} className="cursor-pointer h-full">
-                  <motion.div
-                    whileHover={{ y: -5 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => handleStart('junior')}
-                    className="w-full h-full p-4 md:p-8 group flex flex-col items-center text-center justify-center"
-                  >
-                    <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl bg-blue-500/20 border border-blue-400/30 flex items-center justify-center mb-3 md:mb-8 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(59,130,246,0.2)] shrink-0">
-                      <Rocket className="w-8 h-8 md:w-12 md:h-12 text-blue-400" />
-                    </div>
-                    <h3 className="text-2xl md:text-3xl font-black text-white mb-1 md:mb-3 tracking-wide">初中组<span className="text-lg md:text-xl font-bold opacity-80">(Junior)</span></h3>
-                    <p className="text-blue-100/80 text-sm md:text-lg mb-3 md:mb-6">适合初中生，进阶题库</p>
-                    <div className="mt-auto inline-flex items-center text-xs md:text-sm font-bold text-blue-300 bg-blue-500/20 px-4 md:px-5 py-2 md:py-2.5 rounded-full border border-blue-500/30">扣除 1 次能量</div>
-                  </motion.div>
-                </ElectricBorder>
+                    <ElectricBorder color="#3b82f6" speed={1} chaos={0.12} borderRadius={32} className="cursor-pointer h-full">
+                      <motion.div
+                        whileHover={{ y: -5 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => handleStart('junior')}
+                        className="w-full h-full p-4 md:p-8 group flex flex-col items-center text-center justify-center"
+                      >
+                        <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl bg-blue-500/20 border border-blue-400/30 flex items-center justify-center mb-3 md:mb-8 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(59,130,246,0.2)] shrink-0">
+                          <Rocket className="w-8 h-8 md:w-12 md:h-12 text-blue-400" />
+                        </div>
+                        <h3 className="text-2xl md:text-3xl font-black text-white mb-1 md:mb-3 tracking-wide">初中/高中<span className="text-lg md:text-xl font-bold opacity-80">(Junior/Senior)</span></h3>
+                        <p className="text-blue-100/80 text-sm md:text-lg mb-3 md:mb-6">适合 7-12 年级，进阶题库</p>
+                        <div className="mt-auto inline-flex items-center text-xs md:text-sm font-bold text-blue-300 bg-blue-500/20 px-4 md:px-5 py-2 md:py-2.5 rounded-full border border-blue-500/30">扣除 1 次能量</div>
+                      </motion.div>
+                    </ElectricBorder>
+                  </>
+                )}
               </div>
             </motion.div>
           )}
