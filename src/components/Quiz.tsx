@@ -7,8 +7,7 @@ import { scoreWithAI } from '../services/aiScoring';
 
 // 动画配置
 const SLIDE_DURATION = 0.4; // 滑动动画时长
-const FEEDBACK_DURATION_CORRECT = 1000; // 正确时反馈显示时长(ms)
-const FEEDBACK_DURATION_WRONG = 3000; // 错误时反馈显示时长(ms)
+const FEEDBACK_DURATION = 500; // 默认反馈显示时长(ms)
 
 function calculateFillInBlanksScore(userAnswer: string, correctAnswer: string, maxPoints: number): number {
   if (!userAnswer.trim()) return 0;
@@ -491,10 +490,10 @@ export default function Quiz({
       };
       setQuestionResults(prev => [...prev, result]);
       
-      // 延迟后自动切题 - 根据正确与否设置不同延迟
+      // 延迟后自动切题 - 填空题答错后显示1秒，其余显示默认时长
       setTimeout(() => {
         handleNext();
-      }, isCorrect ? FEEDBACK_DURATION_CORRECT : FEEDBACK_DURATION_WRONG);
+      }, (q.type === 'fill_in_the_blanks' && !isCorrect) ? 1000 : FEEDBACK_DURATION);
       return;
     }
 
@@ -514,7 +513,7 @@ export default function Quiz({
         setQuestionResults(prev => [...prev, result]);
         setTimeout(() => {
           handleNext();
-        }, FEEDBACK_DURATION_WRONG);
+        }, FEEDBACK_DURATION);
         return;
       }
       
@@ -595,10 +594,10 @@ export default function Quiz({
         setIsAiScoring(false);
       }
       
-      // AI评分完成后，延迟自动切题 - 根据得分情况设置不同延迟
+      // AI评分完成后，延迟自动切题
       setTimeout(() => {
         handleNext();
-      }, isCorrect ? FEEDBACK_DURATION_CORRECT : FEEDBACK_DURATION_WRONG);
+      }, FEEDBACK_DURATION);
       return;
     }
 
@@ -621,10 +620,10 @@ export default function Quiz({
       setFeedback('wrong');
     }
 
-    // 延迟后自动切题 - 根据正确与否设置不同延迟
+    // 延迟后自动切题
     setTimeout(() => {
       handleNext();
-    }, isCorrect ? FEEDBACK_DURATION_CORRECT : FEEDBACK_DURATION_WRONG);
+    }, FEEDBACK_DURATION);
   };
 
   // 四舍五入到最近的 0.5
