@@ -173,10 +173,10 @@ export default function App() {
             onAdmin={() => setCurrentScreen('admin')}
           />
         )}
-        {currentScreen === 'quiz' && selectedGroup && track && (
+        {currentScreen === 'quiz' && selectedGroup && track && track !== 'pk' && (
           <Quiz 
             group={selectedGroup} 
-            track={track}
+            track={track as 'track1' | 'track2' | 'track3'}
             onFinish={handleFinishQuiz} 
             onExit={() => setCurrentScreen('selection')} 
           />

@@ -1,6 +1,5 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Clock, CheckCircle2, XCircle, Loader2, Trophy, ArrowLeft, ArrowRight, Zap, Target, Hourglass } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Clock, Trophy, ArrowLeft, ArrowRight, Hourglass } from 'lucide-react';
 import { Question } from '../types';
 import questionsData from '../data/questions.json';
 import { scoreWithAI } from '../services/aiScoring';
