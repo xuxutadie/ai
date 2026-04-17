@@ -60,6 +60,7 @@ export default function PKQuiz({
   const [rightQTimeLeft, setRightQTimeLeft] = useState<number | null>(null);
 
   const [isLoading, setIsLoading] = useState(true);
+  const isFinished = useRef(false);
 
   // 初始化题目
   useEffect(() => {
@@ -115,16 +116,13 @@ export default function PKQuiz({
       // 1. 处理左侧计时
       if (leftIndex < leftQuestions.length) {
         if (leftQTimeLeft !== null) {
-          // 专项计时中
-          setLeftQTimeLeft(prev => {
-            if (prev !== null && prev <= 1) {
-              handleConfirm('left'); // 强制提交
-              return null;
-            }
-            return prev !== null ? prev - 1 : null;
-          });
+          if (leftQTimeLeft <= 0) {
+            handleConfirm('left');
+            setLeftQTimeLeft(null);
+          } else {
+            setLeftQTimeLeft(prev => (prev !== null ? prev - 1 : null));
+          }
         } else if (!rightIsBlocking && !leftFeedback) {
-          // 正常计时（未被对手阻塞，且自身未在反馈停留）
           setLeftTime(prev => (prev <= 1 ? 0 : prev - 1));
         }
       }
@@ -132,26 +130,28 @@ export default function PKQuiz({
       // 2. 处理右侧计时
       if (rightIndex < rightQuestions.length) {
         if (rightQTimeLeft !== null) {
-          setRightQTimeLeft(prev => {
-            if (prev !== null && prev <= 1) {
-              handleConfirm('right');
-              return null;
-            }
-            return prev !== null ? prev - 1 : null;
-          });
+          if (rightQTimeLeft <= 0) {
+            handleConfirm('right');
+            setRightQTimeLeft(null);
+          } else {
+            setRightQTimeLeft(prev => (prev !== null ? prev - 1 : null));
+          }
         } else if (!leftIsBlocking && !rightFeedback) {
           setRightTime(prev => (prev <= 1 ? 0 : prev - 1));
         }
       }
 
       // 检查结束
-      if ((leftTime <= 0 || leftIndex >= leftQuestions.length) && (rightTime <= 0 || rightIndex >= rightQuestions.length)) {
+      if (!isFinished.current && 
+          (leftTime <= 0 || leftIndex >= leftQuestions.length) && 
+          (rightTime <= 0 || rightIndex >= rightQuestions.length)) {
+        isFinished.current = true;
         handlePKFinish();
       }
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [isLoading, leftIndex, rightIndex, leftIsBlocking, rightIsBlocking, leftFeedback, rightFeedback, leftQTimeLeft, rightQTimeLeft, leftQuestions.length, rightQuestions.length]);
+  }, [isLoading, leftIndex, rightIndex, leftIsBlocking, rightIsBlocking, leftFeedback, rightFeedback, leftQTimeLeft, rightQTimeLeft, leftQuestions.length, rightQuestions.length, leftTime, rightTime]);
 
   // 专项限时初始化
   useEffect(() => {
@@ -174,6 +174,7 @@ export default function PKQuiz({
   };
 
   const handleConfirm = async (side: 'left' | 'right') => {
+    if (isFinished.current) return;
     const isLeft = side === 'left';
     const q = isLeft ? leftCurrentQ : rightCurrentQ;
     const answers = isLeft ? leftAnswers : rightAnswers;

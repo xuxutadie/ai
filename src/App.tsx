@@ -89,8 +89,9 @@ export default function App() {
   };
 
   const handlePKFinish = (winner: 'left' | 'right' | 'draw', scores: { left: number, right: number }) => {
-    setScore(winner === 'left' ? scores.left : scores.right); // 临时记录赢家分数用于显示，PK赛有专属结果页更好，这里先复用
+    setScore(winner === 'left' ? scores.left : scores.right);
     setTotalQuestions(100);
+    setQuestionResults([]); // 清空单人模式的结果，避免干扰
     setCurrentScreen('result');
   };
 
