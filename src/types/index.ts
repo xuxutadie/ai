@@ -22,6 +22,18 @@ export interface Question {
 
 export interface AuthStatus {
   code: string;
-  type: 'FREE' | 'PAID_5' | 'UNLIMITED_1Y' | 'UNLIMITED' | 'ADMIN';
+  type: 'FREE' | 'PAID_5' | 'UNLIMITED_1Y' | 'UNLIMITED' | 'ADMIN' | 'PK_SPECIAL';
   remaining: number;
+}
+
+export type PKPlayer = 'left' | 'right';
+
+export interface PKState {
+  currentPlayer: PKPlayer;
+  leftScore: number;
+  rightScore: number;
+  leftTime: number;
+  rightTime: number;
+  isPaused: boolean;
+  questionTimeLeft: number | null; // 填空/简答限时
 }

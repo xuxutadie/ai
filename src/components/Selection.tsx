@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿import { useState } from 'react';
+﻿﻿﻿import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LogOut, Zap, GraduationCap, Rocket, Settings, ArrowLeft, Brain, Target } from 'lucide-react';
 import { AuthStatus } from '../types';
@@ -11,13 +11,75 @@ export default function Selection({
   onLogout 
 }: { 
   authStatus: AuthStatus; 
-  onStart: (group: 'primary' | 'junior', track: 'track1' | 'track2' | 'track3') => void;
+  onStart: (group: 'primary' | 'junior', track: 'track1' | 'track2' | 'track3' | 'pk') => void;
   onAdmin: () => void;
   onLogout: () => void;
 }) {
-  const [selectedTrack, setSelectedTrack] = useState<'track1' | 'track2' | 'track3' | null>(null);
+  const [selectedTrack, setSelectedTrack] = useState<'track1' | 'track2' | 'track3' | 'pk' | null>(null);
   const [showAdmin, setShowAdmin] = useState(false);
   const [adminCode, setAdminCode] = useState('');
+
+  const isPKUnlocked = authStatus.type === 'PK_SPECIAL' || authStatus.type === 'ADMIN' || authStatus.type === 'UNLIMITED';
+
+  const tracks = [
+    {
+      id: 'track1',
+      title: '赛道一',
+      subtitle: '基础知识训练',
+      color: '#8b5cf6',
+      icon: Brain,
+      iconColor: 'text-purple-400',
+      bgColor: 'bg-purple-500/20',
+      borderColor: 'border-purple-400/30',
+      shadowColor: 'shadow-[0_0_30px_rgba(139,92,246,0.2)]',
+      energyColor: 'text-purple-300',
+      energyBg: 'bg-purple-500/20',
+      energyBorder: 'border-purple-500/30'
+    },
+    {
+      id: 'track2',
+      title: '赛道二',
+      subtitle: '工具应用问答',
+      color: '#f59e0b',
+      icon: Target,
+      iconColor: 'text-amber-400',
+      bgColor: 'bg-amber-500/20',
+      borderColor: 'border-amber-400/30',
+      shadowColor: 'shadow-[0_0_30px_rgba(245,158,11,0.2)]',
+      energyColor: 'text-amber-300',
+      energyBg: 'bg-amber-500/20',
+      energyBorder: 'border-amber-500/30'
+    },
+    {
+      id: 'track3',
+      title: '赛道三',
+      subtitle: '综合大题挑战',
+      color: '#3b82f6',
+      icon: Rocket,
+      iconColor: 'text-blue-400',
+      bgColor: 'bg-blue-500/20',
+      borderColor: 'border-blue-400/30',
+      shadowColor: 'shadow-[0_0_30px_rgba(59,130,246,0.2)]',
+      energyColor: 'text-blue-300',
+      energyBg: 'bg-blue-500/20',
+      energyBorder: 'border-blue-500/30'
+    },
+    {
+      id: 'pk',
+      title: 'PK 赛',
+      subtitle: '双人分屏对战',
+      color: '#ef4444',
+      icon: Zap,
+      iconColor: 'text-red-400',
+      bgColor: 'bg-red-500/20',
+      borderColor: 'border-red-400/30',
+      shadowColor: 'shadow-[0_0_30px_rgba(239,68,68,0.2)]',
+      energyColor: 'text-red-300',
+      energyBg: 'bg-red-500/20',
+      energyBorder: 'border-red-500/30',
+      locked: !isPKUnlocked
+    }
+  ];
 
   const handleAdminEnter = () => {
     if (adminCode === 'xxxb520') {
@@ -63,58 +125,45 @@ export default function Selection({
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 20 }}
-              className="w-full h-full flex flex-col items-center"
+              className="w-full h-full flex flex-col items-center overflow-y-auto custom-scrollbar pr-2"
             >
               <h2 className="text-2xl md:text-3xl font-black text-white mb-6 md:mb-8 text-center">选择赛道</h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 w-full max-w-6xl flex-1 min-h-0">
-                <ElectricBorder color="#8b5cf6" speed={1} chaos={0.12} borderRadius={32} className="cursor-pointer h-full">
-                  <motion.div
-                    whileHover={{ y: -5 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => setSelectedTrack('track1')}
-                    className="w-full h-full p-4 md:p-8 group flex flex-col items-center text-center justify-center"
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 w-full max-w-7xl flex-1 min-h-0">
+                {tracks.map((track) => (
+                  <ElectricBorder 
+                    key={track.id}
+                    color={track.color} 
+                    speed={1} 
+                    chaos={0.12} 
+                    borderRadius={32} 
+                    className={`cursor-pointer h-full ${track.locked ? 'opacity-50 grayscale pointer-events-none' : ''}`}
                   >
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl bg-purple-500/20 border border-purple-400/30 flex items-center justify-center mb-3 md:mb-6 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(139,92,246,0.2)] shrink-0">
-                      <Brain className="w-8 h-8 md:w-10 md:h-10 text-purple-400" />
-                    </div>
-                    <h3 className="text-xl md:text-2xl font-black text-white mb-1 md:mb-2 tracking-wide">赛道一</h3>
-                    <p className="text-purple-100/80 text-xs md:text-sm mb-3 md:mb-4">基础知识训练</p>
-                    <div className="mt-auto inline-flex items-center text-xs font-bold text-purple-300 bg-purple-500/20 px-4 py-2 rounded-full border border-purple-500/30 whitespace-nowrap">扣除 1 次能量</div>
-                  </motion.div>
-                </ElectricBorder>
-
-                <ElectricBorder color="#f59e0b" speed={1} chaos={0.12} borderRadius={32} className="cursor-pointer h-full">
-                  <motion.div
-                    whileHover={{ y: -5 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => setSelectedTrack('track2')}
-                    className="w-full h-full p-4 md:p-8 group flex flex-col items-center text-center justify-center"
-                  >
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl bg-amber-500/20 border border-amber-400/30 flex items-center justify-center mb-3 md:mb-6 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(245,158,11,0.2)] shrink-0">
-                      <Target className="w-8 h-8 md:w-10 md:h-10 text-amber-400" />
-                    </div>
-                    <h3 className="text-xl md:text-2xl font-black text-white mb-1 md:mb-2 tracking-wide">赛道二</h3>
-                    <p className="text-amber-100/80 text-xs md:text-sm mb-3 md:mb-4">工具应用问答</p>
-                    <div className="mt-auto inline-flex items-center text-xs font-bold text-amber-300 bg-amber-500/20 px-4 py-2 rounded-full border border-amber-500/30 whitespace-nowrap">扣除 1 次能量</div>
-                  </motion.div>
-                </ElectricBorder>
-
-                <ElectricBorder color="#3b82f6" speed={1} chaos={0.12} borderRadius={32} className="cursor-pointer h-full">
-                  <motion.div
-                    whileHover={{ y: -5 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => setSelectedTrack('track3')}
-                    className="w-full h-full p-4 md:p-8 group flex flex-col items-center text-center justify-center"
-                  >
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl bg-blue-500/20 border border-blue-400/30 flex items-center justify-center mb-3 md:mb-6 group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(59,130,246,0.2)] shrink-0">
-                      <Rocket className="w-8 h-8 md:w-10 md:h-10 text-blue-400" />
-                    </div>
-                    <h3 className="text-xl md:text-2xl font-black text-white mb-1 md:mb-2 tracking-wide">赛道三</h3>
-                    <p className="text-blue-100/80 text-xs md:text-sm mb-3 md:mb-4">综合大题挑战</p>
-                    <div className="mt-auto inline-flex items-center text-xs font-bold text-blue-300 bg-blue-500/20 px-4 py-2 rounded-full border border-blue-500/30 whitespace-nowrap">扣除 1 次能量</div>
-                  </motion.div>
-                </ElectricBorder>
+                    <motion.div
+                      whileHover={{ y: -5 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => setSelectedTrack(track.id as any)}
+                      className="w-full h-full p-4 md:p-6 group flex flex-col items-center text-center justify-center relative overflow-hidden"
+                    >
+                      {track.locked && (
+                        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px]">
+                          <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-2 border border-white/20">
+                            <Settings className="w-6 h-6 text-white/60" />
+                          </div>
+                          <span className="text-white/80 font-bold text-sm">需 PK 赛授权码</span>
+                        </div>
+                      )}
+                      <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl md:rounded-3xl ${track.bgColor} border ${track.borderColor} flex items-center justify-center mb-3 md:mb-5 group-hover:scale-110 transition-transform ${track.shadowColor} shrink-0`}>
+                        <track.icon className={`w-7 h-7 md:w-8 md:h-8 ${track.iconColor}`} />
+                      </div>
+                      <h3 className="text-lg md:text-xl font-black text-white mb-1 tracking-wide">{track.title}</h3>
+                      <p className={`${track.energyColor}/80 text-[10px] md:text-xs mb-3 md:mb-4`}>{track.subtitle}</p>
+                      <div className={`mt-auto inline-flex items-center text-[10px] md:text-xs font-bold ${track.energyColor} ${track.energyBg} px-3 py-1.5 rounded-full border ${track.energyBorder} whitespace-nowrap`}>
+                        {track.id === 'pk' ? 'PK 专属权限' : '扣除 1 次能量'}
+                      </div>
+                    </motion.div>
+                  </ElectricBorder>
+                ))}
               </div>
             </motion.div>
           ) : (
@@ -138,10 +187,12 @@ export default function Selection({
                 </div>
                 <h2 className="text-2xl md:text-3xl font-black text-white text-center">
                   {selectedTrack === 'track1' ? '基础知识训练' : 
-                   selectedTrack === 'track2' ? '工具应用问答' : '综合大题挑战'}
+                   selectedTrack === 'track2' ? '工具应用问答' : 
+                   selectedTrack === 'track3' ? '综合大题挑战' : '双人 PK 对战'}
                 </h2>
                 <p className="text-white/60 text-sm md:text-base mt-2 text-center">
-                  {selectedTrack === 'track3' ? '点击下方按钮立即开始挑战' : '请选择您的学段以开始练习'}
+                  {selectedTrack === 'track3' ? '点击下方按钮立即开始挑战' : 
+                   selectedTrack === 'pk' ? '请选择对战组别以进入赛场' : '请选择您的学段以开始练习'}
                 </p>
               </div>
 

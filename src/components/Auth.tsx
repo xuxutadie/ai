@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿import { useState, useEffect } from 'react';
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Key, Sparkles, ShieldAlert, Loader2, Eye, EyeOff } from 'lucide-react';
 import { AuthStatus } from '../types';
@@ -45,6 +45,11 @@ export default function Auth({ onAuthSuccess }: { onAuthSuccess: (status: AuthSt
     
     if (normalizedCode.startsWith('AI1Y-') && normalizedCode.length >= 9) {
       onAuthSuccess({ code: normalizedCode, type: 'UNLIMITED', remaining: 999 });
+      return;
+    }
+
+    if (normalizedCode.startsWith('PK-') && normalizedCode.length >= 6) {
+      onAuthSuccess({ code: normalizedCode, type: 'PK_SPECIAL', remaining: 999 });
       return;
     }
 

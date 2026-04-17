@@ -1,19 +1,21 @@
 import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Background from './components/Background';
 import Auth from './components/Auth';
 import Selection from './components/Selection';
 import Quiz from './components/Quiz';
+import PKQuiz from './components/PKQuiz';
 import Result from './components/Result';
 import AdminPanel from './components/AdminPanel';
 import { AuthStatus, Question } from './types';
 
-type Screen = 'auth' | 'selection' | 'quiz' | 'result' | 'admin';
+type Screen = 'auth' | 'selection' | 'quiz' | 'result' | 'admin' | 'pk_quiz';
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState<Screen>('auth');
   const [authStatus, setAuthStatus] = useState<AuthStatus | null>(null);
   const [selectedGroup, setSelectedGroup] = useState<'primary' | 'junior' | null>(null);
-  const [track, setTrack] = useState<'track1' | 'track2' | 'track3' | null>(null);
+  const [track, setTrack] = useState<'track1' | 'track2' | 'track3' | 'pk' | null>(null);
   const [score, setScore] = useState<number>(0);
   const [totalQuestions, setTotalQuestions] = useState<number>(0);
   const [questionResults, setQuestionResults] = useState<{
@@ -44,7 +46,7 @@ export default function App() {
     setCurrentScreen('selection');
   };
 
-  const handleStartQuiz = (group: 'primary' | 'junior', selectedTrack: 'track1' | 'track2' | 'track3') => {
+  const handleStartQuiz = (group: 'primary' | 'junior', selectedTrack: 'track1' | 'track2' | 'track3' | 'pk') => {
     if (authStatus?.remaining !== undefined && authStatus.remaining <= 0) {
       alert('您的能量已耗尽，请重新激活！');
       setCurrentScreen('auth');
@@ -57,7 +59,12 @@ export default function App() {
       setAuthStatus(newStatus);
       localStorage.setItem('ai_quiz_auth', JSON.stringify(newStatus));
     }
-    setCurrentScreen('quiz');
+    
+    if (selectedTrack === 'pk') {
+      setCurrentScreen('pk_quiz');
+    } else {
+      setCurrentScreen('quiz');
+    }
   };
 
   const handleFinishQuiz = (finalScore: number, total: number, results?: {
@@ -79,6 +86,12 @@ export default function App() {
     localStorage.removeItem('ai_quiz_auth');
     setAuthStatus(null);
     setCurrentScreen('auth');
+  };
+
+  const handlePKFinish = (winner: 'left' | 'right' | 'draw', scores: { left: number, right: number }) => {
+    setScore(winner === 'left' ? scores.left : scores.right); // 临时记录赢家分数用于显示，PK赛有专属结果页更好，这里先复用
+    setTotalQuestions(100);
+    setCurrentScreen('result');
   };
 
   return (
@@ -150,7 +163,7 @@ export default function App() {
         </div>
       )}
 
-      <div className="relative z-10 w-full max-w-4xl h-full max-h-[900px] flex flex-col p-4 md:p-8">
+      <div className={`relative z-10 w-full ${currentScreen === 'selection' ? 'max-w-6xl' : 'max-w-4xl'} h-full max-h-[900px] flex flex-col p-4 md:p-8 transition-all duration-500`}>
         {currentScreen === 'auth' && <Auth onAuthSuccess={handleAuthSuccess} />}
         {currentScreen === 'selection' && (
           <Selection 
@@ -171,6 +184,24 @@ export default function App() {
         {currentScreen === 'result' && <Result score={score} total={totalQuestions} questionResults={questionResults} onRetry={() => setCurrentScreen('selection')} />}
         {currentScreen === 'admin' && <AdminPanel onExit={() => setCurrentScreen('selection')} />}
       </div>
+
+      {/* PK Quiz Container (FullScreen) */}
+      <AnimatePresence>
+        {currentScreen === 'pk_quiz' && selectedGroup && (
+          <motion.div 
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            className="fixed inset-0 z-[100] bg-[#0f111a] p-8 flex items-center justify-center"
+          >
+            <PKQuiz 
+              group={selectedGroup}
+              onFinish={handlePKFinish}
+              onExit={() => setCurrentScreen('selection')}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
